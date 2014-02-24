@@ -68,6 +68,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 1. Other XML checks
     1. The table of contents (@xml:id="toc") should be a nested list and should match the source table of contents, with page numbers tagged as page number cross references, e.g., `<ref target="#pg_3">3</ref>`
     2. In some volumes, one entry may refer to two different terms, e.g., NAT(O), refers both to the North Atlantic Treaty Organization and the North Atlantic Treaty. As a result, make sure both NATO and NAT are tagged correctly throughout the text. There is a large possibility that they will  not be tagged if the vendor simply searched for NAT(O). 
+    1. Check that all source notes have the `note/@type="source"` attribute (all documents except editorial notes) should have these. XPath: `//tei:div/tei:note[@type='source']`
 
 1. Ebook
     1. To generate the ebook, go to the TEI Content app (`http://localhost:8080/cms/apps/tei-content`), navigate to the volume, and select `Download EPUB`. 
