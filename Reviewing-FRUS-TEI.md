@@ -19,7 +19,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 1. Prepare FRUS TEI file for review
     1. Copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`)
     1. Open the file in oXygen
-    1. Apply the FRUS TEI Schematron and RelaxNG schema files to check for structural problems
+    1. Apply the [FRUS TEI Schematron and RelaxNG schema files](https://gist.github.com/joewiz/9194718) to check for structural problems
     1. Once the volume passes the schema and metadata checks, commit the file to the SVN repository
     1. Upload the FRUS TEI file into localhost
     1. Upload the volume's page images to S3 (or request help with this step)
