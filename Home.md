@@ -1,1 +1,1 @@
-Welcome to the frus-tei wiki!
+Welcome to the FRUS-TEI wiki!
