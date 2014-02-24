@@ -61,6 +61,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 1. Check the volume metadata
     1. Open the volume's metadata file in `paho-trunk/db/cms/apps/volumes/data/` alongside the TEI file's `teiHeader` and `titlePage`
     1. Verify that the title, editors, and publication information is correct
+        1. Verify that year ranges use en-dashes (–) rather than hyphens (-). 
     1. For volumes published since 1972, the volume's ISBN should be present. If needed, look up the ISBN on WorldCat or Amazon and add it to both the volume and its metadata file. If it can't be found, add an XML comment: `<!-- ISBN not found on WorldCat or Amazon -->`
     1. The title elements should all be filled in. The `@type="subseries"` should only contain the date range.
 
