@@ -2,7 +2,7 @@
 
 Reviewing the TEI edition of a FRUS volume (typically delivered by our vendors) is an essential step on the road to publishing the volume and adding it to the FRUS digital archive. The purpose of the review is to ensure that the volume meets our high standards for quality and to provide timely feedback to our vendors.  
 
-The following checklist captures the essential steps of a review.  Each step links to a page with more information.  
+This page contains the essential steps of a review.  As the page is expanded, links will be added to pages with more information.  
 
 # Requirements
 
@@ -20,7 +20,6 @@ The following checklist captures the essential steps of a review.  Each step lin
     1. Copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`)
     1. Open the file in oXygen
     1. Apply the FRUS TEI Schematron and RelaxNG schema files to check for structural problems
-    1. Open the volume's metadata file in `paho-trunk/db/cms/apps/volumes/data/` alongside the TEI file's `teiHeader` and `titlePage` and verify that the title, editors, and publication information is correct
     1. Once the volume passes the schema and metadata checks, commit the file to the SVN repository
     1. Upload the FRUS TEI file into localhost
     1. Upload the volume's page images to S3 (or request help with this step)
@@ -33,7 +32,7 @@ The following checklist captures the essential steps of a review.  Each step lin
     1. Verify that each entry is rendered in correct Sentence Case
 
 1. Front and back matter
-    1. Give each section of the front matter a general check, with the following special checks
+    1. Give each section of the front matter a general check, with the following special checks:
     1. Preface: Verify the styling of the closing signature
     1. Persons and Terms lists:
         1. Verify that entries are bold and definitions are not bold
@@ -48,8 +47,8 @@ The following checklist captures the essential steps of a review.  Each step lin
     1. The volume should be delivered to us with extremely high accuracy.  To check this, we perform a thorough check on a random sample of 5% of the volume.  If the sample does not meet our standards, we will return the volume to the vendor for processing.
     1. To select the 5% of the volume, take the number of pages or documents and calculate the appropriate sample size: a 1000 page volume requires a sample of 50 pages, or a 300 document volume requires a sample of 15 documents.  
     1. Make a note of what sample you select, and include this information in your commit message following the review.  
-    1. Perform the following checks on the sample:
     1. In your browser, turn on the "View Annotations mode" by appending `?view=annotations` to the URL. This mode reveals highlights instances of `<persName>`, `<gloss>`, and `<pb>` tags and shows what each link points to.  
+    1. Perform the following checks on the sample:
     1. Verify that the people or terms have been tagged correctly. Only people and terms in the lists of persons and terms & abbreviations should be tagged, and to prevent misidentification, they should only be tagged when they appear in their full form. A "no ID" warning in the "view annotations mode" indicates that there is no `@target` or `@corresp` value; this is acceptable in document heading, where the sender and recipient are supposed to be tagged regardless of their but elsewhere all tagged text should have an ID.
     1. Similarly, verify that the entries in the right sidebar appear appropriately.
     1. Verify that the page breaks are correctly placed where the page in question begins; the `@n` values should match the source page numbers. Click on the page break entry to verify the the correct image is linked; `@facs` value should match the filename of the corresponding page image.
@@ -58,6 +57,16 @@ The following checklist captures the essential steps of a review.  Each step lin
     1. Look for incorrect capitalization in the classification markings, dateline, and section headings. Title Case is preferable to ALL CAPS.
     1. Regardless of the styling in the printed book, Subject and Participant lists should be tagged as a `<list>` element with `<item>` children in the TEI. The list heading should be in Title Case, and the entries will begin on the line following the list heading. 
     1. Paragraphs: The actual text within each document is either coded as a paragraph `<p>` or as a `<list>`. The `<list>` element is used to indicate a series of tightly spaced lines (often used in quotes or lists), but these instances need not actually contain bulleted or numbered items.  The tight spacing helps group lines together.
+
+1. Check the volume metadata
+    1. Open the volume's metadata file in `paho-trunk/db/cms/apps/volumes/data/` alongside the TEI file's `teiHeader` and `titlePage`
+    1. Verify that the title, editors, and publication information is correct
+    1. For volumes published since 1972, the volume's ISBN should be present. If needed, look up the ISBN on WorldCat or Amazon and add it to both the volume and its metadata file. If it can't be found, add an XML comment: `<!-- ISBN not found on WorldCat or Amazon -->`
+    1. The title elements should all be filled in. The `@type="subseries"` should only contain the date range.
+
+1. Other XML checks
+    1. The table of contents (@xml:id="toc") should be a nested list and should match the source table of contents, with page numbers tagged as page number cross references, e.g., `<ref target="#pg_3">3</ref>`
+    2. In some volumes, one entry may refer to two different terms, e.g., NAT(O), refers both to the North Atlantic Treaty Organization and the North Atlantic Treaty. As a result, make sure both NATO and NAT are tagged correctly throughout the text. There is a large possibility that they will  not be tagged if the vendor simply searched for NAT(O). 
 
 1. Ebook
     1. To generate the ebook, go to the TEI Content app (`http://localhost:8080/cms/apps/tei-content`), navigate to the volume, and select `Download EPUB`. 
