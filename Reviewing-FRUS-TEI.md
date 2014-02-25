@@ -6,7 +6,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 
 # Requirements
 
-1. A history.state.gov development system on localhost
+1. A history.state.gov development system on localhost (see [Setting up a history.state.gov development system](Setup) for more information)
     1. oXygen XML Editor and Subversion (SVN) Client
     1. An up-to-date checkout of the SVN repository
     1. A freshly repopulated database
