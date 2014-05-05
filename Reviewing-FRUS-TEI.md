@@ -36,7 +36,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
     1. Preface: Verify the styling of the closing signature
     1. Persons and Terms lists:
         1. Verify that entries are bold and definitions are not bold
-        1. Verify that cross references ("See ___") are tagged with `<ref>` elements pointing to the alternate entry.
+        1. Verify that cross references ("See ___") are tagged with `<persName corresp="#{p_ID}" type="alt">` elements pointing to the alternate entry.
     1. Sources list: Verify the correct nesting of unpublished sources
     1. Index: 
         1. Verify the correct nesting of the entries
