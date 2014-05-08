@@ -41,7 +41,8 @@ Setting up a history.state.gov development system requires installing oXygen XML
 1. Since you will use `start.jar` every time you first start eXist-db up, you may wish to create a shortcut to this file.
     - On Windows, right-click on `start.jar` and select `Create Shortcut`. Move the shortcut file to a convenient location (e.g., your desktop)
     - On Mac, drag `start.jar` to the Dock beside the trashcan icon.
-1. Now eXist-db is running, and you have a complete copy of the history.state.gov server running on your computer, accessible at <http://localhost:8080/>
+1. In oXygen, select the `Tools` menu > `External Tools` > `populate:all`. This will upload the entire contents of the SVN working copy (in `paho-trunk/db/`) to eXist. This can take 7-20 minutes depending on the speed of your computer. When you see `BUILD SUCCESSFUL`, close the tab.
+1. Now you have a complete copy of the history.state.gov server running on your computer, accessible at <http://localhost:8080/>
 
 ## Editing files and previewing them in eXist-db
 
@@ -53,7 +54,6 @@ Setting up a history.state.gov development system requires installing oXygen XML
 ## Setting up oXygen's Data Source Explorer
 
 1. Note: This is optional and used for opening files directly from the database. The previous section provides a convenient method of uploading individual files to eXist-db.
-1. In oXygen, select the `Tools` menu > `External Tools` > `populate:all`. This will upload the entire contents of the SVN working copy (in `paho-trunk/db/`) to eXist. This can take 7-20 minutes depending on the speed of your computer. When you see `BUILD SUCCESSFUL`, close the tab.
 1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
 1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear. 
 1. Under `Connection wizards` select `Create eXist-db XML connection`. Keep `Host`, `Port`, and `Libraries` unchanged, but modify the other fields as follows: 
