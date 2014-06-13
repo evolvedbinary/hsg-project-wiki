@@ -14,12 +14,25 @@ Make sure you are always working with the latest version of every file in your s
 1. When you see `Updated to revision ____` (e.g., "1000") and `Refresh done`, then the SVN client has completed downloading all of the files.
 1. Your SVN Working Copy is now up to date. 
 
-### Repopulating the database
+### Uploading the latest files into your eXist-db
+
+Assuming that your working copy has newer versions of files than are in your eXist-db database, you may wish to upload the new files to your database.
+
+To get updated files into your eXist-db database, you have two choices:
+
+1. Upload them one at a time (opening each file in oXygen and using the `upload-current-file-to-localhost` button.
+1. Repopulate the entire database. This takes longer (see the directions below) but has the advantage of ensuring all files are up to date. 
+
+A good rule of thumb is to repopulate the entire database at the start of each work week, and on subsequent work days only upload individual files as needed.
+
+#### Repopulating the database
 
 1. Warning: This step will erase the contents of your eXist-db database. So before you proceed, make sure you have saved any files you've edited from the database into your SVN Working Copy. 
 1. Stop eXist-db. You'll know eXist-db is running if the eXist-db icon in your task bar (Windows) or menu bar (Mac) and the `Start server` option is grayed out. To stop the eXist-db server, select the eXist-db task/menu bar icon > `Stop Server`. You'll know eXist-db is not running if there is no eXist icon in the task/menu bar, or if you click on the icon and the menu option for `Stop Server` is grayed out.
 1. In oXygen, select the `Tools` menu > `External Tools` > `wipe-exist-data`. A new tab will open at the bottom of the oXygen window, showing the results of the `wipe-exist-data` script. When you see `BUILD SUCCESSFUL`, close the tab.
 1. Start eXist-db. To start eXist-db if you already have the eXist-db icon in your task/menu bar, select `Start Server`. If you do not have the eXist-db icon in your task/menu bar, double-click the shortcut to `start.jar` that you created when you [set up](Setup) your system.
+1. In oXygen, select the `Tools` menu > `External Tools` > `populate:all`. A new tab will open at the bottom of the oXygen window, showing the results of the `populate:all` script. When you see `BUILD SUCCESSFUL`, close the tab.
+1. Your eXist-db database is now up to date with the latest files from your Working Copy.
 
 ## Committing new or edited files to the repository
 
