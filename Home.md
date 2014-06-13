@@ -6,3 +6,8 @@ This wiki houses instructions for:
 1. [Setting up a history.state.gov development environment](setup) on your computer 
 1. [Using version control with history.state.gov data](version-control)
 1. [Bookmarklets](bookmarklets) handy for switching between your dev system and the live site
+
+Other useful links:
+
+1. [FRUS TEI Guidelines](http://static.history.state.gov/temp/frus-tei-guidelines.html)
+1. [FRUS TEI GitHub Repository, including schema](https://github.com/historyatstate/frus)
