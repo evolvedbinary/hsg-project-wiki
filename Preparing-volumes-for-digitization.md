@@ -1,4 +1,4 @@
-== Overview of procedures for digitizing a FRUS volume
+## Overview of procedures for digitizing a FRUS volume
 
 1. Prepare images
   1. Obtain scanned images of published volume
@@ -10,6 +10,6 @@
   1. Receive delivery of completed TEI files from vendor
   1. Review delivery, and return for revision or accept
 
-== TEI shell files
+## TEI shell files
 
 (to be added)
