@@ -16,7 +16,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 
 # Review procedure
 
-1. Create a new [issue](https://github.com/joewiz/frus-tei/issues) for the volume, and paste our review checkbox template into the issue:
+Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues) for the volume, and paste our review checkbox template into the issue:
 
 ```
 - [ ] Passes FRUS TEI Schematron check
@@ -31,7 +31,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 - [ ] Volume metadata
 ```
 
-As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by using their username, e.g., [@joewiz](http://github.com/joewiz).
+As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by referencing their GitHub username, e.g., [@joewiz](http://github.com/joewiz).
 
 1. Prepare FRUS TEI file for review
     1. If the FRUS TEI file isn't already in SVN, copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`)
