@@ -16,6 +16,23 @@ This page contains the essential steps of a review.  As the page is expanded, li
 
 # Review procedure
 
+1. Create a new [issue](https://github.com/joewiz/frus-tei/issues) for the volume, and paste our review checkbox template into the issue:
+
+```
+- [ ] Passes FRUS TEI Schematron check
+- [ ] Passes RelaxNG schema check
+- [ ] Commit schema-compliant file to SVN
+- [ ] Upload the FRUS TEI file into localhost
+- [ ] Upload page images to S3
+- [ ] Table of contents
+- [ ] Front matter
+- [ ] Back matter
+- [ ] Random sample
+- [ ] Volume metadata
+```
+
+As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by using their username, e.g., [@joewiz](http://github.com/joewiz).
+
 1. Prepare FRUS TEI file for review
     1. If the FRUS TEI file isn't already in SVN, copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`)
     1. Open the file in oXygen
