@@ -53,6 +53,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
         - Search for hyphens in element contents: `-` 
     1. Confirm that no straight single or double quotes are used, since all quotes should be curly/typographic:
         - Search for straight quotes in element contents with this regular expression: `['"]`
+    1. If you find systematic errors in any of these areas, return the volume to the vendor for correction.
 
 1. Check the volume structure
     1. In your browser, open the volume's landing page: `http://localhost:8080/historicaldocuments/{frus-volume-id}`
