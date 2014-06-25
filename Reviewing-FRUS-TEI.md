@@ -24,6 +24,7 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 - [ ] Commit schema-compliant file to SVN
 - [ ] Upload the FRUS TEI file into localhost
 - [ ] Upload page images to S3
+- [ ] Typography and characters
 - [ ] Table of contents
 - [ ] Front matter
 - [ ] Back matter
@@ -40,6 +41,18 @@ As you complete the steps below, check off the boxes, and add any notes in comme
     1. Once the volume passes the schema and metadata checks, commit the file to the SVN repository
     1. Upload the FRUS TEI file into localhost
     1. Upload the volume's page images to S3 (or request help with this step)
+
+1. Check typography and characters
+    1. Confirm that no invalid characters have been used in the file. These are typically caused by poor proofing of OCR text. In oXygen, perform a search with the following parameters: 
+        - Find: `[^a-zA-Z0-9\s!@#$%^&*()\[\]{}?+⅛⅘,.:;'"‘’“”°_\-–—/áäàâãćčéèûëíóòôöêšÉÖüñ|║ý‡<>=†¶§çỳž¢ÇŜ½⅓¼⅔¾£]`
+        - These options checked: `Direction` > `Forward`, `Scope` > `All`, `Options` > `Regular expression` and `Wrap around`
+       Select `Find All` and review the results. Just because a character is found doesn't mean it's wrong, but it can help flag problems like Cyrillic characters used in place of Roman characters, etc.
+    1. Confirm that dashes and hyphens are used correctly:
+        - For numeric ranges that should use en dashes (–), perform a search with the options `Options` > `Regular expression` and `Enable XML search options` > `Element contents` checked, for this regular expression: `\d[^–]\d`
+        - Search for em dashes in element contents: `—`
+        - Search for hyphens in element contents: `-` 
+    1. Confirm that no straight single or double quotes are used, since all quotes should be curly/typographic:
+        - Search for straight quotes in element contents with this regular expression: `['"]`
 
 1. Check the volume structure
     1. In your browser, open the volume's landing page: `http://localhost:8080/historicaldocuments/{frus-volume-id}`
