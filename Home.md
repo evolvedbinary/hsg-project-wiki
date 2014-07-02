@@ -6,6 +6,7 @@ This wiki houses instructions for:
 1. [Setting up a history.state.gov development environment](setup) on your computer 
 1. [Using version control with history.state.gov data](version-control)
 1. [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site 
+1. [Ebooks](ebooks): generating, reviewing, and uploading
 1. [Preparing volumes for digitization](preparing-volumes-for-digitization): Preparing images, shell files
 
 Other useful links:
