@@ -25,6 +25,7 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 - [ ] Upload the FRUS TEI file into localhost
 - [ ] Upload page images to S3
 - [ ] Typography and characters
+- [ ] Source note coding
 - [ ] Table of contents
 - [ ] Front matter
 - [ ] Back matter
