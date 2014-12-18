@@ -4,12 +4,18 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 ## Requirements
 
-- oXygen XML Editor
+- Java 7 JDK
+- oXygen XML Editor (v16.1+)
 - The username and password for your history.state.gov group account on Assembla.com
+
+## Installing Java 7 JDK
+
+1. [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and install the Java 7 JDK (select the version for your operating system from the 1st table on this page)
 
 ## Installing oXygen XML Editor
 
-1. Download and install oXygen XML Editor. 
+1. [Download](http://www.oxygenxml.com/download_oxygenxml_editor.html) and install oXygen XML Editor. For Mac OS X Yosemite (10.10), the recommended version is the one described as, "If you have OS X 10.8, 10.9 or 10.10, you can use the OS X 10.8 and later (Includes Java SE 8) download." Direct link: http://www.oxygenxml.com/InstData/Editor/MacOSX/VM/oxygen.tar.gz.
+
 1. Start oXygen and paste in license key when prompted
 
 ## Checking out the Subversion (SVN) repository
