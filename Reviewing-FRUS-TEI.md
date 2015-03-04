@@ -36,7 +36,7 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by referencing their GitHub username, e.g., [@joewiz](http://github.com/joewiz).
 
 1. Prepare FRUS TEI file for review
-    1. If the FRUS TEI file isn't already in SVN, copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`). The volume has to be in this directory in order for its references to the schema files to work properly
+    1. If the FRUS TEI file isn't already in SVN, copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`). The volume has to be in this directory in order for its references to the schema files to work properly.
     1. Open the file in oXygen
     1. If the Schematron and RelaxNG schema processing instructions aren't present on lines 2 and 3 of the file, please paste in [these references](https://gist.github.com/joewiz/9194718). Validate the document using `Document` > `Validate` > `Validate`.
     1. Review the errors raised by the schema validation check. Errors we expect to fail include: 
@@ -48,7 +48,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
             - Upload the newly generated .tif and .png files to S3's `static.history.state.gov` bucket in the `frus/{volume-id}` folder.  
             - Returning to the TEI, make sure the heading of the image is in the graphic element's `<head>` element - typing it in if not present. Ideally we should have a `<head>` element for each graphic; this is especially important for accessibility reasons, but helps everyone.
             - Revalidate the file
-    1. Once the volume passes the schema and metadata checks, commit the file to the SVN repository
+    1. Once the volume passes the schema and metadata checks, perform a `Format and Indent` (in the `Document` > `Source` menu) once and commit the file to the SVN repository
     1. Upload the FRUS TEI file into localhost
     1. Upload the volume's page images to S3 (or request help with this step)
 
