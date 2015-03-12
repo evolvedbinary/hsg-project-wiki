@@ -27,6 +27,8 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 - [ ] Typography and characters
 - [ ] Source note coding
 - [ ] Table of contents
+- [ ] Tables, both participant and other
+- [ ] Openers and assorted segs
 - [ ] Front matter
 - [ ] Back matter
 - [ ] Random sample
