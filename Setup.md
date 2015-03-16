@@ -4,13 +4,13 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 ## Requirements
 
-- Java 7 JDK
+- Java 8 JDK
 - oXygen XML Editor (v16.1+)
 - The username and password for your history.state.gov group account on Assembla.com
 
-## Installing Java 7 JDK
+## Installing Java 8 JDK
 
-1. [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and install the Java 7 JDK (select the version for your operating system from the 1st table on this page)
+1. [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install the Java 8 JDK (select the version for your operating system from the 1st table on this page)
 
 ## Installing oXygen XML Editor
 
