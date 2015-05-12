@@ -12,8 +12,9 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 
 ## Preparation
 
-1. Check that Mandy has uploaded cover images for the volumes in question to S3; check the `static.history.state.gov` bucket under `frus/{volume-id}/covers`. Without these covers, you will get a generic cover image. The rest of the volume is fine.
+1. Check that the cover images for the volumes are all in S3; check the `static.history.state.gov` bucket under `frus/{volume-id}/covers`. Without these covers, you will get a generic cover image. The rest of the volume is fine. 
 1. Validate each volume's TEI file in oXygen against the `frus.sch` and `frus.rnc` schema files in oXygen. It's important to fix as many problems as possible before generating the ebook, since the ebook generating process takes time.
+1. Similarly, ensure that the volume titles and other metadata in `/db/cms/apps/volumes/data` for each volume is complete.
 1. If you want to quickly preview how a volume will look as an ebook, go to https://localhost:8443/cms/apps/epub and select a volume. This can be handy but isn't a substitute for generating the various formats of ebooks and reviewing them in a real ebook reader.
 
 ## Generating Ebooks
