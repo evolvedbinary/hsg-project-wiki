@@ -216,7 +216,7 @@ for FILE in $(find * -name '*.tiff' -type f); do BASE=`basename $FILE .tiff`; mv
 mogrify -format png -density 72 "*.tif"; mogrify -resize '600x800' "*.png"
 ```
 
-Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory. 
+Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory, e.g., `frus/frus1969-76v01/figure_0637.tif` and `frus/frus1969-76v01/figure_0637.png`. 
 
 ## Convert all page image TIFFs to PNGs
 
@@ -236,4 +236,4 @@ for FOLDER in $(find * -maxdepth 0 -type d ); do mkdir $FOLDER/tiff; mkdir $FOLD
 for folder in $(find * -maxdepth 0 -type d ); do mogrify -path "$folder/medium" -format png -density 72 "$folder/tiff/*.tif"; mogrify -resize 'x800' "$folder/medium/*.png"; done
 ```
 
-Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory. 
+Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory, e.g., `frus/frus1969-76v01/medium/0001.png` and `frus/frus1969-76v01/tiff/figure_0637.tif`. 
