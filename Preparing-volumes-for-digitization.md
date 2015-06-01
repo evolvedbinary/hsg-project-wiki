@@ -220,7 +220,7 @@ Now upload each volumes' images into the `static.history.state.gov` bucket in th
 
 ## Convert all page image TIFFs to PNGs
 
-We also prepare page images as screen resolution PNGs.
+We also prepare page images as screen resolution PNGs. Check the `static.history.state.gov` bucket in the `frus` directory to see if the TIFF and PNG files are already in the volume's `tiff` and `medium` folders, respectively. If the TIFF and PNG files haven't been uploaded, here's how:
 
 - Download the TIFFs for all volumes, e.g., to `~/Desktop/frus-images`, so that each volume's TIFFs are inside a subfolder like `frus-images/frus1969-76v01`, `frus-images/frus1969-76v02`, etc.
 - In Terminal.app, cd into the `frus-images` folder
