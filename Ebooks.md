@@ -29,7 +29,7 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 
 ## Reviewing Ebooks
 
-1. Drag a volume's EPUB file into oXygen (**not** the Mobi-bound EPUB or Mobi files). This opens a new Archive Browser pane, showing the contents of the EPUB file. Select the "Validate" button (red checkmark icon) in the Archive Browser pane. This runs the [EpubCheck](http://www.oxygenxml.com/xml_editor/epub.html) utility, which reports any structural problems with the ebook. Errors like `element "ul" not allowed here` can generally be ignored at present, but errors that we do try to fix include `missing` or `not found` errors relating to links to pages and their fragments, and referenced resources like images. 
+1. Drag a volume's EPUB file into oXygen (**not** the Mobi-bound EPUB or Mobi files). This opens a new Archive Browser pane, showing the contents of the EPUB file. Select the "Validate" button (red checkmark icon) in the Archive Browser pane. This runs the [EpubCheck](http://www.oxygenxml.com/xml_editor/epub.html) utility, which reports any structural problems with the ebook. Errors like `element "ul" not allowed here` can generally be ignored at present, but errors that we do try to fix include `missing`, `not found`, or `fragment identifier not defined` errors relating to links to pages and their fragments, and referenced resources like images. 
 1. Open the EPUB files in iBooks and the Mobipocket files in Kindle. Scan the contents of the volume to make sure the volume looks alright, paying particular attention to any formatting that might be out of the ordinary.
 
 ## Uploading Ebooks for Publication
