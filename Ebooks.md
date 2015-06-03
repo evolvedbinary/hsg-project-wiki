@@ -5,7 +5,7 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 ## Prerequisites
 
 1. An [up-to-date](version-control) [history.state.gov development system](setup)
-1. [Calibre](http://calibre-ebook.com/download)
+1. [Calibre](http://calibre-ebook.com/) and [Parallel](http://www.gnu.org/software/parallel/). I recommend installing [Homebrew](http://brew.sh) and [Caskroom](http://caskroom.io/), then running `brew install parallel` and `brew cask install calibre`. 
 1. [iBooks](https://www.apple.com/support/mac-apps/ibooks/) for Mac (installed by default with Mac OS X)
 1. [Kindle](https://itunes.apple.com/us/app/kindle/id405399194?mt=12) for Mac (free from the Mac App Store)
 1. Internet connection (to access cover art, graphics on S3)
@@ -23,7 +23,7 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 1. Paste in the desired volume IDs, one per line
 1. Select the desired output format(s): `EPUB`, `Mobi-bound EPUB`, or `Both`
 1. Select the `Generate Ebooks` button. **Note**: The Ebook Batch Helper can take 5-10 minutes to generate each ebook; particularly slow are page-based-cross-reference-type volumes of the pre-Johnson era. Since the Ebook Batch Helper doesn't provide any feedback or progress indicators until it has completed all ebooks, the best way to monitor progress is by using the Monex Console: http://localhost:8080/apps/monex/console.html; the Console shows detailed progress messages. If you need to cancel the Ebook Batch Helper, use the Monex Monitoring page: http://localhost:8080/apps/monex/index.html, clicking the "X" beside the ebook-generate.xq query in the "Running Queries" window.
-1. When the Ebook Batch Helper is done, it will produce a final report about the results of the conversion: errors are noted in red, successful conversions in green. Mobi conversion via Calibre is reported in its own window.
+1. When the Ebook Batch Helper is done, it will produce a final report about the results of the conversion: errors are noted in red, successful conversions in green. Mobi conversion via Calibre is reported beneath this.
 1. The Ebook Batch Helper saves ebooks to your home folder's `Downloads` folder inside a date-stamped folder called `frus-ebooks-yyyy-mm-dd`. Here, EPUB files are stored in the `epub` directory and Mobipocket files in the `mobi` directory. A third directory, `mobi-bound`, contains intermediate Mobi-bound EPUB-formatted files, which can be discarded once the final Mobi files have been generated. As the tool runs, you can open your `Downloads/frus-ebooks-yyyy-mm-dd` folder on your desktop, and watch as the contents are filled in: first, the `epub` and `mobi-bound` folders, then the `mobi` folders.
 1. You can re-run the tool to generate a new set; new ebook files will overwrite the existing ones.
 
