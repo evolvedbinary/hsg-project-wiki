@@ -8,7 +8,7 @@ This wiki houses instructions for:
 1. [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site 
 1. [Ebooks](ebooks): generating, reviewing, and publishing
 1. [Preparing volumes for digitization](preparing-volumes-for-digitization): Preparing images, shell files
-1. [FRUS quarterly releases](releases): Steps in preparing quarterly releases
+1. [FRUS quarterly releases](quarterly-releases): Steps in preparing quarterly releases
 
 Other useful links:
 
