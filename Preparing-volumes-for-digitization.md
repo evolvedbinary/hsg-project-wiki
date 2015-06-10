@@ -240,7 +240,7 @@ for FOLDER in $(find * -maxdepth 0 -type d ); do mkdir $FOLDER/tiff; mkdir $FOLD
 - The following command will convert and mogrify the TIFFs into PNGs. It's slow but produces the best quality of any resizing utility we've found:
 
 ```bash
-for folder in $(find * -maxdepth 0 -type d ); do mogrify -path "$folder/medium" -format png -density 72 "$folder/tiff/*.tif"; mogrify -resize 'x800' "$folder/medium/*.png"; done
+for FOLDER in $(find * -maxdepth 0 -type d ); do mogrify -path "$FOLDER/medium" -format png -density 72 "$FOLDER/tiff/*.tif"; mogrify -resize 'x800' "$FOLDER/medium/*.png"; done
 ```
 
 Now that the TIFFs have been converted into screen-resolution PNG files, and the file & folder structure is in the form we need it to be, upload each volumes' images into the `static.history.state.gov` S3 bucket in the `frus` directory. The PNGs will be located in, for example, `frus/frus1969-76v01/medium/0001.png`, and the TIFFs will be located in, for example, `frus/frus1969-76v01/tiff/figure_0637.tif`. 
