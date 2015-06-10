@@ -224,16 +224,16 @@ We also prepare page images as screen resolution PNGs. Check the `static.history
 
 - Download the TIFFs for all volumes, e.g., to `~/Desktop/frus-images`, so that each volume's TIFFs are inside a subfolder like `frus-images/frus1969-76v01`, `frus-images/frus1969-76v02`, etc.
 - In Terminal.app, cd into the `frus-images` folder
-- This command will create medium, tiff folders, move tiffs into tiff folder:
+- This command will create two folders within `frus-images` called `medium` and `tiff`, and will move the TIFF files into the new `tiff` folder:
 
 ```bash
 for FOLDER in $(find * -maxdepth 0 -type d ); do mkdir $FOLDER/tiff; mkdir $FOLDER/medium; mv $FOLDER/*.tif $FOLDER/tiff; done
 ```
 
-- This command will convert and mogrify TIFFs into PNGs. It's slow but produces the best quality of any resizing utility we've found:
+- This command will convert and mogrify the TIFFs into PNGs. It's slow but produces the best quality of any resizing utility we've found:
 
 ```bash
 for folder in $(find * -maxdepth 0 -type d ); do mogrify -path "$folder/medium" -format png -density 72 "$folder/tiff/*.tif"; mogrify -resize 'x800' "$folder/medium/*.png"; done
 ```
 
-Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory, e.g., `frus/frus1969-76v01/medium/0001.png` and `frus/frus1969-76v01/tiff/figure_0637.tif`. 
+Now that the TIFFs have been converted into screen-resolution PNG files, and the file & folder structure is in the form we need it to be, upload each volumes' images into the `static.history.state.gov` S3 bucket in the `frus` directory. The PNGs will be located in, for example, `frus/frus1969-76v01/medium/0001.png`, and the TIFFs will be located in, for example, `frus/frus1969-76v01/tiff/figure_0637.tif`. 
