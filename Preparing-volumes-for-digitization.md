@@ -222,15 +222,22 @@ Now upload each volumes' images into the `static.history.state.gov` bucket in th
 
 We also prepare page images as screen resolution PNGs. Check the `static.history.state.gov` bucket in the `frus` directory to see if the TIFF and PNG files are already in the volume's `tiff` and `medium` folders, respectively. If the TIFF and PNG files haven't been uploaded, here's how:
 
-- Download the TIFFs for all volumes, e.g., to `~/Desktop/frus-images`, so that each volume's TIFFs are inside a subfolder like `frus-images/frus1969-76v01`, `frus-images/frus1969-76v02`, etc.
-- In Terminal.app, cd into the `frus-images` folder
-- This command will create two folders within `frus-images` called `medium` and `tiff`, and will move the TIFF files into the new `tiff` folder:
+- Download the TIFFs for the volumes you're working on
+- Open Terminal.app, create a folder on your desktop called `frus-images`, and cd into it:
+
+```bash
+mkdir ~/Desktop/frus-images
+cd ~/Desktop/frus-images
+```
+
+- Copy each volumes' folder of TIFF images into the `frus-images` folder, so that each volume's TIFFs are inside a subfolder like `frus-images/frus1969-76v01`, `frus-images/frus1969-76v02`, etc.
+- The following command will create two folders within `frus-images` called `medium` and `tiff`, and will move the TIFF files into the new `tiff` folder:
 
 ```bash
 for FOLDER in $(find * -maxdepth 0 -type d ); do mkdir $FOLDER/tiff; mkdir $FOLDER/medium; mv $FOLDER/*.tif $FOLDER/tiff; done
 ```
 
-- This command will convert and mogrify the TIFFs into PNGs. It's slow but produces the best quality of any resizing utility we've found:
+- The following command will convert and mogrify the TIFFs into PNGs. It's slow but produces the best quality of any resizing utility we've found:
 
 ```bash
 for folder in $(find * -maxdepth 0 -type d ); do mogrify -path "$folder/medium" -format png -density 72 "$folder/tiff/*.tif"; mogrify -resize 'x800' "$folder/medium/*.png"; done
