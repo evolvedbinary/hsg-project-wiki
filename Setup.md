@@ -11,10 +11,11 @@ Setting up a history.state.gov development system requires installing oXygen XML
 ## Installing Java 8 JDK
 
 1. [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install the Java 8 JDK (select the version for your operating system from the 1st table on this page)
+1. Or, if you have installed [Homebrew](http://brew.sh) and [Caskroom](http://caskroom.io/), you can simply type this command into Terminal.app: `brew cask install java` 
 
 ## Installing oXygen XML Editor
 
-1. [Download](http://www.oxygenxml.com/download_oxygenxml_editor.html) and install oXygen XML Editor. For Mac OS X Yosemite (10.10), the recommended version is the one described as, "If you have OS X 10.8, 10.9 or 10.10, you can use the OS X 10.8 and later (Includes Java SE 8) download." Direct link: http://www.oxygenxml.com/InstData/Editor/MacOSX/VM/oxygen.tar.gz.
+1. [Download](http://www.oxygenxml.com/download_oxygenxml_editor.html) and install oXygen XML Editor. Assuming you're using Mac OS X Yosemite (10.10), the recommended version is the one labeled, "OS X 10.8 and later (Includes Java SE 8u__)" (**not** the one labeled, "Mac OS X 10.6 and later"). Direct link: http://mirror.oxygenxml.com//InstData/Editor/MacOSX/VM/oxygen.tar.gz.
 
 1. Start oXygen and paste in license key when prompted
 
