@@ -9,6 +9,7 @@ This wiki houses instructions for:
 1. [Ebooks](ebooks): generating, reviewing, and publishing
 1. [Preparing volumes for digitization](preparing-volumes-for-digitization): Preparing images, shell files
 1. [FRUS quarterly releases](quarterly-releases): Steps in preparing quarterly releases
+1. [Using Apache Tika](tika): A tool for converting Word, PDF, and other Office files to XML
 
 Other useful links:
 
