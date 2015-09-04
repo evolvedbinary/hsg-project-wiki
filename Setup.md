@@ -58,9 +58,9 @@ Setting up a history.state.gov development system requires installing oXygen XML
 1. To upload the file to eXist-db, select the `Tools` menu > `External Tools` > `upload-current-file-to-localhost`. A new tab will open at the bottom of the oXygen window, showing the results of the `upload-current-file-to-localhost` script. When you see `BUILD SUCCESSFUL`, close the tab.
 1. In your browser, (re-)load <http://localhost:8080/countries/afghanistan>, and you will see your change. Return to oXygen, undo your change (`Edit` > `Undo`), save the file, and select `upload-current-file-to-localhost` again.
 
-## Setting up oXygen's Data Source Explorer
+## Setting up oXygen's Data Source Explorer (localhost)
 
-1. Note: This is optional and used for opening files directly from the database. The previous section provides a convenient method of uploading individual files to eXist-db.
+1. Note: This is optional and used for editing files already stored in the database on your local copy of eXist-db. The previous section provides a convenient method of uploading individual files to eXist-db.
 1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
 1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear. 
 1. Under `Connection wizards` select `Create eXist-db XML connection`. Keep `Host`, `Port`, and `Libraries` unchanged, but modify the other fields as follows: 
@@ -69,3 +69,16 @@ Setting up a history.state.gov development system requires installing oXygen XML
     - `eXist Admin Client JWS:` delete `exist/` so that the entry reads: `webstart/exist.jnlp`
 1. Leave `Use a secure HTTPS connection (SSL)` checkbox unchecked. 
 1. Select `OK`
+
+## Setting up oXygen's Data Source Explorer (history.state.gov)
+
+1. Note: This is optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist-db.
+1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
+1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear. 
+1. Under `Connections` select `+` to bring up the `Connection` window. Modify the fields as follows: 
+    - `Name:` `history.state.gov`
+    - `Data Source:` `WebDAV (S)FTP`
+    - `WebDAV/FTP URL:` `https://history.state.gov/webdav/db`
+    - `User` and `Password`: You will be provided with this information during your training
+1. Select `OK`
+
