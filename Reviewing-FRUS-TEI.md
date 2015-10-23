@@ -21,6 +21,7 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 ```
 - [ ] Passes FRUS TEI Schematron check
 - [ ] Passes RelaxNG schema check
+- [ ] Scripts run
 - [ ] Commit schema-compliant file to SVN
 - [ ] Upload the FRUS TEI file into localhost
 - [ ] Upload page images to S3
@@ -33,6 +34,7 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 - [ ] Back matter
 - [ ] Random sample
 - [ ] Volume metadata
+- [ ] Ebook generation and review
 ```
 
 As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by referencing their GitHub username, e.g., [@joewiz](http://github.com/joewiz).
