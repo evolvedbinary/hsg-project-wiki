@@ -5,7 +5,7 @@
 ## Timeline
 
 - 4 weeks before HAC, establish volumes to be included in the release
-- Run Quarterly Release Helper to generate draft tweets and press release at http://localhost:8080/cms/apps/tei-content
+- Run Quarterly Release Helper to generate draft tweets and press release at https://localhost:8443/cms/apps/tei-content/views/quarterly-release
 - Circulate list of volumes to management for editing announcements
 - Generate cover images for ebooks, upload to S3
 - Post materials to S3, hsg, and GitHub
@@ -14,7 +14,7 @@
 ## What is uploaded where
 
 - Ebooks and covers are uploaded to S3: `frus/{vol-id}/ebooks`, `frus/{vol-id}/covers`
-- Once ebooks have been posted, run the S3 Cache Helper at https://history.state.gov/cms/apps/tei-content
+- Once ebooks have been posted, run the S3 Cache Helper at https://history.state.gov/cms/apps/aws/edit/update-leaf-directory
 - Upload FRUS TEI and metadata to hsg: `/db/cms/apps/tei-content/data/frus-volumes` and `/db/cms/apps/volumes/data`
 - Post FRUS TEI for new releases and any volumes or schemas updated since the last release to GitHub: `https://github.com/HistoryAtState/frus`
 
