@@ -50,11 +50,11 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
 
-1. Clone eXist to your `workspace` folder, `~/workspace/eXist-LTS`. [TBA]
+1. Clone eXist to your `workspace` folder, `~/workspace/eXist-LTS`. [Note: TBA]
 
 1. In the Tools dropdown menu, select `Update and build eXist`; when this is complete, you will see `BUILD SUCCESSFUL`. In the Tools dropdown menu, select `Start eXist`; you will see a splash screen, which will go away when eXist has completed its startup. In the Tools menu, select `Deploy all repositories to localhost`.
 
-[Note: currently hsg-shell fails unless you apply https://github.com/eXistSolutions/hsg-shell/commit/734c300746546901f8203ed519b36677724a396f.]
+    [Note: currently hsg-shell fails unless you apply https://github.com/eXistSolutions/hsg-shell/commit/734c300746546901f8203ed519b36677724a396f.]
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
 
