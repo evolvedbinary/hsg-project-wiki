@@ -1,6 +1,6 @@
 # Setting up a history.state.gov development system
 
-Setting up a history.state.gov development system requires installing oXygen XML Editor, GitHub Desktop, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist-db, and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you have completed these steps, read the page on [version control](version-control) to learn how to save your work into our version control system and ensuring you continue to have the latest version of all files in our repository.
+Setting up a history.state.gov development system requires installing oXygen XML Editor, GitHub Desktop, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist-db, and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
 
 ## Requirements
 
@@ -24,6 +24,8 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
     These commands created a new directory, `workspace`, in your home directory, and opened this directory in the Finder. We will be storing all files related to our work in this directory.
 
+    (You could easily create this new directory in the Finder too, but performing these steps on the command line primes you for the steps to come.)
+
 1. Install [Homebrew](http://brew.sh) and [Caskroom](http://caskroom.io/) by pasting the following commands into your Terminal window:
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -34,7 +36,7 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
         brew cask install java github-desktop
 
-        brew install ant git node
+        brew install ant git homebrew/versions/node4-lts
 
         npm install -g gulp bower 
 
@@ -52,7 +54,7 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 1. Clone eXist to your `workspace` folder, `~/workspace/eXist-LTS`. [Note: TBA]
 
-1. In the Tools dropdown menu, select `Update and build eXist`; when this is complete, you will see `BUILD SUCCESSFUL`. In the Tools dropdown menu, select `Start eXist`; you will see a splash screen, which will go away when eXist has completed its startup. In the Tools menu, select `Deploy all repositories to localhost`.
+1. In the Tools dropdown menu, select `Update and build eXist`; when this is complete, you will see `BUILD SUCCESSFUL`. In the Tools dropdown menu, select `Start eXist`; you will see a splash screen, which will go away when eXist has completed its startup. In the Tools menu, select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers.
 
     [Note: currently hsg-shell fails unless you apply https://github.com/eXistSolutions/hsg-shell/commit/734c300746546901f8203ed519b36677724a396f.]
 
@@ -67,3 +69,95 @@ Setting up a history.state.gov development system requires installing oXygen XML
 1. To upload the file to eXist-db, select the `Tools` dropdown > `Upload current file to localhost`. A new tab will open at the bottom pane of the oXygen window, showing the results of the `Upload current file to localhost` script. When you see `BUILD SUCCESSFUL`, close the tab.
 
 1. In your browser, (re-)load <http://localhost:8080/exist/apps/hsg-shell/countries/afghanistan>, and you will see your change. Return to oXygen, undo your change (`Edit` > `Undo`), save the file, and select `Upload current file to localhost` again.
+
+## Publishing your work
+
+When you have work that you would like to publish, the following steps will ensure that your work is backed up in our version control repository and published to the live site:
+
+### Commit your work and push it to GitHub 
+
+1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. You will see a list of files you have modified. Confirm which files you want to commit by selecting (or unselecting) the checkboxes next to each file. GitHub desktop will show you a preview of the changes you have made.
+
+1. Enter a brief summary of the changes in the `Summary` field. If the description is too long, use the `Description` field. 
+
+1. Once you've confirmed that the files and summary/description are correct, select `Commit to master`. 
+
+1. Once you've made all of your commits, select `Sync` to synchronize your changes to GitHub.
+
+### Publish your work to hsg
+
+1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
+
+    Before you publish the first time, you must enter your credentials for the hsg servers into the `build.properties` file in your `hsg-project` directory. You will be provided with this information during your training.
+
+## Keeping up with the latest work
+
+To ensure your local copy of files is up to date with everyone's work, follow these steps:
+
+1. In oXygen, under the Tools dropdown menu, select `Fetch updates for all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Fetch updates for current repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
+
+1. To update your copy of the website running in eXist, select `Deploy all repositories to localhost`. Or, if you only want to update a single repository, open a file from that repository in oXygen and select `Deploy current repository to localhost`. When you see `BUILD SUCCESSFUL`, close the tab.
+
+## Browse localhost's eXist in oXygen's Data Source Explorer
+
+1. Note: This is optional and used for editing files already stored in the database on your local copy of eXist-db. The previous section provides a convenient method of uploading individual files to eXist-db.
+
+1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`.
+
+1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear.
+
+1. Under `Connection wizards` select `Create eXist-db XML connection`. Keep `Host`, `Port`, and `Libraries` unchanged, but modify the other fields as follows:
+
+    - `User:` `admin`
+    - `Password:` (delete the existing entry and leave this blank)
+
+1. Leave `Use a secure HTTPS connection (SSL)` checkbox unchecked. 
+
+1. Select `OK`
+
+## Browse history.state.gov's eXist in oXygen's Data Source Explorer
+
+1. Note: This is optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist-db.
+
+1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
+
+1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear. 
+
+1. Under `Connections` select `+` to bring up the `Connection` window. Modify the fields as follows: 
+
+    - `Name:` `1861.history.state.gov`
+    - `Data Source:` `WebDAV (S)FTP`
+    - `WebDAV/FTP URL:` `https://1861.history.state.gov/exist/webdav/db`
+    - `User` and `Password`: You will be provided with this information during your training
+
+1. Select `OK`
+
+1. Add another connection using the same steps for `1991.history.state.gov`
+
+## Connecting to hsg with Transmit
+
+Transmit is a file transfer client that makes it easy to upload many files to eXist. You will be provided with this software during your training.
+
+1. Select `Favorites` > `Add to Favorites...`
+
+1. Modify the fields as follows: 
+
+    - Name: `1861.history.state.gov`
+    - `Protocol:` `WebDAV HTTPS`
+    - `Server:` `1861.history.state.gov`
+    - `User Name` and `Password`: You will be provided with this information during your training
+    - `Remote Path`: `/exist/webdav/db`
+    - `Local Path`: `~/workspace/hsg-project/repos`
+
+1. Select `Save`.
+
+1. Add another favorite using the same steps for `1991.history.state.gov`
+
+1. For localhost, use:
+
+    - Name: `localhost hsg`
+    - `Protocol:` `WebDAV`
+    - `Server:` `localhost`
+    - `User Name` and `Password`: You will be provided with this information during your training
+    - `Remote Path`: `/exist/webdav/db`
+    - `Local Path`: `~/workspace/hsg-project/repos`
