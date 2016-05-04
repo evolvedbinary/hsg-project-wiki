@@ -55,7 +55,7 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
         npm install -g gulp bower 
 
-    When prompted, enter the password for your user account. You will now find GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`.
+    When prompted, enter the password for your user account. You will now find GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the GitHub Desktop icon into your Dock.
 
 1. Start GitHub Desktop, and follow these prompts to set up the program: Select `Continue`. Enter your GitHub user credentials, and select `Sign In`. Select `Continue`. Select `Install GitHub Command Line Tools`; when prompted, enter the password for your user account. Select `Done`. You are welcome to follow the tutorial to learn more about working with GitHub.
 
