@@ -97,15 +97,11 @@ When you have work that you would like to publish, the following steps will ensu
 
 1. Once you've made all of your commits, select `Sync` to synchronize your changes to GitHub.
 
-### Getting ready to publish your work to hsg
-
-1. Before you can publish to hsg, you must first enter the passwords provided to you during your training for the two production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
-
 ### Publishing your work to hsg
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
-    Before you publish the first time, you must enter your credentials for the hsg servers into the `build.properties` file in your `hsg-project` directory. You will be provided with this information during your training.
+    Before you publish the first time, you must first enter the passwords provided to you during your training for the two hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
 
 ## Keeping up with the latest work
 
