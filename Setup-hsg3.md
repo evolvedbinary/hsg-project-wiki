@@ -1,18 +1,33 @@
 # Setting up a history.state.gov development system
 
-Setting up a history.state.gov development system requires installing oXygen XML Editor, GitHub Desktop, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist-db, and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
+Setting up a history.state.gov development system requires installing oXygen XML Editor, GitHub Desktop, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist, and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
 
 ## Requirements
 
-- Mac OS X (Not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing dependencies; but we assume Mac OS X here.)
+- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing dependencies, but you're on your own.
+- eXist (3.0RC2+)
 - oXygen XML Editor (v17.1)
-- Credentials for your GitHub account 
+- For publishing: credentials for your GitHub account and the hsg production servers
+
+## Installing eXist
+
+1. Download the eXist installer from http://hsg-static.s3.amazonaws.com/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
+
+1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
+
+1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
+
+1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close.
+
+1. Start eXist. eXist will show a splash screen and install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
 ## Installing oXygen
 
 1. Go to https://www.oxygenxml.com/xml_editor/software_archive_editor.html and download the edition of oXygen 17.1 called, "OS X 10.8 and later." Direct link: http://archives.oxygenxml.com/Oxygen/Editor/InstData17.1/MacOSX/VM/oxygen.tar.gz. Open the downloaded file, and drag the oXygen folder to your `Applications` folder (in Finder, select `Go` > `Applications`).
 
-1. Start oXygen and paste in license key when prompted
+1. Drag the `oXygen XML Editor` icon onto your Dock.
+
+1. Start oXygen and paste in the license key provided to you during your training when prompted.
 
 ## Installing other dependencies
 
@@ -52,21 +67,19 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
 
-1. Clone eXist to your `workspace` folder, `~/workspace/eXist-LTS`. [Note: TBA]
+## Previewing files on your computer
 
-1. In the Tools dropdown menu, select `Update and build eXist`; when this is complete, you will see `BUILD SUCCESSFUL`. In the Tools dropdown menu, select `Start eXist`; you will see a splash screen, which will go away when eXist has completed its startup. In the Tools menu, select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers.
+Before publishing files to the public website, you may wish to preview them on your local system. This helps ensure that your edits have the desired effect and reduces the likelihood of unforeseen problems when publishing the files.
 
-    [Note: currently hsg-shell fails unless you apply https://github.com/eXistSolutions/hsg-shell/commit/734c300746546901f8203ed519b36677724a396f.]
+1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers.
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
 
-## Editing files and previewing them in eXist-db
+1. Drill down through the folder structure of the repositories to `repos/rdcr/countries/afghanistan.xml`. This is a TEI XML file that can be viewed at <http://localhost:8080/exist/apps/hsg-shell/articles/afghanistan> (see <http://history.state.gov/countries/afghanistan> for the public website).
 
-1. To open a file, use the Project window to drill down through the folder structure of the repositories. For example, drill into `repos/rdcr/countries/afghanistan.xml`. This is a TEI XML file that can be viewed at <http://localhost:8080/exist/apps/hsg-shell/articles/afghanistan> (see <http://history.state.gov/countries/afghanistan> for the public website).
+1. Make a simple change, e.g., change the word "Summary" to "Introduction" in the first `<head>` element. Select the `File` menu > `Save` to save your changes to the file. 
 
-1. Make a simple change, e.g., change the word "Summary" to "Introduction" in the first `<head>` element. Select the `File` menu > `Save` to save the file. 
-
-1. To upload the file to eXist-db, select the `Tools` dropdown > `Upload current file to localhost`. A new tab will open at the bottom pane of the oXygen window, showing the results of the `Upload current file to localhost` script. When you see `BUILD SUCCESSFUL`, close the tab.
+1. To upload the file to eXist, select the `Tools` dropdown > `Upload current file to localhost`. A new tab will open at the bottom pane of the oXygen window, showing the results of the `Upload current file to localhost` script. When you see `BUILD SUCCESSFUL`, close the tab.
 
 1. In your browser, (re-)load <http://localhost:8080/exist/apps/hsg-shell/countries/afghanistan>, and you will see your change. Return to oXygen, undo your change (`Edit` > `Undo`), save the file, and select `Upload current file to localhost` again.
 
@@ -84,7 +97,11 @@ When you have work that you would like to publish, the following steps will ensu
 
 1. Once you've made all of your commits, select `Sync` to synchronize your changes to GitHub.
 
-### Publish your work to hsg
+### Getting ready to publish your work to hsg
+
+1. Before you can publish to hsg, you must first enter the passwords provided to you during your training for the two production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
+
+### Publishing your work to hsg
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
@@ -100,7 +117,7 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 
 ## Browse localhost's eXist in oXygen's Data Source Explorer
 
-1. Note: This is optional and used for editing files already stored in the database on your local copy of eXist-db. The previous section provides a convenient method of uploading individual files to eXist-db.
+1. Note: This is optional and used for editing files already stored in the database on your local copy of eXist. The previous section provides a convenient method of uploading individual files to eXist.
 
 1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`.
 
@@ -115,9 +132,11 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 
 1. Select `OK`
 
-## Browse history.state.gov's eXist in oXygen's Data Source Explorer
+## Browsing history.state.gov's eXist in oXygen's Data Source Explorer
 
-1. Note: This is optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist-db.
+**Note:** Until an issue with our SSL certificate is resolved, you will encounter errors that prevent you from accessing the remote servers.
+
+Note: These steps are optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist.
 
 1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
 
@@ -136,7 +155,7 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 
 ## Connecting to hsg with Transmit
 
-Transmit is a file transfer client that makes it easy to upload many files to eXist. You will be provided with this software during your training.
+Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software during your training.
 
 1. Select `Favorites` > `Add to Favorites...`
 
