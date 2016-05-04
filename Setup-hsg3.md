@@ -11,7 +11,7 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 ## Installing eXist
 
-1. Download the eXist installer from http://hsg-static.s3.amazonaws.com/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
+1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
 
 1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
 
