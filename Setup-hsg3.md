@@ -9,6 +9,15 @@ Setting up a history.state.gov development system requires installing oXygen XML
 - oXygen XML Editor (v17.1)
 - For publishing: credentials for your GitHub account and the hsg production servers
 
+### Updating from our old setup?
+
+If you set up your computer using our [old architecture](Setup), which was based on SVN, please pay attention to the following changes:
+
+- You will need to download the new version of eXist from the link below.
+- You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu.
+- If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then proceed with the steps to install the other software with homebrew.
+- For the moment we will continue to use SVN for pre-publication work, using our old procedures. But work that is published to the website should now all be committed to GitHub, using the directions below.
+
 ## Installing eXist
 
 1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
@@ -130,7 +139,7 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 
 ## Browsing history.state.gov's eXist in oXygen's Data Source Explorer
 
-**Note:** Until an issue with our SSL certificate is resolved, you will encounter errors that prevent you from accessing the remote servers.
+**Important Note:** Until an issue with our SSL certificate is resolved, this method is out of service.
 
 Note: These steps are optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist.
 
