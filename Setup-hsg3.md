@@ -38,6 +38,8 @@ If you set up your computer using our [old architecture](Setup), which was based
 
 1. Start oXygen and paste in the license key provided to you during your training when prompted.
 
+1. Quit oXygen for now.
+
 ## Installing other dependencies
 
 1. Open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time:
