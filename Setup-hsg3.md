@@ -112,7 +112,7 @@ When you have work that you would like to publish, the following steps will ensu
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
-    Before you publish the first time, you must first enter the passwords provided to you during your training for the two hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
+    Before you publish the first time, you must first enter the password provided to you during your training for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
 
 ## Keeping up with the latest work
 
