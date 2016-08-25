@@ -1,4 +1,4 @@
-** Note: See [Setup-hsg3] for the current directions. These are out of date. ** 
+** Note: See [Setup] for the current directions. These are out of date. ** 
 
 # Setting up a history.state.gov development system
 
