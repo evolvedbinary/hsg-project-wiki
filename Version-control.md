@@ -1,6 +1,6 @@
-# Using version control with history.state.gov data
+# Using version control with history.state.gov publications and datasets
 
-All of the data on history.state.gov is stored in a version control system. The version control system ensures that every important change we make is backed up and secure, so we don't lose any work and have a complete history of our work. This article contains instructions for using our version control system on a day to day basis. It assumes you have already [set up](setup) your system.
+All source code, publications, and datasets on history.state.gov is stored in a version control system. The version control system ensures that every important change we make is backed up and secure, so we don't lose any work and have a complete history of our work. This article contains instructions for using our version control system on a day to day basis. It assumes you have already [set up](setup) your system.
 
 ## Starting the day
 
