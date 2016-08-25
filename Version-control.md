@@ -4,23 +4,20 @@ All of the data on history.state.gov is stored in a version control system. The 
 
 ## Starting the day
 
-Make sure you are always working with the latest version of every file in your system - both in your SVN Working Copy and in your eXist-db database. The best way to do this is to follow these directions:
+Make sure you are always working with the latest version of every file in your system - both in your hsg-project folder and in your local eXist-db database. The best way to do this is to follow these directions:
 
 ### Getting the latest files
 
-1. In Syncro SVN Client, select the `Working Copy` tab.
-1. Right-click on the top-level folder and select `Update`. 
-1. Select the `Console` tab to watch the progress as the SVN client downloads all of the latest files. 
-1. When you see `Updated to revision ____` (e.g., "1000") and `Refresh done`, then the SVN client has completed downloading all of the files.
-1. Your SVN Working Copy is now up to date. 
+1. In oXygen's External Tools dropdown menu (also available from the `Tools` menu > `External Tools`), select `Fetch updates for all repositories`.
+1. Your hsg-project folder and all of the repositories cloned into its `repos` subdirectory is now up to date. 
 
 ### Uploading the latest files into your eXist-db
 
-Assuming that your working copy has newer versions of files than are in your eXist-db database, you may wish to upload the new files to your database.
+Assuming that your hsg-project folder has newer versions of files than are in your eXist-db database, you may wish to upload the new files to your database.
 
 To get updated files into your eXist-db database, you have two choices:
 
-1. Upload them one at a time (opening each file in oXygen and using the `upload-current-file-to-localhost` button.
+1. Upload them one at a time (opening each file in oXygen and using the `Upload current file to localhost` button.
 1. Repopulate the entire database. This takes longer (see the directions below) but has the advantage of ensuring all files are up to date. 
 
 A good rule of thumb is to repopulate the entire database at the start of each work week, and on subsequent work days only upload individual files as needed.
@@ -29,14 +26,12 @@ A good rule of thumb is to repopulate the entire database at the start of each w
 
 1. Warning: This step will erase the contents of your eXist-db database. So before you proceed, make sure you have saved any files you've edited from the database into your SVN Working Copy. 
 1. Stop eXist-db. You'll know eXist-db is running if the eXist-db icon in your task bar (Windows) or menu bar (Mac) and the `Start server` option is grayed out. To stop the eXist-db server, select the eXist-db task/menu bar icon > `Stop Server`. You'll know eXist-db is not running if there is no eXist icon in the task/menu bar, or if you click on the icon and the menu option for `Stop Server` is grayed out.
-1. In oXygen, select the `Tools` menu > `External Tools` > `wipe-exist-data`. A new tab will open at the bottom of the oXygen window, showing the results of the `wipe-exist-data` script. When you see `BUILD SUCCESSFUL`, close the tab.
-1. Start eXist-db. To start eXist-db if you already have the eXist-db icon in your task/menu bar, select `Start Server`. If you do not have the eXist-db icon in your task/menu bar, double-click the shortcut to `start.jar` that you created when you [set up](Setup) your system.
-1. In oXygen, select the `Tools` menu > `External Tools` > `populate:all`. A new tab will open at the bottom of the oXygen window, showing the results of the `populate:all` script. When you see `BUILD SUCCESSFUL`, close the tab.
-1. Your eXist-db database is now up to date with the latest files from your Working Copy.
+1. In oXygen's External Tools dropdown menu, select `Wipe Exist Data`. A new tab will open at the bottom of the oXygen window, showing the results of this operation. When you see `BUILD SUCCESSFUL`, close the tab.
+1. Start eXist-db.
+1. In oXygen's External Tools dropdown menu, select `Deploy all repositories to localhost`. A new tab will open at the bottom of the oXygen window, showing the results of this operation, which can take up to 15 minutes to complete. When you see `BUILD SUCCESSFUL`, close the tab.
+1. Your eXist-db database is now up to date with the latest files from your hsg-project folder.
 
 ## Committing new or edited files to the repository
 
-1. When you have a new or edited file that you are ready to commit to the repository, open the Syncro SVN Client window and select the `Working copy` tab. The SVN Client should automatically scan for new or edited files. (You can force the SVN Client to scan for new or edited files by right-clicking on the top-level folder and selecting `Refresh`.
-1. Right-click on the top-level folder and select `Commit`. A `Commit` dialog window will appear, showing a list of all changed files. Carefully review the list of changed files, ensuring that the only files checked are the ones you want to commit; uncheck any files you do not want to commit. In the `Commit message` field enter a description of the changes you are making.
-1. Select the `Console` tab to watch the progress as the SVN client commits your files to the repository.
-1. When you see `Committed revision ____` (e.g., "1001") and `Refresh done`, then the SVN client has completed committing your files to the repository.
+1. When you have a new or edited file that you are ready to commit to the repository, open GitHub Desktop, and select the repository in question; if the repository is not listed, return to oXygen, and in oXygen's External Tools dropdown menu, select `Open current repository in GitHub Desktop`. With the repository selected, GitHub Desktop's `Uncommitted Changes` tab will show a list of changed files. Make sure the checkbox is selected next to each file you intend to commit.
+1. Enter a description of your work, and select the `Commit` button, using the larger box beneath that for extended comments. You can make more than one commit at once, grouping them together logically. When your commits are complete, select the `Sync` button. If you do not select the `Sync` button, your commits will not be sent to GitHub.
