@@ -1,3 +1,5 @@
+** Note: See [Setup-hsg3] for the current directions. These are out of date. ** 
+
 # Setting up a history.state.gov development system
 
 Setting up a history.state.gov development system requires installing oXygen XML Editor, checking out the Subversion (SVN) repository, setting up oXygen to access the files in the history.state.gov project, starting eXist-db and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you have completed these steps, read the page on [version control](version-control) to learn how to save your work into our version control system and ensuring you continue to have the latest version of all files in our repository.
