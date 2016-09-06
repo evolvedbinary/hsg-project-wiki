@@ -11,7 +11,7 @@ Setting up a history.state.gov development system requires installing oXygen XML
 
 ### Updating from our old setup?
 
-If you set up your computer using our [old architecture](Setup), which was based on SVN, please pay attention to the following changes:
+If you set up your computer using our [old architecture](Setup-(old)), which was based on SVN, please pay attention to the following changes:
 
 - You will need to download the new version of eXist from the link below.
 - You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu.
