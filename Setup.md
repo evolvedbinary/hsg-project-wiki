@@ -18,18 +18,6 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 - If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then proceed with the steps to install the other software with homebrew.
 - For the moment we will continue to use SVN for pre-publication work, using our old procedures. But work that is published to the website should now all be committed to GitHub, using the directions below.
 
-## Installing eXist
-
-1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
-
-1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
-
-1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
-
-1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close.
-
-1. Start eXist. eXist will show a splash screen and install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
-
 ## Installing oXygen
 
 1. Go to https://www.oxygenxml.com/xml_editor/software_archive_editor.html and download the edition of oXygen 17.1 called, "OS X 10.8 and later." Direct link: http://archives.oxygenxml.com/Oxygen/Editor/InstData17.1/MacOSX/VM/oxygen.tar.gz. Open the downloaded file, and drag the oXygen folder to your `Applications` folder (in Finder, select `Go` > `Applications`).
@@ -46,19 +34,29 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
         mkdir ~/workspace
 
-        open ~/workspace
+        open ~/
 
-    These commands created a new directory, `workspace`, in your home directory, and opened this directory in the Finder. We will be storing all files related to our work in this directory.
+    These commands create a new directory, `workspace`, in your home directory, and open your home directory in the Finder. (You could easily have created this new directory in the Finder too, but performing these steps on the command line primes you for the steps to come.)
 
-    (You could easily create this new directory in the Finder too, but performing these steps on the command line primes you for the steps to come.)
+1. We will be storing all files related to our work in this directory and accessing it a lot, so drag the new `workspace` folder from your home directory in the Finder onto that window's Favorites sidebar:
 
-1. Install [Homebrew](http://brew.sh) and [Caskroom](http://caskroom.io/) by pasting the following commands into your Terminal window:
+    ![Video showing how to drag folder onto sidebar](https://github.com/HistoryAtState/hsg-project/wiki/images/drag-folder-onto-sidebar.gif)
+    
+1. Install [Homebrew](http://brew.sh) by pasting the following commands into your Terminal window:
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-        brew tap caskroom/cask
+    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install XCode or accept the XCode license.  
 
-1. Having installed homebrew, install Java 8 JDK and GitHub Desktop, as well as the other dependencies:
+1. To confirm Homebrew installed correctly, enter this command:
+
+        brew doctor
+
+    You should see the following response:
+
+    > Your system is ready to brew.
+
+1. Having installed Homebrew, install Java 8 JDK and GitHub Desktop, as well as the other dependencies:
 
         brew cask install java github-desktop
 
@@ -82,9 +80,25 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
 Before publishing files to the public website, you may wish to preview them on your local system. This helps ensure that your edits have the desired effect and reduces the likelihood of unforeseen problems when publishing the files.
 
+### Installing eXist
+
+1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
+
+1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
+
+1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
+
+1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close.
+
+1. Start eXist. eXist will show a splash screen and install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
+
+### Deploying all repositories to eXist
+
 1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers.
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
+
+### Test a simple edit
 
 1. Drill down through the folder structure of the repositories to `repos/rdcr/countries/afghanistan.xml`. This is a TEI XML file that can be viewed at <http://localhost:8080/exist/apps/hsg-shell/articles/afghanistan> (see <http://history.state.gov/countries/afghanistan> for the public website).
 
@@ -108,13 +122,13 @@ When you have work that you would like to publish, the following steps will ensu
 
 1. Once you've made all of your commits, select `Sync` to synchronize your changes to GitHub.
 
-### Publishing your work to hsg
+### Publish your work to hsg
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
     Before you publish the first time, you must first enter the password provided to you during your training for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
 
-## Keeping up with the latest work
+## Keeping up with everyone's latest work
 
 To ensure your local copy of files is up to date with everyone's work, follow these steps:
 
@@ -141,7 +155,7 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 
 ## Browsing history.state.gov's eXist in oXygen's Data Source Explorer
 
-**Important Note:** Until an issue with our SSL certificate is resolved, this method is out of service.
+**Important Note:** Until an issue with Java's support of our server's SSL certificate is resolved, this method is out of service.
 
 Note: These steps are optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist.
 
