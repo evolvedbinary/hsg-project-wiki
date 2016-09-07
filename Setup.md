@@ -22,7 +22,7 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
 1. Go to https://www.oxygenxml.com/xml_editor/software_archive_editor.html and download the edition of oXygen 17.1 called, "OS X 10.8 and later." Direct link: http://archives.oxygenxml.com/Oxygen/Editor/InstData17.1/MacOSX/VM/oxygen.tar.gz. Open the downloaded file, and drag the oXygen folder to your `Applications` folder (in Finder, select `Go` > `Applications`).
 
-1. Drag the `oXygen XML Editor` icon onto your Dock.
+1. Drag the `oXygen XML Editor` icon onto your Dock so you can always get to it easily.
 
 1. Start oXygen and paste in the license key provided to you during your training when prompted.
 
@@ -30,7 +30,7 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
 ## Installing other dependencies
 
-1. Open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time:
+1. Open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time, hitting return after each:
 
         mkdir ~/workspace
 
@@ -42,7 +42,7 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
     ![Video showing how to drag folder onto sidebar](https://github.com/HistoryAtState/hsg-project/wiki/images/drag-folder-onto-sidebar.gif)
     
-1. Install [Homebrew](http://brew.sh) by pasting the following commands into your Terminal window:
+1. Install [Homebrew](http://brew.sh) by copying and pasting this entire command into your Terminal window and hitting return:
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -56,7 +56,7 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
     > Your system is ready to brew.
 
-1. Having installed Homebrew, install Java 8 JDK and GitHub Desktop, as well as the other dependencies:
+1. Having installed Homebrew, enter these commands to install Java 8 JDK and GitHub Desktop, as well as the other dependencies:
 
         brew cask install java github-desktop
 
@@ -64,7 +64,7 @@ If you set up your computer using our [old architecture](Setup-(old)), which was
 
         npm install -g gulp bower 
 
-    When prompted, enter the password for your user account. You will now find GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the GitHub Desktop icon into your Dock.
+    When prompted, enter the password for your user account. You will now find GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the GitHub Desktop icon into your Dock so you can always get to it easily.
 
 1. Start GitHub Desktop, and follow these prompts to set up the program: Select `Continue`. Enter your GitHub user credentials, and select `Sign In`. Select `Continue`. Select `Install GitHub Command Line Tools`; when prompted, enter the password for your user account. Select `Done`. You are welcome to follow the tutorial to learn more about working with GitHub.
 
