@@ -7,16 +7,19 @@ Setting up a history.state.gov development system requires installing oXygen XML
 - Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing dependencies, but you're on your own.
 - eXist (3.0RC2+)
 - oXygen XML Editor (v17.1)
-- For publishing: credentials for your GitHub account and the hsg production servers
+- A GitHub account
+    - If you don't have one, please create one at https://github.com/join
+    - Make note of your credentials (username & password), since you will need these for the steps below.
+    - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
+    - To be able to publish to the hsg production servers, you will need credentials for the servers; these will be provided to you during your training.
 
 ### Updating from our old setup?
 
 If you set up your computer using our [old architecture](Setup-(old)), which was based on SVN, please pay attention to the following changes:
 
 - You will need to download the new version of eXist from the link below.
-- You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu.
-- If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then proceed with the steps to install the other software with homebrew.
-- For the moment we will continue to use SVN for pre-publication work, using our old procedures. But work that is published to the website should now all be committed to GitHub, using the directions below.
+- You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu. If your version is out of date, download 17.1 from the link below.
+- If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then run `brew doctor` to check your homebrew installation; follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` Then proceed with the steps below to install the other software with homebrew.
 
 ## Installing oXygen
 
