@@ -100,7 +100,7 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Deploying all repositories to eXist
 
-1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On remote computers, this step could take as long as 40 minutes, depending on your computer's hardware.
+1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
 
