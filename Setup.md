@@ -1,10 +1,13 @@
 # Setting up a history.state.gov development system
 
-Setting up a history.state.gov development system requires installing oXygen XML Editor, GitHub Desktop, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist, and populating the database. Then you will have a complete copy of the history.state.gov website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
+Setting up a history.state.gov development system requires a modern computer with ample memory and storage and a suite of software (eXist-db, oXygen XML Editor, and GitHub Desktop). These steps will lead you through installing this software, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist, and populating the database. When complete, you will have a fully functional copy of the history.state.gov ("hsg") website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
 
 ## Requirements
 
-- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing dependencies, but you're on your own.
+- A computer with at least:
+    - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
+    - 20 GB of available storage space (SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
+- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - eXist (3.0RC2+)
 - oXygen XML Editor (v17.1)
 - A GitHub account
