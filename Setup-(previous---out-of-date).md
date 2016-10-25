@@ -1,4 +1,4 @@
-** Note: See [Setup] for the current directions. These are out of date. ** 
+** Note: See [Setup (current)](https://github.com/HistoryAtState/hsg-project/wiki/Setup-(current)) for the current directions. These are out of date. ** 
 
 # Setting up a history.state.gov development system
 
@@ -83,4 +83,3 @@ Setting up a history.state.gov development system requires installing oXygen XML
     - `WebDAV/FTP URL:` `https://history.state.gov/webdav/db`
     - `User` and `Password`: You will be provided with this information during your training
 1. Select `OK`
-
