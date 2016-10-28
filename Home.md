@@ -4,7 +4,7 @@ This wiki houses instructions for:
 
 1. [Setting up a history.state.gov development environment](setup) on your computer.  
 1. [Using version control with history.state.gov data](version-control)
-1. [Publishing New Volumes to Website](publishing-new-volumes)
+1. [Publishing New Volumes to Website](Publishing-New-Volumes-to-Website)
 1. [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site 
 1. [Reviewing FRUS TEI files](reviewing-frus-tei)
 1. [Ebooks](ebooks): generating, reviewing, and publishing
