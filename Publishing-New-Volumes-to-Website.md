@@ -99,7 +99,7 @@ In order to use the Cache Helper, enter your volume’s id and press Submit. Whe
 
 * After you press `Submit` open your localhost in Transmit. Navigate down to `apps/s3/cache/static.history.state.gov/frus`. Under `/frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
 
-* To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.history.state.gov` and navigate to `apps/s3/cache/static.history.state.gov/frus`. Both sides should mirror each other like this:
+* To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.history.state.gov` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
 
 * Move the volume folder from the localhost into the corresponding folder in `1861.history.state.gov`
 
