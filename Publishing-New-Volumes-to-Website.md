@@ -10,7 +10,7 @@ Open the volume’s corresponding volume XML file in `hsg-project/repos/frus/bib
 In order to view the volume metadata and shell file locally, you will need to change the volume’s `<publication-status>` to “published” and upload the file and the shell file you will create in step 2 to the localhost. Here you can make corrections to the file and reupload to the localhost to view your corrections.  Neither of these files should be uploaded to hsg, however, until you have completed all of the steps below and are ready to publish the volume. 
 
 ## 2. Create Shell File
-	After you have uploaded the volume metadata file to the localhost, navigate to http://localhost:8080/exist/apps/release/ and click on “Shell File Helper.” On the next page, enter the volume id and click “Generate Shell Files.” A draft shell file for the volume will download to your computer. Open the file in oXygen and save it in hsg-project/repos/frus/volumes. 
+After you have uploaded the volume metadata file to the localhost, navigate to [http://localhost:8080/exist/apps/release/](Release Helper) and click on “Shell File Helper.” On the next page, enter the volume id and click “Generate Shell Files.” A draft shell file for the volume will download to your computer. Open the file in oXygen and save it in hsg-project/repos/frus/volumes. 
 	Double check the information that is already populated in the shell file and fill out the div/@xml-id=”pressrelease” portion of the template with:
 	1. The publication date
 	2. The content paragraphs of the press release
