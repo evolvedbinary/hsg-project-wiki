@@ -8,8 +8,6 @@ Setting up a history.state.gov development system requires a modern computer wit
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
     - 20 GB of available storage space (SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
 - Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
-- eXist (3.0RC2+)
-- oXygen XML Editor (v17.1)
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join
     - Make note of your credentials (username & password), since you will need these for the steps below.
@@ -18,13 +16,12 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 ### Updating from our old setup?
 
-If you set up your computer using our [old architecture](Setup-(old)), which was based on SVN, please pay attention to the following changes:
-
-- You will need to download the new version of eXist from the link below.
 - You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu. If your version is out of date, download 17.1 from the link below.
 - If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then run `brew doctor` to check your homebrew installation; follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` Then proceed with the steps below to install the other software with homebrew.
 
 ## Installing oXygen
+
+We use oXygen XML Editor (v17.1). To install this version:
 
 1. Go to https://www.oxygenxml.com/xml_editor/software_archive_editor.html and download the edition of oXygen 17.1 called, "OS X 10.8 and later." Direct link: http://archives.oxygenxml.com/Oxygen/Editor/InstData17.1/MacOSX/VM/oxygen.tar.gz. Open the downloaded file, and drag the oXygen folder to your `Applications` folder (in Finder, select `Go` > `Applications`).
 
@@ -88,6 +85,8 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Installing eXist
 
+We use a custom build of eXist 3.0 RC2. To install it:
+
 1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
 
 1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
@@ -141,6 +140,8 @@ To ensure your local copy of files is up to date with everyone's work, follow th
 1. In oXygen, under the Tools dropdown menu, select `Fetch updates for all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Fetch updates for current repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
 
 1. To update your copy of the website running in eXist, select `Deploy all repositories to localhost`. Or, if you only want to update a single repository, open a file from that repository in oXygen and select `Deploy current repository to localhost`. When you see `BUILD SUCCESSFUL`, close the tab.
+
+A more detailed set of instructions with suggestions for daily and weekly tasks is in the article on [[Version control]].
 
 ## Browse localhost's eXist in oXygen's Data Source Explorer
 
