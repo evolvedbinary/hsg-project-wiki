@@ -7,7 +7,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 # Requirements
 
 1. A history.state.gov development system on localhost (see [Setting up a history.state.gov development system](setup) for more information)
-    1. oXygen XML Editor and Subversion (SVN) Client
+    1. oXygen XML Editor and GitHub Desktop
     1. An up-to-date checkout of the SVN repository
     1. A freshly repopulated database
 1. A web browser
@@ -16,7 +16,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
 
 # Review procedure
 
-Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues) for the volume, and paste our review checkbox template into the issue:
+Before you begin, create a new [issue](https://github.com/HistoryAtState/frus/issues) for the volume, and paste our review checkbox template into the issue:
 
 ```
 - [ ] Passes FRUS TEI Schematron check
@@ -40,9 +40,9 @@ Before you begin, create a new [issue](https://github.com/joewiz/frus-tei/issues
 As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by referencing their GitHub username, e.g., [@joewiz](http://github.com/joewiz).
 
 1. Prepare FRUS TEI file for review
-    1. If the FRUS TEI file isn't already in SVN, copy the FRUS TEI file into your SVN working copy directory (`paho-trunk/db/cms/apps/tei-content/data/frus-volumes`). The volume has to be in this directory in order for its references to the schema files to work properly.
+    1. If the FRUS TEI file isn't already in GitHub, copy the FRUS TEI file into your GitHub working copy directory (`hsg-project/repos/frus/volumes`). The volume has to be in this directory in order for its references to the schema files to work properly.
     1. Open the file in oXygen
-    1. If the Schematron and RelaxNG schema processing instructions aren't present on lines 2 and 3 of the file, please paste in [these references](https://gist.github.com/joewiz/9194718). Validate the document using `Document` > `Validate` > `Validate`.
+    1. Validate the document against our Schematron and RelaxNG schema using `Document` > `Validate` > `Validate`.
     1. Review the errors raised by the schema validation check. Errors we expect to fail include: 
         1. **`<editor>`** The names of the volume's compiler(s), as recorded in the `teiHeader` element. Check the volume's title page to see if the names are listed here; if so, give each name an `<editor>` element with a `@role` value matching their role as compiler (`primary`) or general editor (`general`) . If the names do not appear on the title page, check the volume's Preface, and identify the names of those noted specifically for having *compiled documentation* for the volume. Place them as `<editor role="primary"/>`. Copy these entries in the volume's metadata file in the `/db/cms/apps/volumes/data` folder, and in this file only, identify, if possible, the name of the person whose role most closely approximated the general editor; use the @role values and definitions in the volumes `code-tables/editor-role-codes.xml` file. 
         1. **`<graphic> @url`** - in a graphic/@url value of of `figure_nnnn`, `nnnn` coresponds to the page image filename, e.g., `nnnn.tif`. Download the volume's page images from the `paho-hcl` bucket's `UWDCC Scans` folder on S3, and open the image in Pixelmator. Check that there is only one image on this page. For each image on the page, perform the following:
@@ -71,7 +71,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
     1. If you find systematic errors in any of these areas, return the volume to the vendor for correction.
 
 1. Check the volume structure
-    1. In your browser, open the volume's landing page: `http://localhost:8080/historicaldocuments/{frus-volume-id}`
+    1. In your browser, open the volume's landing page: <http://localhost:8080/exist/apps/hsg-shell/historicaldocuments/{frus-volume-id}>
     1. In oXygen, expand the Outline to show the contents of the `front`, `body`, and `back`
     1. Verify the table of contents entries match the source volume
     1. Verify that the hierarchy is correct
@@ -105,7 +105,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
     1. Paragraphs: The actual text within each document is either coded as a paragraph `<p>` or as a `<list>`. The `<list>` element is used to indicate a series of tightly spaced lines (often used in quotes or lists), but these instances need not actually contain bulleted or numbered items.  The tight spacing helps group lines together.
 
 1. Check the volume metadata
-    1. Open the volume's metadata file in `paho-trunk/db/cms/apps/volumes/data/` alongside the TEI file's `teiHeader` and `titlePage`
+    1. Open the volume's metadata file in `hsg-project/repos/frus/bibliography/` alongside the TEI file's `teiHeader` and `titlePage`
     1. Verify that the title, editors, and publication information is correct
         1. Verify that year ranges use en-dashes (–) rather than hyphens (-). 
     1. For volumes published since 1972, the volume's ISBN should be present. If needed, look up the ISBN on WorldCat or Amazon and add it to both the volume and its metadata file. If it can't be found, add an XML comment: `<!-- ISBN not found on WorldCat or Amazon -->`
@@ -117,7 +117,6 @@ As you complete the steps below, check off the boxes, and add any notes in comme
     1. Check that all source notes have the `note/@type="source"` attribute (all documents except editorial notes) should have these. XPath: `//tei:div/tei:note[@type='source']`
 
 1. Ebook
-    1. To generate the ebook, go to the TEI Content app (`http://localhost:8080/cms/apps/tei-content`), navigate to the volume, and select `Download EPUB`. 
-    1. TODO: Add directions for generating the MobiPocket version.
+    1. See the wiki article on generating ebooks, <https://github.com/HistoryAtState/hsg-project/wiki/ebooks>.
 
 Finally, if time allows, flip through the volume (this is fastest with the ebook).  Let your eye spot any anomalies.
