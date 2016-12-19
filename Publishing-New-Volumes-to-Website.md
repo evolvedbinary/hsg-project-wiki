@@ -99,7 +99,25 @@ Once in S3 Cache Helper, enter your volume’s ID and select `Submit`. (Whereas 
 
 * Move the volume folder from the localhost into the corresponding folder in `1861.history.state.gov`.
 
-## 6. Create Carousel Entry
+## 6. Add Subject Tags for the Volume
+
+For each volume, the compiler is required to supply subject tags that must be entered and uploaded to hsg for every newly published volume. When you have received the tags from the compiler, you should use the Tag Helper to put them in proper form:
+
+* Navigate to https://history.state.gov/cms/apps/tags/tag-helper.xq and enter the username and password you received during your training. 
+
+* In the space provided, copy and paste the subject tags and press `Search`
+
+Below the entry box, you should see a report that indicates how many tags were found for the number of tags you provided and a list of space-delimited tags for inserting into a TEI document. Double check that all of your tags have been found. If they haven't, double check the spelling, etc. against the list of approved tags and run the search again after correcting any errors. When all of your tags have been found, open the `frus-tags.xml` file at `/repos/tags/tagged-resources/frus`. In the file:
+
+* Scroll down to the bottom of the document and locate the place where your volume should be inserted in the list of volumes that are already published. 
+
+* Copy a `<study>` for another volume and paste it where your volume belongs.
+
+* Revise the title and link information in this study to match your volume, and replace the existing `tag/@id` with the space-delimited tags you generated using Tag Helper above. 
+
+When you have fully revised the new `<study>` entry for your volume in the file, save your changes and press `upload-current-file-to-history.state.gov` under your External Tools in oXygen.  
+
+## 7. Create Carousel Entry
 
 As with our previous workflow, in order to update the carousel for the publication of a new volume or quarterly release, you will need to create a new entry and update the display order. The files you need are now located at `hsg-project/carousel/display-order` and `hsg-project/carousel/entries`.
 
@@ -129,3 +147,5 @@ As with our previous workflow, in order to update the carousel for the publicati
 </topic>`
 
 Once you have finished editing both files, upload them to localhost, and review them one last time before uploading to hsg when you are are ready to publish the volume. 
+
+ Final Note: Don't forget to commit all of your changes to the files above to GitHub as soon as you have published the volume. 
