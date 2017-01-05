@@ -14,18 +14,18 @@ Setting up a history.state.gov development system requires a modern computer wit
     - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
     - To be able to publish to the hsg production servers, you will need credentials for the servers; these will be provided to you during your training.
 
-### Updating from our old setup?
+### Updating from our old setup (early 2016)?
 
-- You will need oXygen 17.1. Check the version of your oXygen via the `Help > About` menu. If your version is out of date, download 17.1 from the link below.
+- You will need oXygen 18.1. Check the version of your oXygen via the `Help > About` menu. If your version is out of date, download 18.1 from the link below.
 - If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then run `brew doctor` to check your homebrew installation; follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` Then proceed with the steps below to install the other software with homebrew.
 
 ## Installing oXygen
 
-We use oXygen XML Editor (v17.1). To install this version:
+We use oXygen XML Editor (v18.1). To install this version:
 
-1. Go to https://www.oxygenxml.com/xml_editor/software_archive_editor.html and download the edition of oXygen 17.1 called, "OS X 10.8 and later." Direct link: http://archives.oxygenxml.com/Oxygen/Editor/InstData17.1/MacOSX/VM/oxygen.tar.gz. Open the downloaded file, and drag the oXygen folder to your `Applications` folder (in Finder, select `Go` > `Applications`).
+1. Go to https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html and click on the download button. Direct link: http://mirror.oxygenxml.com/InstData/Editor/MacOSX/VM/oxygen.dmg. Open the downloaded file, and drag the `oXygen XML Editor` folder to your `Applications` folder (in Finder, select `Go` > `Applications`). If you have an older version of oXygen installed—you'll know if you see an `oxygen` folder in the Applications directory)—delete it since it's no longer needed.
 
-1. Drag the `oXygen XML Editor` icon onto your Dock so you can always get to it easily.
+1. Drag the `oXygen XML Editor` application from the `/Applications/oXygen XML Editor` onto your Dock so you can always get to it easily.
 
 1. Start oXygen and paste in the license key provided to you during your training when prompted.
 
