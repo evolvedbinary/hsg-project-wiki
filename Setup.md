@@ -63,7 +63,7 @@ We use oXygen XML Editor (v18.1). To install this version:
 
         brew cask install java github-desktop
 
-        brew install ant git homebrew/versions/node4-lts
+        brew install ant git node@4
 
         npm install -g gulp bower 
 
