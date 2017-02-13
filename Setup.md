@@ -49,7 +49,7 @@ We use oXygen XML Editor (v18.1). To install this version:
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install XCode or accept the XCode license.  
+    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install XCode or accept the XCode license (in which case you should do as directed, and once done, re-enter the command to install homebrew).  
 
 1. To confirm Homebrew installed correctly, enter this command:
 
