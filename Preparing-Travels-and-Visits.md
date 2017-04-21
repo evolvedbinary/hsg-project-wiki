@@ -14,9 +14,9 @@ These directions explain how to take a submission from Evan Duncan with the late
 
 ![Resulting document in Microsoft Word](images/tv_01-paste-table-ms-word.png)
 
-## Prepare the "tsv-helper" app
+## Prepare the "enrich" app
 
-Install tsv-helper app into eXist. (TODO)
+Upload the [enrich](https://github.com/joewiz/enrich) queries into eXist under `/db/enrich`. (TODO: Make into a .xar app)
 
 ## Enrich the data in OpenRefine
 
@@ -35,19 +35,19 @@ Install tsv-helper app into eXist. (TODO)
     
         - New column name: `country-id`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-country.xq?country=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/get-country.xq?country=" + value.escape("url")`
       
     - Date (1st pass for end date):
     
         - New column name: `end-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-end-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/get-end-date.xq?date=" + value.escape("url")`
 
     - Date (2nd pass for start date):
     
         - New column name: `start-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-start-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/get-start-date.xq?date=" + value.escape("url")`
 
 1. Check the resulting columns for any irregularities, such as blank cells where there should be a date or country ID. Enter values for these fields, correcting the field as appropriate.
 
