@@ -1,4 +1,4 @@
-# Preparing Travels & Visits
+# Preparing Travels and Visits
 
 These directions explain how to take a submission from Evan Duncan with the latest entries from Travels of the President, Travels of the Secretary of State, or Visitors by Foreign Leaders, and convert them into the format needed for display on hsg.
 
@@ -12,16 +12,24 @@ These directions explain how to take a submission from Evan Duncan with the late
 1. Select the "show editing marks" icon in the Word toolbar, to show tabs and returns. Delete any extra returns and extra copies of column headings (sometimes Evan included extra column headings at the top of pages). Keep the top column heading. Review the document for any unexpected formatting (entries split by a return, extra tabs, etc.). 
 1. This is your TSV file - tab-separated value. Paste it into a new oXygen file, and scan again for irregularities.
 
+![Resulting document in Microsoft Word](images/tv_01-paste-table-ms-word.png)
+
 ## Prepare the "tsv-helper" app
 
-Install tsv-helper app into eXist
+Install tsv-helper app into eXist. (TODO)
 
 ## Enrich the data in OpenRefine
 
 1. In OpenRefine, select Create Project > Clipboard, and paste the TSV file into the text field
+    ![](images/tv_02-find-and-replace-italics.png)
 1. Review the preview to ensure all looks as expected, give the project a name, then select the Create Project button to the upper-right of the text field
+    ![](images/tv_03-create-project-in-openrefine.png)
 1. Advance through the rows to make sure the import completed as expected
 1. For each of the following fields, select Edit Cells > Common Transforms > Trim leading and trailing whitespace, then select Edit Column > Add column by fetching URLs, setting Throttle Delay to 0 for all:
+
+    ![](images/tv_04-trim-whitespace.png)
+    ![](images/tv_05-fetch-urls.png)
+    ![](images/tv_06-fetch-urls-grel.png)
 
     - Country:
     
@@ -43,9 +51,13 @@ Install tsv-helper app into eXist
 
 1. Check the resulting columns for any irregularities, such as blank cells where there should be a date or country ID. Enter values for these fields, correcting the field as appropriate.
 
+    ![](images/tv_07-fetch-urls-result.png)
+    
 ## Export from OpenRefine
 
 1. Select Export > Templating, and use the following values for the different projects, substituting the values as noted, and making sure the column names in `{{cells["column-name"].value}}` line up with the column names in your project (otherwise values in those elements will come out as `null`).
+
+    ![](images/tv_08-templating.png)
 
     - Travels of the President
     

@@ -10,7 +10,7 @@ This wiki houses instructions for:
 1. [Ebooks](ebooks): generating, reviewing, and publishing
 1. [Preparing volumes for digitization](preparing-volumes-for-digitization): Preparing images, shell files
 1. [FRUS quarterly releases](quarterly-releases): Steps in preparing quarterly releases
-1. [Preparing Travels & Visits](preparing-travels-&-visits): Converting Word submissions into XML
+1. [Preparing Travels & Visits](preparing-travels-and-visits): Converting Word submissions into XML
 1. [Converting files to XML](converting-files-to-xml): How to convert Word, PDF, and other Office files to XML
 1. [Training checklist](training-checklist): A checklist for trainers and trainees
 1. [Homebrew](homebrew): Info on our use of homebrew, apps available via homebrew
