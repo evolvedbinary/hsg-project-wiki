@@ -7,12 +7,12 @@ These directions explain how to take a submission from Evan Duncan with the late
 1. Open Evan Duncan's submission in MS Word
 1. Delete all text before the start of the table, so the entire document is just the table
 1. Use Advanced Find and Replace to turn any italicized text into `<em>^&</em>`
+    ![](images/tv_02-find-and-replace-italics.png)
 1. Select all, copy, and paste
 1. Click on the floating menu and select "Keep Text Only," so only text is left, and the table is gone
 1. Select the "show editing marks" icon in the Word toolbar, to show tabs and returns. Delete any extra returns and extra copies of column headings (sometimes Evan included extra column headings at the top of pages). Keep the top column heading. Review the document for any unexpected formatting (entries split by a return, extra tabs, etc.). 
-1. This is your TSV file - tab-separated value. Paste it into a new oXygen file, and scan again for irregularities.
-
-![Resulting document in Microsoft Word](images/tv_01-paste-table-ms-word.png)
+1. This is your TSV (tab-separated value) file. Paste it into a new oXygen file, and scan again for irregularities.
+    ![Resulting document in Microsoft Word](images/tv_01-paste-table-ms-word.png)
 
 ## Prepare the "enrich" app
 
@@ -21,7 +21,6 @@ Upload the [enrich](https://github.com/joewiz/enrich) queries into eXist under `
 ## Enrich the data in OpenRefine
 
 1. In OpenRefine, select Create Project > Clipboard, and paste the TSV file into the text field
-    ![](images/tv_02-find-and-replace-italics.png)
 1. Review the preview to ensure all looks as expected, give the project a name, then select the Create Project button to the upper-right of the text field
     ![](images/tv_03-create-project-in-openrefine.png)
 1. Advance through the rows to make sure the import completed as expected
