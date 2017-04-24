@@ -1,6 +1,10 @@
 # Preparing Travels and Visits
 
-These directions explain how to take a submission from Evan Duncan with the latest entries from Travels of the President, Travels of the Secretary of State, or Visitors by Foreign Leaders, and convert them into the format needed for display on hsg.
+These directions explain how to take a submission from Evan Duncan with the latest entries from Travels of the President, Travels of the Secretary of State, or Visitors by Foreign Leaders, and convert them into the format needed for display on hsg. 
+
+## Prerequisites
+
+These directions assume you have a fully up-to-date [hsg-project system](setup) with your eXist database populated with hsg-project, as well as the current versions oXygen XML Editor, OpenRefine, GitHub Desktop, and Microsoft Office.
 
 ## Prepare the MS Word File
 
