@@ -14,14 +14,24 @@ Setting up a history.state.gov development system requires a modern computer wit
     - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
     - To be able to publish to the hsg production servers, you will need credentials for the servers; these will be provided to you during your training.
 
-### Updating from our old setup (early 2016)?
+### Updating from our old setup (pre-May 2017)?
 
-- You will need oXygen 18.1. Check the version of your oXygen via the `Help > About` menu. If your version is out of date, download 18.1 from the link below.
-- If you already had homebrew installed, skip the step below where we install homebrew, but instead simply run `brew update && brew upgrade`. Then run `brew doctor` to check your homebrew installation; follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` Then proceed with the steps below to install the other software with homebrew.
+- **Note:** The directions in this section are still being developed and tested. Please contact Joe if you have any questions.
+- You will need updates to the packages installed via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
+
+        brew update && brew upgrade
+
+    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` 
+- You will need eXist 3.2.0, oXygen 19, and Java 8u131. Delete eXist and oXygen from your Applications folder, and then, using homebrew, enter:
+
+    brew cask reinstall exist-db oxygen-xml-editor java
+
+- Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.2.0". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. 
+- If you use eXist to preview website content, start eXist, accepting the default values in the "eXist-db Configuration" dialog, and repopulate the database.
 
 ## Installing oXygen
 
-We use oXygen XML Editor (v18.1). To install this version:
+We use oXygen XML Editor (v19). To install this version:
 
 1. Go to https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html and click on the download button. Direct link: http://mirror.oxygenxml.com/InstData/Editor/MacOSX/VM/oxygen.dmg. Open the downloaded file, and drag the `oXygen XML Editor` folder to your `Applications` folder (in Finder, select `Go` > `Applications`). If you have an older version of oXygen installed—you'll know if you see an `oxygen` folder in the Applications directory)—delete it since it's no longer needed.
 
@@ -85,9 +95,9 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Installing eXist
 
-We use a custom build of eXist 3.0 RC2. To install it:
+We use the standard release of eXist 3.2.0. To install it:
 
-1. Download the eXist installer from https://s3.amazonaws.com/hsg-static/exist/eXist-db-3.0.RC2-HEAD-f111e4d.dmg.
+1. Download the eXist installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.2.0.dmg.
 
 1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
 
