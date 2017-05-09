@@ -127,6 +127,10 @@ We use the standard release of eXist 3.2.0. To install it:
 
 When you have work that you would like to publish, the following steps will ensure that your work is backed up in our version control repository and published to the live site:
 
+### Apply "Format and Indent"
+
+With the document open in oXygen, select the "Format and Indent" toolbar button (also accessible via the "Source" menu under "Document" > "Format and Indent"), and save your document. If you've made updates to many files, see https://github.com/HistoryAtState/hsg-project/issues/31 for a time-saving tip.  This "Format and Indent" command ensures your commit (in the next step) is clean and reveals only the changes you made, not other incidental changes.
+
 ### Commit your work and push it to GitHub 
 
 1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. You will see a list of files you have modified. Confirm which files you want to commit by selecting (or unselecting) the checkboxes next to each file. GitHub desktop will show you a preview of the changes you have made.
