@@ -6,13 +6,16 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
-    - 20 GB of available storage space (SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Linux or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
+    - 20 GB of available storage space (an SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
+- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join
     - Make note of your credentials (username & password), since you will need these for the steps below.
     - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
-    - To be able to publish to the hsg production servers, you will need credentials for the servers; these will be provided to you during your training.
+- Other required information that will be provided to you during your training
+    - Credentials for hsg (needed when you begin publishing directly to hsg)
+    - oXygen license key
+    - Mac App Store credentials (needed for downloading Transmit)
 
 ### Updating from our old setup (pre-May 2017)?
 
@@ -22,24 +25,14 @@ Setting up a history.state.gov development system requires a modern computer wit
         brew update && brew upgrade
 
     Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` 
-- You will need eXist 3.2.0, oXygen 19, and Java 8u131. Delete eXist and oXygen from your Applications folder, and then, using homebrew, enter:
+- You will need eXist 3.1.1, oXygen 19, and Java 8u131. Delete eXist and oXygen from your Applications folder, and then, using homebrew, enter:
 
-    brew cask reinstall exist-db oxygen-xml-editor java
+        brew cask reinstall oxygen-xml-editor java
 
-- Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.2.0". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. 
+    Next, download the eXist 3.1.1 installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.1.1.dmg. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`. Now the new version of eXist will be in your `Applications` folder (in Finder, select `Go > Applications`). 
+    
+- Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. 
 - If you use eXist to preview website content, start eXist, accepting the default values in the "eXist-db Configuration" dialog, and repopulate the database.
-
-## Installing oXygen
-
-We use oXygen XML Editor (v19). To install this version:
-
-1. Go to https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html and click on the download button. Direct link: http://mirror.oxygenxml.com/InstData/Editor/MacOSX/VM/oxygen.dmg. Open the downloaded file, and drag the `oXygen XML Editor` folder to your `Applications` folder (in Finder, select `Go` > `Applications`). If you have an older version of oXygen installed—you'll know if you see an `oxygen` folder in the Applications directory)—delete it since it's no longer needed.
-
-1. Drag the `oXygen XML Editor` application from the `/Applications/oXygen XML Editor` onto your Dock so you can always get to it easily.
-
-1. Start oXygen and paste in the license key provided to you during your training when prompted.
-
-1. Quit oXygen for now.
 
 ## Installing other dependencies
 
@@ -69,17 +62,23 @@ We use oXygen XML Editor (v19). To install this version:
 
     > Your system is ready to brew.
 
-1. Having installed Homebrew, enter these commands to install Java 8 JDK and GitHub Desktop, as well as the other dependencies:
+    If, instead, homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
 
-        brew cask install java github-desktop
+1. Having installed Homebrew, enter these commands to install Java 8 JDK, GitHub Desktop, oXygen XML Editor, as well as the other dependencies:
 
-        brew install ant git node@4
+        brew cask install java github-desktop oxygen-xml-editor
+
+        brew install ant git node node@4
 
         npm install -g gulp bower 
 
-    When prompted, enter the password for your user account. You will now find GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the GitHub Desktop icon into your Dock so you can always get to it easily.
+    When prompted, enter the password for your user account. You will now find oXygen XML Editor and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the oXygen XML Editor and GitHub Desktop icons into your Dock so you can always get to them easily.
 
-1. Start GitHub Desktop, and follow these prompts to set up the program: Select `Continue`. Enter your GitHub user credentials, and select `Sign In`. Select `Continue`. Select `Install GitHub Command Line Tools`; when prompted, enter the password for your user account. Select `Done`. You are welcome to follow the tutorial to learn more about working with GitHub.
+1. Start oXygen and paste in the license key provided to you during your training when prompted.
+
+1. Quit oXygen for now.
+
+1. Start GitHub Desktop, and follow these prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`. (**NOTE:** As of June 28, 2017, the beta release of GitHub Desktop installed by homebrew does not yet have a feature we relied on in the previous version, called "Install GitHub Desktop Command Line Tools." To download the version that does, go to https://desktop.github.com/, scroll down to "Not ready for Desktop Beta?", and download the Mac version. Double-click on the downloaded file, and drag "GitHub Desktop" into your Applications folder. Start GitHub Desktop, and follow these prompts to set up the program: Select `Continue`. Enter your GitHub user credentials, and select `Sign In`. Select `Continue`. Select `Install GitHub Command Line Tools`; when prompted, enter the password for your user account. Select `Done`. You are welcome to follow the tutorial to learn more about working with GitHub.)
 
 1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, select the "+" icon in the top-left corner of the GitHub Desktop window. Select the Clone tab. Under HistoryAtState, you will see an entry called `hsg-project`. Select this, and then select `Clone hsg-project`. You will be prompted to select a location to save the `hsg-project` repository. Navigate to the `workspace` folder we created in step 1, and select `Clone`.
 
@@ -95,9 +94,9 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Installing eXist
 
-We use the standard release of eXist 3.2.0. To install it:
+We use the standard release of eXist 3.1.1. To install it:
 
-1. Download the eXist installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.2.0.dmg.
+1. Download the eXist installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.1.1.dmg.
 
 1. Open the downloaded file, and drag the `eXist` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
 
