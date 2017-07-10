@@ -17,7 +17,7 @@ Setting up a history.state.gov development system requires a modern computer wit
     - oXygen license key
     - Mac App Store credentials (needed for downloading Transmit)
 
-### Updating from our old setup (pre-May 2017)?
+## Updating from our old setup (pre-May 2017)?
 
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - You will need updates to the packages installed via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
