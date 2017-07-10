@@ -2,7 +2,8 @@ Welcome to the hsg-project wiki!
 
 This wiki houses instructions for:
 
-1. [Setting up a history.state.gov development environment](setup) on your computer.  
+1. [Setting up a history.state.gov development environment](setup) on your computer.
+1. [Updating your local HSG development environment](https://github.com/HistoryAtState/hsg-project/wiki/Setup#updating-from-our-old-setup-pre-may-2017) on your computer.
 1. [Using version control with history.state.gov data](version-control)
 1. [Publishing New Volumes to Website](publishing-new-volumes-to-website)
 1. [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site 
