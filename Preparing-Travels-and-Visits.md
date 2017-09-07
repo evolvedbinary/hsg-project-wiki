@@ -20,7 +20,7 @@ These directions assume you have a fully up-to-date [hsg-project system](setup) 
 
 ## Prepare the "enrich" app
 
-Upload the [enrich](https://github.com/joewiz/enrich) queries into eXist under `/db/enrich`. (TODO: Make into a .xar app)
+Install the [enrich](https://github.com/joewiz/enrich) app.
 
 ## Enrich the data in OpenRefine
 
