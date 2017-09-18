@@ -38,19 +38,19 @@ Install the [enrich](https://github.com/joewiz/enrich) app.
     
         - New column name: `country-id`
         
-        - Expression: `"http://localhost:8080/exist/apps/enrich/get-country.xq?country=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-country.xq?country=" + value.escape("url")`
       
     - Date (1st pass for end date):
     
         - New column name: `end-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/enrich/get-end-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-end-date.xq?date=" + value.escape("url")`
 
     - Date (2nd pass for start date):
     
         - New column name: `start-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/enrich/get-start-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-start-date.xq?date=" + value.escape("url")`
 
 1. Check the resulting columns for any irregularities, such as blank cells where there should be a date or country ID. Enter values for these fields, correcting the field as appropriate.
 
