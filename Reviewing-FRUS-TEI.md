@@ -22,7 +22,6 @@ Before you begin, create a new [issue](https://github.com/HistoryAtState/frus/is
 - [ ] Passes FRUS TEI Schematron check
 - [ ] Passes RelaxNG schema check
 - [ ] Scripts run
-- [ ] Commit schema-compliant file to SVN
 - [ ] Upload the FRUS TEI file into localhost
 - [ ] Upload page images to S3
 - [ ] Typography and characters
@@ -30,6 +29,7 @@ Before you begin, create a new [issue](https://github.com/HistoryAtState/frus/is
 - [ ] Table of contents
 - [ ] Tables, both participant and other
 - [ ] Openers and assorted segs
+- [ ] Datelines added and prepped for dates project
 - [ ] Front matter
 - [ ] Back matter
 - [ ] Random sample
