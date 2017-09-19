@@ -20,7 +20,7 @@ First, check:
 1. Have you run "Fetch updates" in oXygen today? (Do this to make sure you have the latest files.) Does the console window that appears when you run "Fetch updates" show any problems? If so, copy and paste the entire contents of the console into an email. If not, then try deploying the repositories to localhost again.
 1. Is eXist running?
 
-If the problem persists, copy and paste the entire contents of the console window in oXygen into an email and send it to your trainer. The console output can be cryptic, but it often indicates the source of the problem or provide useful clues.
+If the problem persists, copy and paste the entire contents of the console window in oXygen into an email and send it to your trainer. The console output can be cryptic, but it often indicates the source of the problem or provides useful clues.
 
 ## Uploading a file to localhost or history.state.gov says BUILD FAILED
 
@@ -29,7 +29,7 @@ Causes can include:
 1. For localhost, eXist is not running.
 2. For history.state.gov, your connection to the internet is not working, or history.state.gov is undergoing maintenance.
 
-The console window in oXygen should show a more detailed description of the problem. The console output can be cryptic, but it often indicates the source of the problem or provide useful clues. 
+The console window in oXygen should show a more detailed description of the problem. The console output can be cryptic, but it often indicates the source of the problem or provides useful clues. 
 
 If you're not able to solve the problem, then copy and paste the entire contents of the console window in oXygen into an email and send it to your trainer.
 
