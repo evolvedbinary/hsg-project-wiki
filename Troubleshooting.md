@@ -33,7 +33,7 @@ The console window in oXygen should show a more detailed description of the prob
 
 If you're not able to solve the problem, then copy and paste the entire contents of the console window in oXygen into an email and send it to your trainer.
 
-## GitHub Desktop is saying there is a conflict
+## GitHub Desktop says there is a conflict
 
 Git conflicts can be tricky to overcome, but take a screenshot and send it to your trainer. 
 
