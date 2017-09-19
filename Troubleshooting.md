@@ -22,7 +22,7 @@ First, check:
 
 If the problem persists, copy and paste the entire contents of the console window in oXygen into an email and send it to your trainer. The console output can be cryptic, but it often indicates the source of the problem or provides useful clues.
 
-## Uploading a file to localhost or history.state.gov says BUILD FAILED
+## Uploading a file to localhost or hsg says BUILD FAILED
 
 Causes can include:
 
