@@ -6,7 +6,7 @@ Have an idea for a new entry - a problem you've helped someone fix? Go ahead and
 
 ## The directions say X should happen, but it's not
 
-Please let your trainer or the author of the directions know where the directions are diverging from the directions so they can help find the problem you're encountering and/or fix the directions. The sooner we fix the problem, the better.
+Please let your trainer or the author of the directions know where the directions are diverging from what you're experiencing so they can help find the problem you're encountering and/or fix the directions. The sooner we fix the problem, the better.
 
 If you're getting an error, copy and paste the entire error verbatim into an email, or take a screenshot and send it. 
 
