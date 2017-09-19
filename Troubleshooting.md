@@ -1,6 +1,8 @@
 # Troubleshooting
 
-This article contains troubleshooting tips for problems that commonly crop up. In general, before you report a problem, make sure that your system is up-to-date with all system updates and with the updates at the top of the [Setup](setup) article.
+This article contains troubleshooting tips for problems that others have encountered. Hopefully this article will give you a path to finding a solution or workaround for any problem.
+
+Have an idea for a new entry - a problem you've helped someone fix? Go ahead and add it!
 
 ## The directions say X should happen, but it's not
 
