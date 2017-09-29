@@ -17,20 +17,20 @@ Setting up a history.state.gov development system requires a modern computer wit
     - oXygen license key
     - Mac App Store credentials (needed for downloading Transmit)
 
-## Updating from our old setup (pre-May 2017)?
+## Updating from our old setup (pre-May 2017)? 
 
+- Instructions last updated September 28, 2017.
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - You will need updates to the packages installed via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
 
         brew update && brew upgrade
 
-    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports, `Your system is ready to brew.` 
-- You will need eXist 3.1.1, oXygen 19, and Java 8u131. Delete eXist and oXygen from your Applications folder, and then, using homebrew, enter:
+    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports `Your system is ready to brew.` 
+- You will need eXist 3.5.0, oXygen 19, and Java 8u144. Delete eXist and oXygen from your Applications folder, and then, using homebrew, enter:
 
-        brew cask reinstall oxygen-xml-editor java
+        brew cask uninstall java
+        brew cask reinstall oxygen-xml-editor java8 exist-db
 
-    Next, download the eXist 3.1.1 installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.1.1.dmg. Open the downloaded file, and drag the `eXist-db` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`. Now the new version of eXist will be in your `Applications` folder (in Finder, select `Go > Applications`). 
-    
 - Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. For good measure, please run the "Prepare upgrade to eXist 3.1.1" a second time.
 - If you use eXist to preview website content, then proceed from Step 4 of [Installing eXist](#installing-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). If you have any errors in deploying all cloned repositories, please quit eXist and run the "Prepare upgrade to eXist 3.1.1" again; then start eXist and deploy all cloned repositories.
 
