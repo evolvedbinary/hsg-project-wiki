@@ -64,9 +64,9 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     If, instead, homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
 
-1. Having installed Homebrew, enter these commands to install Java 8 JDK, GitHub Desktop, oXygen XML Editor, as well as the other dependencies:
+1. Having installed Homebrew, enter these commands to install Java 8 JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
 
-        brew cask install java github-desktop oxygen-xml-editor
+        brew cask install java github-desktop oxygen-xml-editor exist-db
 
         brew install ant git node node@4
 
@@ -92,13 +92,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 Before publishing files to the public website, you may wish to preview them on your local system. This helps ensure that your edits have the desired effect and reduces the likelihood of unforeseen problems when publishing the files.
 
-### Installing eXist
-
-We use the standard release of eXist 3.1.1. To install it:
-
-1. Download the eXist installer from https://bintray.com/existdb/releases/download_file?file_path=eXist-db-3.1.1.dmg.
-
-1. Open the downloaded file, and drag the `eXist-db` icon into the `Applications` folder. To remove the eXist-db disk image icon from your desktop, select the icon and select `File > Eject`.
+### Starting eXist
 
 1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
 
