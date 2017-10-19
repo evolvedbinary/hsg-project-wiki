@@ -148,4 +148,13 @@ As with our previous workflow, in order to update the carousel for the publicati
 
 Once you have finished editing both files, upload them to localhost, and review them one last time before uploading to hsg when you are are ready to publish the volume. 
 
- Final Note: Don't forget to commit all of your changes to the files above to GitHub as soon as you have published the volume. 
+## 7. Commit all files to GitHub
+After you have finished publishing your volume, the files in each of these repos need to be committed to GitHub. Remember to click `Sync` after you commit the files to push your changes to the master branch. You will have to do this 3 separate times for the following files in 3 repos:
+1.  carousel
+    * a. display-order
+    * b. numbered entry for volume
+2. frus
+    * a. bibliography
+    * b. volumes
+3. tags/tagged resources
+    * a. frus-tags
