@@ -27,7 +27,7 @@ If the problem persists, copy and paste the entire contents of the console windo
 Causes can include:
 
 1. For localhost, eXist is not running.
-2. For history.state.gov, your connection to the internet is not working, or history.state.gov is undergoing maintenance.
+2. For history.state.gov, your connection to the internet is not working, or history.state.gov is undergoing maintenance, or you have not [entered the server credentials](https://github.com/HistoryAtState/hsg-project/wiki/setup#publish-your-work-to-hsg) for history.state.gov. 
 
 The console window in oXygen should show a more detailed description of the problem. The console output can be cryptic, but it often indicates the source of the problem or provides useful clues. 
 
