@@ -25,11 +25,16 @@ Setting up a history.state.gov development system requires a modern computer wit
 
         brew update && brew upgrade
 
-    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports `Your system is ready to brew.` 
+    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
+
+    > Your system is ready to brew.
+
 - These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.9, oXygen 19.1, and Java 8 Update 151:
 
-        brew cask uninstall java github-desktop
         brew tap caskroom/versions
+        
+        brew cask uninstall java github-desktop
+        
         brew cask reinstall exist-db github java8 oxygen-xml-editor
 
 - Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. For good measure, please run the "Prepare upgrade to eXist 3.1.1" a second time.
@@ -171,8 +176,6 @@ A more detailed set of instructions with suggestions for daily and weekly tasks 
 1. Select `OK`
 
 ## Browsing history.state.gov's eXist in oXygen's Data Source Explorer
-
-**Important Note:** Until an issue with Java's support of our server's SSL certificate is resolved, this method is out of service.
 
 Note: These steps are optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist.
 
