@@ -69,7 +69,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
         brew tap caskroom/versions
 
-        brew cask install java8 github-desktop oxygen-xml-editor exist-db
+        brew cask install java8 github oxygen-xml-editor exist-db
 
         brew install ant git node node@4
 
