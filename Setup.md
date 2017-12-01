@@ -67,7 +67,9 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 1. Having installed Homebrew, enter these commands to install Java 8 JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
 
-        brew cask install java github-desktop oxygen-xml-editor exist-db
+        brew tap caskroom/versions
+
+        brew cask install java8 github-desktop oxygen-xml-editor exist-db
 
         brew install ant git node node@4
 
