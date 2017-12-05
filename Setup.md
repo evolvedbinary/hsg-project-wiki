@@ -37,7 +37,11 @@ Setting up a history.state.gov development system requires a modern computer wit
         
         brew cask reinstall exist-db github java8 oxygen-xml-editor
 
-- Open oXygen and from the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". Quit and restart oXygen. Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. For good measure, please run the "Prepare upgrade to eXist 3.1.1" a second time.
+- Next, open oXygenXML.
+  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
+  - Quit and restart oXygen.
+  - Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. 
+  - For good measure, please run the "Prepare upgrade to eXist 3.1.1" a second time.
 - If you use eXist to preview website content, then proceed from Step 4 of [Installing eXist](#installing-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). If you have any errors in deploying all cloned repositories, please quit eXist and run the "Prepare upgrade to eXist 3.1.1" again; then start eXist and deploy all cloned repositories.
 
 ## Installing other dependencies
