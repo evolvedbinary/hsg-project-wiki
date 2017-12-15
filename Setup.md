@@ -19,18 +19,26 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 ## Updating from an old setup? 
 
-- Instructions last updated December 1, 2017.
+- Instructions last updated December 15, 2017.
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates; if the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - You will need updates to the packages we install via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
 
         brew update && brew upgrade
 
-    Once this command completes, run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
+- We also need to make sure you have all of the required dependencies installed. To show what you have already installed, paste in the following command:
+ 
+        brew list
+
+    You should see all 4 of the following entries: `ant git node node@4`. If any are missing, install them with the following command:
+
+        brew install ant git node node@4
+
+- Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
     > Your system is ready to brew.
 
-- These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.9, oXygen 19.1, and Java 8 Update 151:
+- These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.9, oXygen 19.1, and Java 8 Update 152 (or newer):
 
         brew tap caskroom/versions
         
@@ -38,12 +46,15 @@ Setting up a history.state.gov development system requires a modern computer wit
         
         brew cask reinstall exist-db github java8 oxygen-xml-editor
 
+- GitHub Desktop has recently been relaunched with a significantly different interface. Proceed with the setup steps under [Setting up GitHub Desktop](#setting-up-gitHub-desktop). Return here when you are done setting up GitHub Desktop.
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
   - Quit and restart oXygen.
-  - Then, from the External Tools toolbar menu select "Prepare upgrade to eXist 3.1.1". This command will (1) wipe your eXist database, (2) delete old repositories we no longer need cloned locally, (3) update the list of hsg-project repositories, and (4) clone any hsg-project repositories you do not yet have. Select "Yes" to proceed. 
-  - For good measure, please run the "Prepare upgrade to eXist 3.1.1" a second time.
-- If you use eXist to preview website content, then proceed from Step 4 of [Installing eXist](#installing-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). If you have any errors in deploying all cloned repositories, please quit eXist and run the "Prepare upgrade to eXist 3.1.1" again; then start eXist and deploy all cloned repositories.
+  - Then, from the External Tools toolbar menu, run these commands:
+    - `Wipe eXist Data` (confirm "yes" when asked)
+    - Steps 1-3 under `Setup and maintenance`: `Clone all repositories`, `Apply Mac settings to hsg-project`, and `Apply hsg-project settings to eXist`
+- If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Return here when you are done setting up eXist.
+- If you just installed the new GitHub Desktop above and had to re-authenticate, you'll need to re-add all of your repositories to the list. To do this, you can either (1) drag the repository folders from the Finder onto the GitHub Desktop window or (2) add the repository folders one at a time from oXygen by opening a file from a repository and selecting `Open current repository in GitHub Desktop` from the oXygen External Tools menu (as described in [Commit your work and push it to GitHub](#commit-your-work-and-push-it-to-github). 
 
 ## Installing other dependencies
 
@@ -91,15 +102,23 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 1. Quit oXygen for now.
 
-1. Start GitHub Desktop, and follow these prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`. (**NOTE:** As of June 28, 2017, the beta release of GitHub Desktop installed by homebrew does not yet have a feature we relied on in the previous version, called "Install GitHub Desktop Command Line Tools." To download the version that does, go to https://desktop.github.com/, scroll down to "Not ready for Desktop Beta?", and download the Mac version. Double-click on the downloaded file, and drag "GitHub Desktop" into your Applications folder. Start GitHub Desktop, and follow these prompts to set up the program: Select `Continue`. Enter your GitHub user credentials, and select `Sign In`. Select `Continue`. Select `Install GitHub Command Line Tools`; when prompted, enter the password for your user account. Select `Done`. You are welcome to follow the tutorial to learn more about working with GitHub.)
+## Setting up GitHub Desktop
 
-1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, select the "+" icon in the top-left corner of the GitHub Desktop window. Select the Clone tab. Under HistoryAtState, you will see an entry called `hsg-project`. Select this, and then select `Clone hsg-project`. You will be prompted to select a location to save the `hsg-project` repository. Navigate to the `workspace` folder we created in step 1, and select `Clone`.
+1. Find GitHub Desktop in your Applications folder. Drag its icon to the dock.
 
-1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. In `hsg-project`, double-click on the `hsg-project.xpr` file. This opens oXygen and opens the `Project` pane with a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
+1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`. Under the `GitHub Desktop` menu bar, select `Install Command Line Tool`.
 
-1. In oXygen's menu bar, you will see a button with a green triangle icon, the "Tools" icon, and at its right is a small black triangle icon. Select the black triangle icon to display a list of common commands for working with the hsg-project. Select `Clone all repositories`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
+## Getting hsg-project
+
+1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, click on the `File` menu and select `Clone Repository`. Under GitHub.com, you will see an entry called `HistoryAtState/hsg-project`. Select this, and then select `Clone hsg-project`. In the `Local Path` field, click on `Choose`, navigate to your `workspace` folder we created in step 1, select `Open`, and finally select `Clone`.
+
+1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. Inside the `hsg-project` folder, double-click on the `hsg-project.xpr` file. This opens oXygen and opens the `Project` pane with a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
+
+1. In oXygen's menu bar, you will see a button with a green triangle icon, the "Tools" icon, and at its right is a small black triangle icon. Select the black triangle icon to display a list of common commands for working with the hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
 
 1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
+
+1. Next, continue with the `Setup & maintenance` entries in the External Tools menu, selecting `2. Apply Mac settings to hsg-project` and `3. Apply hsg-project settings to eXist`. (Do not proceed to #4 yet.)
 
 ## Previewing files on your computer
 
@@ -109,13 +128,13 @@ Before publishing files to the public website, you may wish to preview them on y
 
 1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
 
-1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close.
+1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close. 
 
 1. Start eXist. eXist will show a splash screen and install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
 ### Deploying all repositories to eXist
 
-1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
+1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `4. Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
 
@@ -139,19 +158,25 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 ### Commit your work and push it to GitHub 
 
-1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. You will see a list of files you have modified. Confirm which files you want to commit by selecting (or unselecting) the checkboxes next to each file. GitHub desktop will show you a preview of the changes you have made.
+1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. 
+
+1. You will see a button in the toolbar, called `Fetch origin`. Click on this to make sure you have the latest version of everyone else's work from this repository.
+
+1. In the left-hand pane, you will see a tab, called `Changes`, with a list of files you have modified. Confirm which files you want to commit by selecting (or unselecting) the checkboxes next to each file. Clicking on any file bring up a summary of the changes you made to the file (known as a "diff").
 
 1. Enter a brief summary of the changes in the `Summary` field. If the description is too long, use the `Description` field. 
 
 1. Once you've confirmed that the files and summary/description are correct, select `Commit to master`. 
 
-1. Once you've made all of your commits, select `Sync` to synchronize your changes to GitHub.
+1. As soon as you make a commit, the `Fetch Origin` toolbar button will become `Push Origin`, meaning that you have at least one local commit that have not yet been pushed to GitHub's servers. 
+
+1. Once you've made all of your commits, select `Push Origin` to push your changes to GitHub. (The `Push Origin` button will now return to `Fetch Origin`, and you will receive an email confirmation of your commit from the hsg-commits mailing list.)
 
 ### Publish your work to hsg
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
-    Before you publish the first time, you must first enter the password provided to you during your training for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu, select `Enter server credentials`.
+    Before you publish the first time, you must first enter the password provided to you during your training for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
 
 ## Keeping up with everyone's latest work
 
