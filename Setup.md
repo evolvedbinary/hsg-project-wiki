@@ -30,7 +30,7 @@ Setting up a history.state.gov development system requires a modern computer wit
  
         brew list
 
-    You should see all 4 of the following entries: `ant git node node@4`. If any are missing, install them with the following command:
+    You should see all 4 of the following entries: `ant git node node@4`. If you see these all, proceed to the next step. If any are missing, install them with the following command:
 
         brew install ant git node node@4
 
@@ -38,7 +38,9 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     > Your system is ready to brew.
 
-- These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.9, oXygen 19.1, and Java 8 Update 152 (or newer):
+    Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
+
+- These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.11, oXygen 19.1, and Java 8 Update 152 (or newer):
 
         brew tap caskroom/versions
         
@@ -46,7 +48,7 @@ Setting up a history.state.gov development system requires a modern computer wit
         
         brew cask reinstall exist-db github java8 oxygen-xml-editor
 
-- GitHub Desktop has recently been relaunched with a significantly different interface. Proceed with the setup steps under [Setting up GitHub Desktop](#setting-up-gitHub-desktop). Return here when you are done setting up GitHub Desktop.
+- In mid-2017 GitHub Desktop was relaunched with a significantly different interface. We are now using this version of GitHub Desktop, as it provides all of the features we needed from the old version. Proceed with the setup steps under [Setting up GitHub Desktop](#setting-up-gitHub-desktop). Return here when you are done setting up GitHub Desktop.
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
   - Quit and restart oXygen.
