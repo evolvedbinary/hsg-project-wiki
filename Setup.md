@@ -54,10 +54,10 @@ Setting up a history.state.gov development system requires a modern computer wit
   - Quit and restart oXygen.
   - Then, from the External Tools toolbar menu, run these commands:
     - `Wipe eXist Data` (confirm "yes" when asked)
-    - Under `Setup and maintenance`: 
-      - `Clone all repositories`
-      - `Apply Mac settings to hsg-project`
-      - `Apply hsg-project settings to eXist`
+    - Under `= Setup and maintenance =`: 
+      - `1. Clone all repositories`
+      - `2. Apply Mac settings to hsg-project`
+      - `3. Apply hsg-project settings to eXist`
 - If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Return here when you are done setting up eXist.
 - If you just installed the new GitHub Desktop above and had to re-authenticate, you'll need to re-add all of your repositories to the list. To do this, you can either (1) drag the repository folders from the Finder onto the GitHub Desktop window or (2) add the repository folders one at a time from oXygen by opening a file from a repository and selecting `Open current repository in GitHub Desktop` from the oXygen External Tools menu (as described in [Commit your work and push it to GitHub](#commit-your-work-and-push-it-to-github). 
 
