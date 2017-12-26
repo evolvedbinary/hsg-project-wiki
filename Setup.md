@@ -108,7 +108,9 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 1. Find GitHub Desktop in your Applications folder. Drag its icon to the dock.
 
-1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`. Under the `GitHub Desktop` menu bar, select `Install Command Line Tool`.
+1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`.
+
+1. Under the `GitHub Desktop` menu bar, select `Install Command Line Tool`.
 
 ## Getting hsg-project
 
