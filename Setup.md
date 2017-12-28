@@ -19,7 +19,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 ## Updating from an old setup? 
 
-- Instructions last updated December 15, 2017.
+- Instructions last updated December 28, 2017.
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates; if the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - You will need updates to the packages we install via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
@@ -47,6 +47,8 @@ Setting up a history.state.gov development system requires a modern computer wit
         brew cask uninstall java github-desktop
         
         brew cask reinstall exist-db github java8 oxygen-xml-editor
+
+    If, after the second command, Homebrew complains that `java` or `github-desktop` are not installed, remove these entries from the command and repeat. If, after the third command, Homebrew complains that any of the entries are already installed ("It seems there is already an app at..."), please manually delete the original application from your Applications folder, and then repeat the command.
 
 - In mid-2017 GitHub Desktop was relaunched with a significantly different interface. We are now using this version of GitHub Desktop, as it provides all of the features we needed from the old version. Proceed with the setup steps under [Setting up GitHub Desktop](#setting-up-gitHub-desktop). Return here when you are done setting up GitHub Desktop.
 - Next, open oXygen.
