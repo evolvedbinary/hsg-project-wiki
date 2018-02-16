@@ -19,7 +19,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 ## Updating from an old setup? 
 
-- Instructions last updated December 28, 2017.
+- Instructions last updated February 16, 2018.
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates; if the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - You will need updates to the packages we install via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
@@ -40,7 +40,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- These steps will update you to eXist 3.6.0, GitHub Desktop 1.0.11, oXygen 19.1, and Java 8 Update 152 (or newer):
+- These steps will update you to eXist 4.0.0, GitHub Desktop 1.0.13, oXygen 19.1, and Java 8 Update 152 (or newer):
 
         brew tap caskroom/versions
         
