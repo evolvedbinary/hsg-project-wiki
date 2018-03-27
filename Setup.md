@@ -40,7 +40,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- These steps will update you to eXist 4.0.0, GitHub Desktop 1.0.13, oXygen 19.1, and Java 8 Update 152 (or newer):
+- These steps will update you to eXist 4.0.0, GitHub Desktop 1.1.1, oXygen 20.0, and Java 8 Update 152 (or newer):
 
         brew tap caskroom/versions
         
