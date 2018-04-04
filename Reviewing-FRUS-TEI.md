@@ -30,6 +30,7 @@ Before you begin, create a new [issue](https://github.com/HistoryAtState/frus/is
 - [ ] Tables, both participant and other
 - [ ] Openers and assorted segs
 - [ ] Datelines added and prepped for dates project
+- [ ] Postscripts and frus:attachments confirmed
 - [ ] Front matter
 - [ ] Back matter
 - [ ] Random sample
