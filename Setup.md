@@ -6,7 +6,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
-    - 20 GB of available storage space (an SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
+    - 30 GB of available storage space (an SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
 - Mac OS X (up to date). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join
@@ -15,11 +15,10 @@ Setting up a history.state.gov development system requires a modern computer wit
 - Other required information that will be provided to you during your training
     - Credentials for hsg (needed when you begin publishing directly to hsg)
     - oXygen license key
-    - Mac App Store credentials (needed for downloading Transmit)
 
 ## Updating from an old setup? 
 
-- Instructions last updated May 16, 2018.
+- Instructions last updated August 27, 2018.
 - **Note:** Please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates; if the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - You will need updates to the packages we install via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
@@ -30,9 +29,14 @@ Setting up a history.state.gov development system requires a modern computer wit
  
         brew list
 
-    You should see all 4 of the following entries: `ant git node node@4`. If you see these all, proceed to the next step. If any are missing, install them with the following command:
+    You should see at least the following 4 entries: `ant git node node@4`. The following two commands will upgrade node@4 to node@6:
 
-        brew install ant git node node@4
+        brew uninstall node@4 && brew install node@6
+        /usr/local/opt/node@6/bin/npm rebuild
+
+    If any are of the other 3 (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
+
+        brew install ant git node
 
 - Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -40,17 +44,16 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- These steps will update you to eXist 4.1.0, GitHub Desktop 1.1.1, oXygen 20.0, and Java 8 Update 152 (or newer):
+- These steps will update you to eXist 4.3.1, GitHub Desktop 1.3.4, oXygen 20.1, and Java 10 (or newer):
 
-        brew tap caskroom/versions
-        
-        brew cask uninstall java github-desktop
-        
-        brew cask reinstall exist-db github java8 oxygen-xml-editor
+        brew cask uninstall java8
 
-    If, after the second command, Homebrew complains that `java` or `github-desktop` are not installed, remove these entries from the command and repeat. If, after the third command, Homebrew complains that any of the entries are already installed ("It seems there is already an app at..."), please manually delete the original application from your Applications folder, and then repeat the command.
+        brew cask uninstall github-desktop
 
-- In mid-2017 GitHub Desktop was relaunched with a significantly different interface. We are now using this version of GitHub Desktop, as it provides all of the features we needed from the old version. Proceed with the setup steps under [Setting up GitHub Desktop](#setting-up-gitHub-desktop). Return here when you are done setting up GitHub Desktop.
+        brew cask reinstall java exist-db github oxygen-xml-editor
+
+    If, after either of the first two commands, Homebrew complains that `java8` or `github-desktop` are not installed or that "No Cask with this name exists", no worries, just move on to the next command.
+
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
   - Quit and restart oXygen.
@@ -61,7 +64,6 @@ Setting up a history.state.gov development system requires a modern computer wit
       - `2. Apply Mac settings to hsg-project`
       - `3. Apply hsg-project settings to eXist`
 - If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Return here when you are done setting up eXist.
-- If you just installed the new GitHub Desktop above and had to re-authenticate, you'll need to re-add all of your repositories to the list. To do this, you can either (1) drag the repository folders from the Finder onto the GitHub Desktop window or (2) add the repository folders one at a time from oXygen by opening a file from a repository and selecting `Open current repository in GitHub Desktop` from the oXygen External Tools menu (as described in [Commit your work and push it to GitHub](#commit-your-work-and-push-it-to-github). 
 
 ## Installing other dependencies
 
@@ -81,7 +83,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install XCode or accept the XCode license (in which case you should do as directed, and once done, re-enter the command to install homebrew).  
+    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install Xcode or accept the Xcode license (in which case you should do as directed, and once done, re-enter the command to install homebrew).  
 
 1. To confirm Homebrew installed correctly, enter this command:
 
@@ -97,11 +99,11 @@ Setting up a history.state.gov development system requires a modern computer wit
 
         brew tap caskroom/versions
 
-        brew cask install java8 github oxygen-xml-editor exist-db
+        brew cask install java github oxygen-xml-editor exist-db
 
-        brew install ant git node node@4
+        brew install ant git node node@6
 
-        npm install -g gulp bower 
+        npm install -g gulp bower
 
     When prompted, enter the password for your user account. You will now find oXygen XML Editor and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the oXygen XML Editor and GitHub Desktop icons into your Dock so you can always get to them easily.
 
@@ -115,7 +117,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`.
 
-1. Under the `GitHub Desktop` menu bar, select `Install Command Line Tool`.
+1. Under the `GitHub Desktop` menu, select `Install Command Line Tool`.
 
 ## Getting hsg-project
 
