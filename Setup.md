@@ -32,9 +32,8 @@ Setting up a history.state.gov development system requires a modern computer wit
     You should see at least the following 4 entries: `ant git node node@4`. The following two commands will upgrade node@4 to node@6:
 
         brew uninstall node@4 && brew install node@6
-        /usr/local/opt/node@6/bin/npm rebuild
 
-    If any are of the other 3 (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
+    If any are of the other 3 entries (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
 
         brew install ant git node
 
@@ -43,6 +42,14 @@ Setting up a history.state.gov development system requires a modern computer wit
     > Your system is ready to brew.
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
+
+- The following three commands will update node-related dependencies.
+
+        npm install -g gulp bower
+
+        cd ~/workspace/hsg-project/repos
+
+        for folder in $(find * -maxdepth 0 -type d ); do rm -rf "$folder/node_modules"; done
 
 - These steps will update you to eXist 4.3.1, GitHub Desktop 1.3.4, oXygen 20.1, and Java 10 (or newer):
 
