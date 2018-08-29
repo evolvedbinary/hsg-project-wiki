@@ -70,7 +70,7 @@ Setting up a history.state.gov development system requires a modern computer wit
       - `1. Clone all repositories`
       - `2. Apply Mac settings to hsg-project`
       - `3. Apply hsg-project settings to eXist`
-- If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Return here when you are done setting up eXist.
+- If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Now you're all set with the latest version of all of our software.
 
 ## Installing other dependencies
 
