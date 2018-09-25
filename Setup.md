@@ -20,7 +20,8 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 - Instructions last updated September 25, 2018.
 - **Note:** These instructions have been tested, but please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
-- Follow the direction to [to find out which macOS your Mac is using](https://support.apple.com/en-us/HT201260) and upgrade to macOS Mojave. Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding. 
+- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
+- Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - After installing macOS Mojave and all system updates, you will need to install the current version of the Apple Developer Command Line Tools so that Homebrew and our oXygen scripts work. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
 
         xcode-select --install
@@ -49,7 +50,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- If you just upgraded from node@4 to node@6, the following three commands are needed to update node-related dependencies.
+- If you just upgraded from node@4 to node@6 in the step above, enter the following three commands to update node-related dependencies.
 
         npm install -g gulp bower
 
