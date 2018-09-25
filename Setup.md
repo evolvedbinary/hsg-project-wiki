@@ -18,10 +18,16 @@ Setting up a history.state.gov development system requires a modern computer wit
 
 ## Updating from an old setup? 
 
-- Instructions last updated August 29, 2018.
+- Instructions last updated September 25, 2018.
 - **Note:** These instructions have been tested, but please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
-- Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates; if the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
-- You will need updates to the packages we install via Homebrew. To update these packages, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command: 
+- Follow the direction to [to find out which macOS your Mac is using](https://support.apple.com/en-us/HT201260) and upgrade to macOS Mojave. Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding. 
+- After installing macOS Mojave and all system updates, you will need to install the current version of the Apple Developer Command Line Tools so that Homebrew and our oXygen scripts work. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
+
+        xcode-select --install
+
+    This will bring up a dialog with 3 buttons. Select "Install", and let the installation complete.
+
+- You will need to update Homebrew. To do so, enter the following command: 
 
         brew update && brew upgrade
 
@@ -29,13 +35,13 @@ Setting up a history.state.gov development system requires a modern computer wit
  
         brew list
 
-    You should see at least the following 4 entries: `ant git node node@4`. The following two commands will upgrade node@4 to node@6:
+    You should see at least the following 4 entries: `ant git node node@6`. If you see `node@4` and not `node@6`, the following two commands will upgrade node@4 to node@6:
 
         brew uninstall node@4 && brew install node@6
 
     If any are of the other 3 entries (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
 
-        brew install ant git node
+        brew install ant && brew install git && brew install node
 
 - Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -43,7 +49,7 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- The following three commands will update node-related dependencies.
+- If you just upgraded from node@4 to node@6, the following three commands are needed to update node-related dependencies.
 
         npm install -g gulp bower
 
@@ -51,15 +57,17 @@ Setting up a history.state.gov development system requires a modern computer wit
 
         for folder in $(find * -maxdepth 0 -type d ); do rm -rf "$folder/node_modules"; done
 
-- These steps will update you to eXist 4.3.1, GitHub Desktop 1.3.4, oXygen 20.1, and Java 10 (or newer):
+- We also need to make sure you have all of the required dependencies installed. To show what you have already installed, paste in the following command:
+ 
+        brew cask list
 
-        brew cask uninstall java8
+    You should see at least the following 4 entries: java, github, exist-db, and oxygen-xml-editor. If you see `java8` or `github-desktop`, uninstall them with this command:
 
-        brew cask uninstall github-desktop
+        brew cask uninstall java8 && brew cask uninstall github-desktop
+
+- These steps will update you to the current versions of our main software packages: eXist 4.4.0, GitHub Desktop 1.4.0, oXygen 20.1, and Java 10:
 
         brew cask reinstall java exist-db github oxygen-xml-editor
-
-    If, after either of the first two commands, Homebrew complains that `java8` or `github-desktop` are not installed or that "No Cask with this name exists", no worries, just move on to the next command.
 
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
@@ -70,9 +78,9 @@ Setting up a history.state.gov development system requires a modern computer wit
       - `1. Clone all repositories`
       - `2. Apply Mac settings to hsg-project`
       - `3. Apply hsg-project settings to eXist`
-- If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Now you're all set with the latest version of all of our software.
+- If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
 
-## Installing other dependencies
+## Installing dependencies
 
 1. Open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time, hitting return after each:
 
@@ -100,9 +108,9 @@ Setting up a history.state.gov development system requires a modern computer wit
 
     > Your system is ready to brew.
 
-    If, instead, homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
+    If, instead, Homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
 
-1. Having installed Homebrew, enter these commands to install Java 8 JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
+1. Having installed Homebrew, enter these commands to install Java JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
 
         brew tap caskroom/versions
 
