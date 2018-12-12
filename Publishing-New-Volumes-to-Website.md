@@ -9,6 +9,16 @@ Open the volume’s corresponding volume XML file in `hsg-project/repos/frus/bib
 
 In order to view the volume metadata and shell file locally, you will need to change the volume’s `<publication-status>` to “published” and upload the file and the shell file you will create in step 2 to localhost. Here you can make corrections to the file and re-upload to localhost to view your corrections. Neither of these files should be uploaded to hsg, however, until you have completed all of the steps below and are ready to publish the volume. 
 
+---
+
+**Do you have the XML for the volume?**
+
+- [ ] If YES, skip step 2 and proceed to **step 3**.
+
+- [ ] If NO, proceed to **step 2**.
+
+---
+
 ## 2. Create Shell File
 After you have uploaded the volume metadata file to the localhost, navigate to the Release app at <http://localhost:8080/exist/apps/release/> and click on `Shell File Helper.` On the next page, enter the volume id and click `Generate Shell Files.` A draft shell file for the volume will download to your computer. Open the file in oXygen and save it in `hsg-project/repos/frus/volumes.` 
 
@@ -19,7 +29,7 @@ Double check the information that is already populated in the shell file and fil
 3. GPO S/N
 4. Editor information
 
-When you are finished, upload the file to the localhost and review the volume landing page. 	
+When you are finished, upload the file to the localhost and review the volume landing page.	
 
 ## 3. Review the Volume XML
 
@@ -29,6 +39,16 @@ When you receive the final XML for your volume, you will largely follow the same
 2. Rename the final XML file according to our file naming conventions, move the file to `hsg-project/repos/frus/volumes`, and upload it to localhost. You will have to replace the file that is currently there if you published the volume. 
 3. Review the file following the instructions at [Reviewing FRUS TEI](https://github.com/HistoryAtState/hsg-project/wiki/reviewing-frus-tei) for any clarification. 
 4. When you have finished, commit the new file to GitHub and upload to hsg.  
+
+---
+
+**Do you have the XML for the volume?**
+
+- [ ] If YES, proceed to **step 4**.
+
+- [ ] If NO, skip step 4 and proceed to **step 5**.
+
+---
 
 ## 4. Generate TIFFs, PNGs, and Ebooks
 
