@@ -44,7 +44,7 @@ When you receive the final XML for your volume, you will largely follow the same
 
 - [ ] If YES, proceed to **[step 4](#4-generate-tiffs-pngs-and-ebooks)**.
 
-- [ ] If NO, skip step 4.
+- [ ] If NO, skip step 4 and proceed to **[step 5](#5-update-volume-cache)**.
 
 ---
 
