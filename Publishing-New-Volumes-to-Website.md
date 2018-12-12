@@ -1,5 +1,3 @@
-If you have the XML for the volume, skip step 2. If you do not have XML for the volume, skip step 4.  
-
 NOTE: These steps assume that you have already received a final PDF for the volume that you have cropped, renamed according to FRUS file naming conventions, and uploaded to S3.  
 
 ##  1. Edit Volume Metadata
@@ -13,9 +11,9 @@ In order to view the volume metadata and shell file locally, you will need to ch
 
 **Do you have the XML for the volume?**
 
-- [ ] If YES, skip step 2 and proceed to **step 3**.
+- [ ] If YES, skip step 2 and proceed to **[step 3](#3-review-the-volume-xml)**.
 
-- [ ] If NO, proceed to **step 2**.
+- [ ] If NO, proceed to **[step 2](#2-create-shell-file)**.
 
 ---
 
@@ -44,13 +42,13 @@ When you receive the final XML for your volume, you will largely follow the same
 
 **Do you have the XML for the volume?**
 
-- [ ] If YES, proceed to **step 4**.
+- [ ] If YES, proceed to **[step 4](#4-generate-tiffs-pngs-and-ebooks)**.
 
-- [ ] If NO, skip step 4 and proceed to **step 5**.
+- [ ] If NO, skip step 4.
 
 ---
 
-## 4. Generate TIFFs, PNGs, and Ebooks
+## 4. Generate TIFFs, PNGs, and eBooks
 
 NOTE: In order to make TIFFs and PNGs, you need to already have Homebrew, Ghostscript, and Imagemagick installed. If you have already installed these dependencies, skip the steps below. 
 
@@ -85,17 +83,17 @@ This final step takes significantly longer to complete so be sure that the proce
 
 ### CREATE EBOOKS
 
-Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make ebooks. In order to do this you will need to first open both files for the volume in oXygen. (These are in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography`.) Upload both of these files to localhost so that the latest copy is available to eXist.
+Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks. In order to do this you will need to first open both files for the volume in oXygen. (These are in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography`.) Upload both of these files to localhost so that the latest copy is available to eXist.
 
-Navigate to the Release app at <http://localhost:8080/exist/apps/release/> and click “EBook Batch Helper.” Be sure the the radio button is set to generate “Both” epub and mobi-bound epubs then click `Generate Ebooks`. 
+Navigate to the Release app at <http://localhost:8080/exist/apps/release/> and click “eBook Batch Helper.” Be sure the the radio button is set to generate “Both” epub and mobi-bound epubs then click `Generate eBooks`. 
 
-In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. When you see that the Ebook batch conversion has successfully completed at the bottom of the Ebook Batch Helper, open the “epub” subfolder in your Downloads folder. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks. If the file is appropriately formatted (check the table of contents, click the hyperlinks for random documents, check headings, lists, and tables, etc.) upload this file to the volume’s folder in S3 and in a new subfolder entitled “ebook”.
+In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks. If the file is appropriately formatted (check the table of contents, click the hyperlinks for random documents, check headings, lists, and tables, etc.) upload this file to the volume’s folder in S3 and in a new subfolder entitled “ebook”.
 
 After you have uploaded the .epub of the volume, open the “mobi-bound” subfolder in your Downloads. You will notice that there is another .epub in this folder that has the same name as the file you just uploaded to S3. It is very important that when you are converting this file to a .mobi using Calibre that you use the file in the “mobi-bound” subfolder. If you accidentally use the .epub file in the “epub” subfolder to generate the .mobi, you will notice that all lists in the volume are incorrectly formatted as bulleted lists in the .mobi and you will have to reconvert using the mobi-bound epub. 
 
 Open Calibre and drag and drop the mobi-bound epub file into the app. It should appear as item number 1 in the center console. Right click on the volume title and click `Convert Books` -> `Convert Individually`.  In the new dialog box that pops up, change `Output format` in the upper right-hand corner of the box from “EPUB” to “MOBI” and click `OK`. When Calibre has finished the conversion, you will find the .mobi in Calibre Library in a subfolder that has the volume’s full name. Rename the .mobi according to our file naming protocol and open it using Kindle for Mac. Review the .mobi as you did the epub and when you have completed the review, upload it to S3 in the same directory as the epub you uploaded above. 
 
-As with the pdf, in order to ensure that a link to both ebooks appears on the volume landing page, you will need to update the volume’s cache. The instructions for this are below.  
+As with the pdf, in order to ensure that a link to both eBooks appears on the volume landing page, you will need to update the volume’s cache. The instructions for this are below.  
 
 ## 5. Update Volume Cache
 
