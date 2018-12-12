@@ -1,6 +1,6 @@
-# Ebooks
+# eBooks
 
-We publish EPUB and Mobi versions of each FRUS volume. This page explains how we generate and review ebooks before publication.
+We publish EPUB and Mobi versions of each FRUS volume. This page explains how we generate and review eBooks before publication.
 
 ## Prerequisites
 
@@ -12,27 +12,27 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 
 ## Preparation
 
-1. Check that the cover images for the volumes are all in S3; check the `static.history.state.gov` bucket under `frus/{volume-id}/covers`. Without these covers, the ebooks you generate below have a generic cover image, which is okay for proofing but not for publication. 
-1. Validate each volume's TEI file (in `frus/volumes`) in oXygen. It's important to fix as many problems as possible before generating the ebook, since the ebook generating process takes time. Certain errors that the schema files find—particularly those related to missing images—will actually cause the ebook generator to fail.
+1. Check that the cover images for the volumes are all in S3; check the `static.history.state.gov` bucket under `frus/{volume-id}/covers`. Without these covers, the eBooks you generate below have a generic cover image, which is okay for proofing but not for publication. 
+1. Validate each volume's TEI file (in `frus/volumes`) in oXygen. It's important to fix as many problems as possible before generating the eBook, since the eBook generating process takes time. Certain errors that the schema files find—particularly those related to missing images—will actually cause the eBook generator to fail.
 1. Similarly, ensure that the volume titles and other metadata for each volume (in `frus/bibliography`) is complete.
 
-## Generating Ebooks
+## Generating eBooks
 
-1. Open the Release app at <http://localhost:8080/exist/apps/release> and select the link for "Ebook Batch Helper" 
+1. Open the Release app at <http://localhost:8080/exist/apps/release> and select the link for "eBook Batch Helper" 
 1. Paste in the desired volume IDs, one per line
 1. Select the desired output format(s): `EPUB`, `Mobi-bound EPUB`, or `Both`
-1. Select the `Generate Ebooks` button. **Note**: The Ebook Batch Helper can take 5-10 minutes to generate each ebook; particularly slow are page-based-cross-reference-type volumes of the pre-Johnson era. Since the Ebook Batch Helper doesn't provide any feedback or progress indicators until it has completed all ebooks, the best way to monitor progress is by using the Monex Console: <http://localhost:8080/exist/apps/monex/console.html>; the Console shows detailed progress messages. If you need to cancel the Ebook Batch Helper, use the Monex Monitoring page: <http://localhost:8080/exist/apps/monex/index.html>, clicking the "X" beside the ebook-helper.xq query in the "Running Queries" window.
-1. When the Ebook Batch Helper is done, it will produce a final report about the results of the conversion: errors are noted in red, successful conversions in green. Mobi conversion via Calibre is reported beneath this.
-1. The Ebook Batch Helper saves ebooks to your home folder's `Downloads` folder inside a date-stamped folder called `frus-ebooks-yyyy-mm-dd`. Here, EPUB files are stored in the `epub` directory and Mobipocket files in the `mobi` directory. A third directory, `mobi-bound`, contains intermediate Mobi-bound EPUB-formatted files, which can be discarded once the final Mobi files have been generated. As the tool runs, you can open your `Downloads/frus-ebooks-yyyy-mm-dd` folder on your desktop, and watch as the contents are filled in: first, the `epub` and `mobi-bound` folders, then the `mobi` folders.
-1. You can re-run the tool to generate a new set; new ebook files will overwrite the existing ones.
+1. Select the `Generate eBooks` button. **Note**: The eBook Batch Helper can take 5-10 minutes to generate each eBook; particularly slow are page-based-cross-reference-type volumes of the pre-Johnson era. Since the eBook Batch Helper doesn't provide any feedback or progress indicators until it has completed all eBooks, the best way to monitor progress is by using the Monex Console: <http://localhost:8080/exist/apps/monex/console.html>; the Console shows detailed progress messages. If you need to cancel the eBook Batch Helper, use the Monex Monitoring page: <http://localhost:8080/exist/apps/monex/index.html>, clicking the "X" beside the ebook-helper.xq query in the "Running Queries" window.
+1. When the eBook Batch Helper is done, it will produce a final report about the results of the conversion: errors are noted in red, successful conversions in green. Mobi conversion via Calibre is reported beneath this.
+1. The eBook Batch Helper saves eBooks to your home folder's `Downloads` folder inside a date-stamped folder called `frus-ebooks-yyyy-mm-dd`. Here, EPUB files are stored in the `epub` directory and Mobipocket files in the `mobi` directory. A third directory, `mobi-bound`, contains intermediate Mobi-bound EPUB-formatted files, which can be discarded once the final Mobi files have been generated. As the tool runs, you can open your `Downloads/frus-ebooks-yyyy-mm-dd` folder on your desktop, and watch as the contents are filled in: first, the `epub` and `mobi-bound` folders, then the `mobi` folders.
+1. You can re-run the tool to generate a new set; new eBook files will overwrite the existing ones.
 
-## Reviewing Ebooks
+## Reviewing eBooks
 
-1. Drag a volume's EPUB file into oXygen (**not** the Mobi-bound EPUB or Mobi files). This opens a new Archive Browser pane, showing the contents of the EPUB file. Select the "Validate" button (red checkmark icon) in the Archive Browser pane. This runs the [EpubCheck](http://www.oxygenxml.com/xml_editor/epub.html) utility, which reports any structural problems with the ebook. Errors like `element "ul" not allowed here` can generally be ignored at present, but errors that we do try to fix include `missing`, `not found`, or `fragment identifier not defined` errors relating to links to pages and their fragments, and referenced resources like images. 
-1. Make a copy of the EPUB and Mobi files, and open the **copies** of the EPUB files in iBooks and the Mobipocket files in Kindle. (Making these copies is necessary because opening an ebook file in an ebook reader often results in the ebook's filename, contents, and metadata being changed by the reader. We want to be sure to post only the originals, not the modified versions to our website.) Scan the contents of the volume to make sure the volume looks right, paying particular attention to any formatting that might be out of the ordinary. A good method for spot checking is to quickly flip through every page.
+1. Drag a volume's EPUB file into oXygen (**not** the Mobi-bound EPUB or Mobi files). This opens a new Archive Browser pane, showing the contents of the EPUB file. Select the "Validate" button (red checkmark icon) in the Archive Browser pane. This runs the [EpubCheck](http://www.oxygenxml.com/xml_editor/epub.html) utility, which reports any structural problems with the eBook. Errors like `element "ul" not allowed here` can generally be ignored at present, but errors that we do try to fix include `missing`, `not found`, or `fragment identifier not defined` errors relating to links to pages and their fragments, and referenced resources like images. 
+1. Make a copy of the EPUB and Mobi files, and open the **copies** of the EPUB files in iBooks and the Mobipocket files in Kindle. (Making these copies is necessary because opening an eBook file in an eBook reader often results in the eBook's filename, contents, and metadata being changed by the reader. We want to be sure to post only the originals, not the modified versions to our website.) Scan the contents of the volume to make sure the volume looks right, paying particular attention to any formatting that might be out of the ordinary. A good method for spot checking is to quickly flip through every page.
 
-## Uploading Ebooks for Publication
+## Uploading eBooks for Publication
 
-1. When preparing ebooks for upload, make sure to use the version of each ebook file generated directly by our tools. Using the version directly generated by our tools (making a copy of them first) ensures no unwanted modifications have been made to the files. Be sure each ebook's filename takes the form that our tool generates them in and that our website assumes: `{volume-id}.epub` and `{volume-id}.mobi`. 
+1. When preparing eBooks for upload, make sure to use the version of each eBook file generated directly by our tools. Using the version directly generated by our tools (making a copy of them first) ensures no unwanted modifications have been made to the files. Be sure each eBook's filename takes the form that our tool generates them in and that our website assumes: `{volume-id}.epub` and `{volume-id}.mobi`. 
 1. Upload each volume's `.epub` and `.mobi` file to S3, under `frus/{volume-id}/ebooks`. Use the AWS S3 console (the web page) or an S3 client like Transmit.
-1. When the ebooks are all added and you are ready to make them available for public release, use the Release app's S3 Cache Helper to fetch data about the volumes' links to EPUB, Mobi, and PDF files; then use Transmit to upload the resulting files from `/db/apps/s3/cache/static.history.state.gov/frus` to the corresponding collection on the 1861 server. Without this, links to the volumes will not appear on the volumes' landing pages or the [listing of all ebooks](https://history.state.gov/historicaldocuments/ebooks).
+1. When the eBooks are all added and you are ready to make them available for public release, use the Release app's S3 Cache Helper to fetch data about the volumes' links to EPUB, Mobi, and PDF files; then use Transmit to upload the resulting files from `/db/apps/s3/cache/static.history.state.gov/frus` to the corresponding collection on the 1861 server. Without this, links to the volumes will not appear on the volumes' landing pages or the [listing of all eBooks](https://history.state.gov/historicaldocuments/ebooks).
