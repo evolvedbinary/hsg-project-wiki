@@ -11,7 +11,7 @@ This page contains the essential steps of a review.  As the page is expanded, li
     1. An up-to-date checkout of the SVN repository
     1. A freshly repopulated database
 1. A web browser
-1. An ebook reader
+1. An eBook reader
 1. The source volume (PDF or print)
 
 # Review procedure
@@ -35,7 +35,7 @@ Before you begin, create a new [issue](https://github.com/HistoryAtState/frus/is
 - [ ] Back matter
 - [ ] Random sample
 - [ ] Volume metadata
-- [ ] Ebook generation and review
+- [ ] eBook generation and review
 ```
 
 As you complete the steps below, check off the boxes, and add any notes in comments. You can even ask other people on the team to weigh in in your comments, by referencing their GitHub username, e.g., [@joewiz](http://github.com/joewiz).
@@ -117,7 +117,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
     2. In some volumes, one entry may refer to two different terms, e.g., NAT(O), refers both to the North Atlantic Treaty Organization and the North Atlantic Treaty. As a result, make sure both NATO and NAT are tagged correctly throughout the text. There is a large possibility that they will  not be tagged if the vendor simply searched for NAT(O). 
     1. Check that all source notes have the `note/@type="source"` attribute (all documents except editorial notes) should have these. XPath: `//tei:div/tei:note[@type='source']`
 
-1. Ebook
-    1. See the wiki article on generating ebooks, <https://github.com/HistoryAtState/hsg-project/wiki/ebooks>.
+1. eBook
+    1. See the wiki article on generating eBooks, <https://github.com/HistoryAtState/hsg-project/wiki/ebooks>.
 
-Finally, if time allows, flip through the volume (this is fastest with the ebook).  Let your eye spot any anomalies.
+Finally, if time allows, flip through the volume (this is fastest with the eBook).  Let your eye spot any anomalies.
