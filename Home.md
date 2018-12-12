@@ -12,17 +12,17 @@ Publications and Datasets
 
 1. [FRUS TEI Guidelines](http://static.history.state.gov/temp/frus-tei-guidelines.html)
 1. [FRUS TEI GitHub Repository, including Schema](https://github.com/historyatstate/frus)
-1. [New Volumes: Publishing to Website (FRUS TEI Files)](publishing-new-volumes-to-website) 
-1. [New Volumes: Reviewing (FRUS TEI Files)](reviewing-frus-tei)
+1. [New Volumes: Publishing to Website](publishing-new-volumes-to-website) (FRUS TEI Files)
+1. [New Volumes: Reviewing](reviewing-frus-tei) (FRUS TEI Files)
 1. [eBooks: Generating, Reviewing, and Publishing](ebooks)
 1. [FRUS Quarterly Releases: Steps in Preparing Quarterly Releases](quarterly-releases)
 1. [Travels & Visits: Converting Word Submissions into XML](preparing-travels-and-visits)
 
 Other Resources
 
-1. [Training Checklist](training-checklist): a checklist for trainers and trainees
-1. [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site
-1. [Homebrew](homebrew): information on our use of homebrew and apps available via homebrew
-1. [Converting Files to XML](converting-files-to-xml): how to convert Word, PDF, and other Office files to XML
-1. [VSFS](vsfs): getting VSFS students set up to contribute with GitHub
-1. [Troubleshooting](troubleshooting): quick fixes to common problems
+* [Training Checklist](training-checklist): a checklist for trainers and trainees
+* [Bookmarklets](bookmarklets): for your browser's bookmarks bar, to quickly switch between preview and live site
+* [Homebrew](homebrew): information on our use of homebrew and apps available via homebrew
+* [Converting Files to XML](converting-files-to-xml): how to convert Word, PDF, and other Office files to XML
+* [VSFS](vsfs): getting VSFS students set up to contribute with GitHub
+* [Troubleshooting](troubleshooting): quick fixes to common problems
