@@ -1,4 +1,4 @@
-Welcome to the hsg-project wiki!  The following pages will walk you through setting up, updating, and maintaining your history.state.gov (HSG) development environment.
+Welcome to the hsg-project wiki!  The following pages will walk you through setting up, updating, and maintaining your **history.state.gov (HSG) development environment**.
 
 This wiki houses instructions for:
 
