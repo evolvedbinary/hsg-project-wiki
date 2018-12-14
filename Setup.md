@@ -1,13 +1,13 @@
-# Setting up a history.state.gov development system
+# Setting up a history.state.gov Development Environment
 
-Setting up a history.state.gov development system requires a modern computer with ample memory and storage and a suite of software (eXist-db, oXygen XML Editor, and GitHub Desktop). These steps will lead you through installing this software, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project, starting eXist, and populating the database. When complete, you will have a fully functional copy of the history.state.gov ("hsg") website running on your computer, and you can edit files and preview how the changes will look on your computer. Once you are ready to publish your work, commit and sync the changes into our version control system.
+The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software (including eXist-db, oXygen XML Editor, and GitHub Desktop). These directions lead you through installing this software, checking out GitHub repositories, setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
 ## Requirements
 
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
     - 30 GB of available storage space (an SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- Mac OS X (up to date). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
+- An up-to-date copy macOS (up to date). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join
     - Make note of your credentials (username & password), since you will need these for the steps below.
