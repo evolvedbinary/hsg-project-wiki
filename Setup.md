@@ -12,7 +12,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     - If you don't have one, please create one at https://github.com/join
     - Make note of your credentials (username & password), since you will need these for the steps below.
     - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
-- Other required information that will be provided to you during your training
+- Other required information that will be provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist)
     - Credentials for hsg (needed when you begin publishing directly to hsg)
     - oXygen license key
 
