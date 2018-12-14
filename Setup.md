@@ -123,7 +123,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     When prompted, enter the password for your user account. You will now find oXygen XML Editor and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the oXygen XML Editor and GitHub Desktop icons into your Dock so you can always get to them easily.
 
-1. Start oXygen and paste in the license key provided to you during your training when prompted.
+1. Start oXygen and paste in the license key provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) when prompted.
 
 1. Quit oXygen for now.
 
@@ -203,7 +203,7 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
-    Before you publish the first time, you must first enter the password provided to you during your training for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
+    Before you publish the first time, you must first enter the password provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
 
 ## Keeping up with everyone's latest work
 
@@ -245,7 +245,7 @@ Note: These steps are optional and used for editing files already stored in the 
     - `Name:` `1861.history.state.gov`
     - `Data Source:` `WebDAV (S)FTP`
     - `WebDAV/FTP URL:` `https://1861.history.state.gov/exist/webdav/db`
-    - `User` and `Password`: You will be provided with this information during your training
+    - `User` and `Password`: You will be provided with this information [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist)
 
 1. Select `OK`
 
@@ -253,7 +253,7 @@ Note: These steps are optional and used for editing files already stored in the 
 
 ## Connecting to hsg with Transmit
 
-Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software during your training.
+Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist).
 
 1. Select `Favorites` > `Add to Favorites...`
 
