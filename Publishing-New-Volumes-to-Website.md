@@ -85,21 +85,33 @@ This final step takes significantly longer to complete so be sure that the proce
 
 **Have you installed Calibre?**
 
-- [ ] If YES, proceed to **[step 4c](#4c-install-calibre)**.
+- [ ] If YES, skip step 4c proceed to **[step 4d](#4d-create-ebooks)**.
 
-- [ ] If NO, skip step 4 and proceed to **[step 5=4d](#4d-create-ebooks)**.
+- [ ] If NO, proceed to **[step 4c](#4c-install-calibre)**.
 
 ---
 
 ### 4c. INSTALL CALIBRE
 
-
+* Download the Calibre application:
+  - If you are working on a Mac, download via https://calibre-ebook.com/download_osx
+  - If you are working on a Windows, download via https://calibre-ebook.com/download_windows
+* Double-click on the .dmg file you downloaded to open a folder window.
+* Drag the Calibre book icon to the Applications folder within the window.
+  - This action should begin the copying of Calibre to your local computer's Applications.
+  - Your local Applications folder should then open automatically.
+* Double-click on the new Calibre icon in your local Applications folder to open the program for the first time.
+* In the set-up screen:
+  - Accept the defaults on the first screen. Click "Next >"
+  - Keep the default "Generic" in Manufacturers and "Generic e-ink device" in Devices. Click "Next >"
+  - Click "Finish" to complete setup.
+  - The Calibre application should then start.
 
 ### 4d. CREATE EBOOKS
 
+Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks.
 
-
-Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks. In order to do this you will need to first open both files for the volume in oXygen. (These are in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography`.) Upload both of these files to localhost so that the latest copy is available to eXist.
+In order to create eBooks, you will need to first open the volume XML and bibliography XML files in oXygen. (These files should be found in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography` respectively.) Upload both of these files to localhost so that the latest copy is available to eXist.
 
 Navigate to the Release app at <http://localhost:8080/exist/apps/release/> and click “eBook Batch Helper.” Be sure the the radio button is set to generate “Both” epub and mobi-bound epubs then click `Generate eBooks`. 
 
