@@ -52,13 +52,13 @@ When you receive the final XML for your volume, you will largely follow the same
 
 NOTE: In order to make TIFFs and PNGs, you need to already have Homebrew, Ghostscript, and Imagemagick installed. If you have already installed these dependencies, skip the steps below. 
 
-### INSTALL HOMEBREW, GHOSTSCRIPT, IMAGEMAGICK
+### 4a. INSTALL HOMEBREW, GHOSTSCRIPT, IMAGEMAGICK
 
 1. Follow the instructions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#installing-other-dependencies>, specifically, numbers 3 and 4.
 2. In Terminal, enter `brew install imagemagick --with-libtiff` to install Imagemagick
 3. Then, paste `brew install gs` to install Ghostscript. 
 
-### CREATE TIFFS AND PNGS
+### 4b. CREATE TIFFS AND PNGS
 
 If you have the final pdf of the volume, you can make TIFFs and PNGs while you wait for the final XML. To do this you will need to:
 
@@ -81,7 +81,23 @@ If you have the final pdf of the volume, you can make TIFFs and PNGs while you w
 
 This final step takes significantly longer to complete so be sure that the process is done running before you upload the page images to S3. When this is done running, upload the parent folder with the 3 subfolders to S3 in the directory `static.history.state.gov/frus` 
 
-### CREATE EBOOKS
+---
+
+**Have you installed Calibre?**
+
+- [ ] If YES, proceed to **[step 4c](#4c-install-calibre)**.
+
+- [ ] If NO, skip step 4 and proceed to **[step 5=4d](#4d-create-ebooks)**.
+
+---
+
+### 4c. INSTALL CALIBRE
+
+
+
+### 4d. CREATE EBOOKS
+
+
 
 Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks. In order to do this you will need to first open both files for the volume in oXygen. (These are in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography`.) Upload both of these files to localhost so that the latest copy is available to eXist.
 
