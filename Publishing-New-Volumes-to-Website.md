@@ -54,7 +54,7 @@ NOTE: In order to make TIFFs and PNGs, you need to already have Homebrew, Ghosts
 
 ### 4a. INSTALL HOMEBREW, GHOSTSCRIPT, IMAGEMAGICK
 
-1. Follow the instructions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#installing-other-dependencies>, specifically, numbers 3 and 4.
+1. Follow the instructions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#installing-dependencies>, specifically, numbers 3 and 4.
 2. In Terminal, enter `brew install imagemagick --with-libtiff` to install Imagemagick
 3. Then, paste `brew install gs` to install Ghostscript. 
 
