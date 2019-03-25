@@ -64,7 +64,7 @@ If you have the final pdf of the volume, you can make TIFFs and PNGs while you w
 
 1. Create a new folder on your desktop, say, `frus-temp`, and place the final PDF in the folder, ensuring that you have renamed it according to our FRUS file naming conventions to match the volume's ID. 
 2. Go to Spotlight in the upper-right hand corner of your Mac and search for “Terminal”. Open Terminal. 
-3. Update Homebrew by entering `brew update` then `brew upgrade`
+3. Update Homebrew by entering `brew update && brew upgrade`
 4. Type `cd ` (followed by a space), then drag and drop the folder you created in step 1 onto the Terminal window, which fills in the complete path to this directory. (The result will be a command in your Terminal that looks something like `cd /Users/joe/Desktop/frus-temp`.) Then paste this entire line into Terminal (note: you'll probably need to scroll to get the entire line's worth of text):
 
         for file in *.pdf; do FOLDER=`basename -s .pdf $file`; mkdir $FOLDER; cd $FOLDER; mkdir tiff; mkdir medium; mkdir pdf; cd ..; mv $file "$FOLDER/pdf/"; done
