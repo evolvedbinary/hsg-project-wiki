@@ -22,10 +22,10 @@ After you have uploaded the volume metadata file to the localhost, navigate to t
 
 Double check the information that is already populated in the shell file and fill out the `div/@xml:id=”pressrelease”` portion of the template with:
 
-1. The publication date
-2. The content paragraphs of the press release
-3. GPO S/N
-4. Editor information
+* The publication date
+* The content paragraphs of the press release
+* GPO S/N
+* Editor information
 
 When you are finished, upload the file to the localhost and review the volume landing page.	
 
@@ -93,15 +93,15 @@ This final step takes significantly longer to complete so be sure that the proce
 
 ### 4c. INSTALL CALIBRE
 
-* Download the Calibre application:
+1. Download the Calibre application:
   - If you are working on a Mac, download via https://calibre-ebook.com/download_osx
   - If you are working on a Windows, download via https://calibre-ebook.com/download_windows
-* Double-click on the .dmg file you downloaded to open a folder window.
-* Drag the Calibre book icon to the Applications folder within the window.
+2. Double-click on the .dmg file you downloaded to open a folder window.
+3. Drag the Calibre book icon to the Applications folder within the window.
   - This action should begin the copying of Calibre to your local computer's Applications.
   - Your local Applications folder should then open automatically.
-* Double-click on the new Calibre icon in your local Applications folder to open the program for the first time.
-* In the set-up screen:
+4. Double-click on the new Calibre icon in your local Applications folder to open the program for the first time.
+5. In the set-up screen:
   - Accept the defaults on the first screen. Click "Next >"
   - Keep the default "Generic" in Manufacturers and "Generic e-ink device" in Devices. Click "Next >"
   - Click "Finish" to complete setup.
@@ -111,42 +111,42 @@ This final step takes significantly longer to complete so be sure that the proce
 
 Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks.
 
-* In order to create eBooks, you will need to first open the volume XML and bibliography XML files in oXygen. (These files should be found in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography` respectively.) 
-* Using the external tools menu in oXygenXML, upload both of these files to localhost so that the latest copy is available to eXist: `Upload current file to localhost`
-* Navigate to the Release app at <http://localhost:8080/exist/apps/release/>
-* In the Release app, click `eBook Batch Helper`.
-  * Set the radio button to generate `Both` epub and mobi-bound epubs.
-  * Click `Generate eBooks`. 
-* In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. 
-  * When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. 
-* In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks.
-  * Verify the file is properly formatted:
+1. In order to create eBooks, you will need to first open the volume XML and bibliography XML files in oXygen. (These files should be found in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography` respectively.) 
+2. Using the external tools menu in oXygenXML, upload both of these files to localhost so that the latest copy is available to eXist: `Upload current file to localhost`
+3. Navigate to the Release app at <http://localhost:8080/exist/apps/release/>
+4. In the Release app, click `eBook Batch Helper`.
+  - Set the radio button to generate `Both` epub and mobi-bound epubs.
+  - Click `Generate eBooks`. 
+5. In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. 
+  - When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. 
+6. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks.
+  - Verify the file is properly formatted:
     * Check the table of contents.
     * Click the hyperlinks for random documents.
     * Check headings
     * Check lists
     * Check tables
     * etc.
-* If the .epud file is appropriately formatted, upload this file to:
-  * the volume’s folder in S3, and 
-  * in a new subfolder entitled “ebook”
-* After you have uploaded the .epub of the volume, open the “mobi-bound” subfolder in your Downloads. 
-  * You will notice that there is another .epub in this folder that has the same name as the file you just uploaded to S3.
+7. If the .epud file is appropriately formatted, upload this file to:
+  - the volume’s folder in S3, and 
+  - in a new subfolder entitled “ebook”
+8. After you have uploaded the .epub of the volume, open the “mobi-bound” subfolder in your Downloads. 
+  - You will notice that there is another .epub in this folder that has the same name as the file you just uploaded to S3.
     * NOTE: It is very important that when you are converting this file to a .mobi using Calibre that you use the file in the “mobi-bound” subfolder. If you accidentally use the .epub file in the “epub” subfolder to generate the .mobi, you will notice that all lists in the volume are incorrectly formatted as bulleted lists in the .mobi and you will have to reconvert using the mobi-bound epub. 
-* Open Calibre and drag and drop the mobi-bound epub file into the app. 
+9. Open Calibre and drag and drop the mobi-bound epub file into the app. 
   * It should appear as item number 1 in the center console. 
-* Right click on the volume title and click `Convert Books` -> `Convert Individually`.
-* In the new dialog box that pops up, change `Output format` in the upper right-hand corner of the box from “EPUB” to “MOBI”. Click `OK`. 
-* When Calibre has finished the conversion, you will find the .mobi in Calibre Library in a subfolder that has the volume’s full name. Rename the .mobi according to our file naming protocol and open it using Kindle for Mac. 
-* Review the .mobi as you did the epub:
-  * Verify the file is properly formatted:
+10. Right click on the volume title and click `Convert Books` -> `Convert Individually`.
+11. In the new dialog box that pops up, change `Output format` in the upper right-hand corner of the box from “EPUB” to “MOBI”. Click `OK`. 
+12. When Calibre has finished the conversion, you will find the .mobi in Calibre Library in a subfolder that has the volume’s full name. Rename the .mobi according to our file naming protocol and open it using Kindle for Mac. 
+13. Review the .mobi as you did the epub:
+  - Verify the file is properly formatted:
     * Check the table of contents.
     * Click the hyperlinks for random documents.
     * Check headings
     * Check lists
     * Check tables
     * etc.
-* When you have completed the review of the .mobi file, upload it to S3 in the same directory as the .epub you uploaded above. 
+14. When you have completed the review of the .mobi file, upload it to S3 in the same directory as the .epub you uploaded above. 
 
 As with the .pdf, in order to ensure that a link to both eBooks appears on the volume landing page, you will need to update the volume’s cache. Proceed to **[step 5](#5-update-volume-cache)**.  
 
@@ -166,29 +166,22 @@ If the menu on this page says, "S3 app isn't configured yet," you will need to f
 
 Once in S3 Cache Helper, enter your volume’s ID and select `Submit`. (Whereas before, this automatically updated the cache for us, there are a few extra steps that we have to do in the new workflow.)
 
-* After you press `Submit`, open your localhost in Transmit. (If you haven't configured Transmit, follow the setup directions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#connecting-to-hsg-with-transmit>.) Navigate down to `/db/apps/s3/cache/static.history.state.gov/frus`. Under `frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
-
-* To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.history.state.gov` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
-
-* Move the volume folder from the localhost into the corresponding folder in `1861.history.state.gov`.
+1. After you press `Submit`, open your localhost in Transmit. (If you haven't configured Transmit, follow the setup directions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#connecting-to-hsg-with-transmit>.) 
+2. Navigate down to `/db/apps/s3/cache/static.history.state.gov/frus`. Under `frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
+3. To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.history.state.gov` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
+4. Move the volume folder from the localhost into the corresponding folder in `1861.history.state.gov`.
 
 ## 6. Add Subject Tags for the Volume
 
 For each volume, the compiler is required to supply subject tags that must be entered and uploaded to hsg for every newly published volume. When you have received the tags from the compiler, you should use the Tag Helper to put them in proper form:
 
-* Navigate to https://history.state.gov/cms/apps/tags/tag-helper.xq and enter the username and password you received during your training. 
-
-* In the space provided, copy and paste the subject tags and press `Search`
-
-Below the entry box, you should see a report that indicates how many tags were found for the number of tags you provided and a list of space-delimited tags for inserting into a TEI document. Double check that all of your tags have been found. If they haven't, double check the spelling, etc. against the list of approved tags and run the search again after correcting any errors. When all of your tags have been found, open the `frus-tags.xml` file at `/repos/tags/tagged-resources/frus`. In the file:
-
-* Scroll down to the bottom of the document and locate the place where your volume should be inserted in the list of volumes that are already published. 
-
-* Copy a `<study>` for another volume and paste it where your volume belongs.
-
-* Revise the title and link information in this study to match your volume, and replace the existing `tag/@id` with the space-delimited tags you generated using Tag Helper above. 
-
-When you have fully revised the new `<study>` entry for your volume in the file, save your changes and press `upload-current-file-to-history.state.gov` under your External Tools in oXygen.  
+1. Navigate to https://history.state.gov/cms/apps/tags/tag-helper.xq and enter the username and password you received during your training. 
+2. In the space provided, copy and paste the subject tags and press `Search`
+3. Below the entry box, you should see a report that indicates how many tags were found for the number of tags you provided and a list of space-delimited tags for inserting into a TEI document. Double check that all of your tags have been found. If they haven't, double check the spelling, etc. against the list of approved tags and run the search again after correcting any errors. When all of your tags have been found, open the `frus-tags.xml` file at `/repos/tags/tagged-resources/frus`. In the file:
+4. Scroll down to the bottom of the document and locate the place where your volume should be inserted in the list of volumes that are already published. 
+5. Copy a `<study>` for another volume and paste it where your volume belongs.
+6. Revise the title and link information in this study to match your volume, and replace the existing `tag/@id` with the space-delimited tags you generated using Tag Helper above. 
+7. When you have fully revised the new `<study>` entry for your volume in the file, save your changes and press `upload-current-file-to-history.state.gov` under your External Tools in oXygen.  
 
 ## 7. Create Carousel Entry
 
@@ -224,10 +217,10 @@ Once you have finished editing both files, upload them to localhost, and review 
 ## 7. Commit all files to GitHub
 After you have finished publishing your volume, the files in each of these repos need to be committed to GitHub. Remember to click `Sync` after you commit the files to push your changes to the master branch. You will have to do this 3 separate times for the following files in 3 repos:
 1.  carousel
-    * a. display-order
-    * b. numbered entry for volume
+  - display-order
+  - numbered entry for volume
 2. frus
-    * a. bibliography
-    * b. volumes
+  - bibliography
+  - volumes
 3. tags/tagged resources
-    * a. frus-tags
+  - frus-tags
