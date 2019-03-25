@@ -115,6 +115,7 @@ Once you have the final XML for the volume and have reviewed it thoroughly, you 
 2. Using the external tools menu in oXygenXML, upload both of these files to localhost so that the latest copy is available to eXist: `Upload current file to localhost`
 3. Navigate to the Release app at <http://localhost:8080/exist/apps/release/>
 4. In the Release app, click `eBook Batch Helper`.
+  - Enter the volume ID(s) in the "Volume IDs" input box (e.g. `frus1977-80v12`).
   - Set the radio button to generate `Both` epub and mobi-bound epubs.
   - Click `Generate eBooks`. 
 5. In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. 
