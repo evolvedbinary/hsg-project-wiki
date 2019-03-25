@@ -111,17 +111,43 @@ This final step takes significantly longer to complete so be sure that the proce
 
 Once you have the final XML for the volume and have reviewed it thoroughly, you are ready to make eBooks.
 
-In order to create eBooks, you will need to first open the volume XML and bibliography XML files in oXygen. (These files should be found in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography` respectively.) Upload both of these files to localhost so that the latest copy is available to eXist.
-
-Navigate to the Release app at <http://localhost:8080/exist/apps/release/> and click “eBook Batch Helper.” Be sure the the radio button is set to generate “Both” epub and mobi-bound epubs then click `Generate eBooks`. 
-
-In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks. If the file is appropriately formatted (check the table of contents, click the hyperlinks for random documents, check headings, lists, and tables, etc.) upload this file to the volume’s folder in S3 and in a new subfolder entitled “ebook”.
-
-After you have uploaded the .epub of the volume, open the “mobi-bound” subfolder in your Downloads. You will notice that there is another .epub in this folder that has the same name as the file you just uploaded to S3. It is very important that when you are converting this file to a .mobi using Calibre that you use the file in the “mobi-bound” subfolder. If you accidentally use the .epub file in the “epub” subfolder to generate the .mobi, you will notice that all lists in the volume are incorrectly formatted as bulleted lists in the .mobi and you will have to reconvert using the mobi-bound epub. 
-
-Open Calibre and drag and drop the mobi-bound epub file into the app. It should appear as item number 1 in the center console. Right click on the volume title and click `Convert Books` -> `Convert Individually`.  In the new dialog box that pops up, change `Output format` in the upper right-hand corner of the box from “EPUB” to “MOBI” and click `OK`. When Calibre has finished the conversion, you will find the .mobi in Calibre Library in a subfolder that has the volume’s full name. Rename the .mobi according to our file naming protocol and open it using Kindle for Mac. Review the .mobi as you did the epub and when you have completed the review, upload it to S3 in the same directory as the epub you uploaded above. 
-
-As with the pdf, in order to ensure that a link to both eBooks appears on the volume landing page, you will need to update the volume’s cache. The instructions for this are below.  
+1. In order to create eBooks, you will need to first open the volume XML and bibliography XML files in oXygen. (These files should be found in `hsg-project/repos/frus/volumes` and `hsg-project/repos/frus/bibliography` respectively.) 
+1. Using the external tools menu in oXygenXML, upload both of these files to localhost so that the latest copy is available to eXist: `Upload current file to localhost`
+1. Navigate to the Release app at <http://localhost:8080/exist/apps/release/>
+1. In the Release app, click `eBook Batch Helper`.
+  * Set the radio button to generate `Both` epub and mobi-bound epubs.
+  * Click `Generate eBooks`. 
+1. In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. 
+  * When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. 
+1. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks.
+  * Verify the file is properly formatted:
+    * Check the table of contents.
+    * Click the hyperlinks for random documents.
+    * Check headings
+    * Check lists
+    * Check tables
+    * etc.
+1. If the .epud file is appropriately formatted, upload this file to:
+  * the volume’s folder in S3, and 
+  * in a new subfolder entitled “ebook”
+1. After you have uploaded the .epub of the volume, open the “mobi-bound” subfolder in your Downloads. 
+  * You will notice that there is another .epub in this folder that has the same name as the file you just uploaded to S3.
+    * NOTE: It is very important that when you are converting this file to a .mobi using Calibre that you use the file in the “mobi-bound” subfolder. If you accidentally use the .epub file in the “epub” subfolder to generate the .mobi, you will notice that all lists in the volume are incorrectly formatted as bulleted lists in the .mobi and you will have to reconvert using the mobi-bound epub. 
+1. Open Calibre and drag and drop the mobi-bound epub file into the app. 
+  * It should appear as item number 1 in the center console. 
+1. Right click on the volume title and click `Convert Books` -> `Convert Individually`.
+1. In the new dialog box that pops up, change `Output format` in the upper right-hand corner of the box from “EPUB” to “MOBI”. Click `OK`. 
+1. When Calibre has finished the conversion, you will find the .mobi in Calibre Library in a subfolder that has the volume’s full name. Rename the .mobi according to our file naming protocol and open it using Kindle for Mac. 
+1. Review the .mobi as you did the epub:
+  * Verify the file is properly formatted:
+    * Check the table of contents.
+    * Click the hyperlinks for random documents.
+    * Check headings
+    * Check lists
+    * Check tables
+    * etc.
+1. When you have completed the review of the .mobi file, upload it to S3 in the same directory as the .epub you uploaded above. 
+1. As with the .pdf, in order to ensure that a link to both eBooks appears on the volume landing page, you will need to update the volume’s cache. See step 5.  
 
 ## 5. Update Volume Cache
 
