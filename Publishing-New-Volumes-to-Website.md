@@ -119,14 +119,15 @@ Once you have the final XML for the volume and have reviewed it thoroughly, you 
   - Set the radio button to generate `Both` epub and mobi-bound epubs.
   - Click `Generate eBooks`. 
 5. In your Downloads folder, you will see a folder entitled “frus-ebooks-[date]” with subfolders “epub” “mobi” and “mobi-bound”. 
-  - When you see that the eBook batch conversion has successfully completed at the bottom of the eBook Batch Helper, open the “epub” subfolder in your Downloads folder. 
-6. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in iBooks.
+  - If you see at the bottom of the eBook Batch Helper that the eBook batch conversion has successfully completed, open the “epub” subfolder in your Downloads folder. 
+6. In the folder, you should see a .epub file named with the volume’s frus-id. Open this file and review it in **iBooks.
   - Verify the file is properly formatted:
-    * Check the table of contents.
-    * Click the hyperlinks for random documents.
+    * Check the table of contents
+    * Click the hyperlinks for random documents
     * Check headings
     * Check lists
     * Check tables
+    * Check any images
     * etc.
 7. If the .epud file is appropriately formatted, upload this file to:
   - the volume’s folder in S3, and 
@@ -146,6 +147,7 @@ Once you have the final XML for the volume and have reviewed it thoroughly, you 
     * Check headings
     * Check lists
     * Check tables
+    * Check any images
     * etc.
 14. When you have completed the review of the .mobi file, upload it to S3 in the same directory as the .epub you uploaded above. 
 
