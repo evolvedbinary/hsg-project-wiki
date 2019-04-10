@@ -6,7 +6,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
-    - 30 GB of available storage space (an SSD, or SSD/HD hybrid "Fusion" drive, is recommended for best performance).
+    - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
 - An up-to-date copy macOS (up to date). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join
@@ -18,9 +18,10 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Updating from an old setup? 
 
-- Instructions last updated September 25, 2018.
+- Instructions last updated April 10, 2019.
 - **Note:** These instructions have been tested, but please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
-- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
+- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave version 10.14.x", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
+- (Note: If macOS **10.15** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.)
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - After installing macOS Mojave and all system updates, you will need to install the current version of the Apple Developer Command Line Tools so that Homebrew and our oXygen scripts work. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
 
