@@ -262,7 +262,7 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
 
     - Name: `1861.history.state.gov`
     - `Protocol:` `WebDAV HTTPS`
-    - `Server:` `1861.history.state.gov`
+    - `Address:` `1861.history.state.gov`
     - `User Name` and `Password`: You will be provided with this information during your training
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`
@@ -275,7 +275,8 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
 
     - Name: `localhost hsg`
     - `Protocol:` `WebDAV`
-    - `Server:` `localhost`
+    - `Address:` `localhost`
+    - `Port:` `8080`
     - `User Name` and `Password`: You will be provided with this information during your training
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`
