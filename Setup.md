@@ -38,9 +38,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
  
         brew list
 
-    You should see at least the following 4 entries: `ant git node node@6`. If you see `node@4` and not `node@6`, the following two commands will upgrade node@4 to node@6:
+    You should see at least the following 4 entries: `ant git node node@8`. If you see `node@6` and not `node@8`, the following two commands will upgrade node@6 to node@8:
 
-        brew uninstall node@4 && brew install node@6
+        brew uninstall node@6 && brew install node@8
 
     If any are of the other 3 entries (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
 
@@ -52,7 +52,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     Sometimes the problems reported by `brew doctor` are inscrutable. Contact Joe if you are unable to decipher these.
 
-- If you just upgraded from node@4 to node@6 in the step above, enter the following three commands to update node-related dependencies.
+- If you just upgraded from node@6 to node@8 in the step above, enter the following three commands to update node-related dependencies.
 
         npm install -g gulp bower
 
@@ -119,7 +119,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask install java11 github oxygen-xml-editor exist-db
 
-        brew install ant git node node@6
+        brew install ant git node node@8
 
         npm install -g gulp bower
 
