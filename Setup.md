@@ -18,11 +18,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Updating from an old setup? 
 
-[Instructions last updated April 10, 2019]
+[Instructions last updated July 17, 2019]
 
-- **Note:** These instructions have been tested, but please contact Joe if you encounter any unexpected results as you follow these directions for updating your system.
+- **Note:** These instructions are being updated and are not expected to work. Please stick with your previous setup if possible and wait for the testing to be completed before proceeding.
 - From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave version 10.14.x", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
-- **Warning:** If macOS **10.15** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.
+- **Warning:** If macOS **Catalina (10.15)** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
 - After installing macOS Mojave (10.14) and all system updates, you will need to install the current version of the Apple Developer Command Line Tools so that Homebrew and our oXygen scripts work. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
 
@@ -64,13 +64,16 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
  
         brew cask list
 
-    You should see at least the following 4 entries: java, github, exist-db, and oxygen-xml-editor. If you see `java8`, `java`, or `github-desktop`, uninstall them with this command:
+    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java`, `java8`, `java11`, or `github-desktop`, select the appropriate command from the following list to uninstall the old software:
 
-        brew cask uninstall java8 java github-desktop
+        brew cask uninstall java
+        brew cask uninstall java8
+        brew cask uninstall java11
+        brew cask uninstall github-desktop
 
-- These steps will update you to the current versions of our main software packages: eXist 4.6.1, GitHub Desktop 1.6.5, oXygen 21.0, and Java 11:
+- The next command will update you to the current versions of our main software packages: eXist 4.7.0, GitHub Desktop 2.1.0, oXygen 21.1, and Java 8 (specifically, the Zulu distribution of OpenJDK 8):
 
-        brew cask reinstall java11 exist-db github oxygen-xml-editor
+        brew cask reinstall zulu8 exist-db github oxygen-xml-editor
 
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
@@ -117,9 +120,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew tap caskroom/versions
 
-        brew cask install java11 github oxygen-xml-editor exist-db
+        brew cask install zulu8 github oxygen-xml-editor exist-db
 
-        brew install ant git node node@6
+        brew install ant git node node@10
 
         npm install -g gulp bower
 
