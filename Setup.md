@@ -71,7 +71,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
         brew cask uninstall java11
         brew cask uninstall github-desktop
 
-- The next command will update you to the current versions of our main software packages: eXist 4.7.0, GitHub Desktop 2.1.0, oXygen 21.1, and Java 8 (specifically, the Zulu distribution of OpenJDK 8):
+- The next command will update you to the current versions of our main software packages: eXist 4.7.1, GitHub Desktop 2.1.0, oXygen 21.1, and Java 8 (specifically, the Zulu distribution of OpenJDK 8):
 
         brew cask reinstall zulu8 exist-db github oxygen-xml-editor
 
