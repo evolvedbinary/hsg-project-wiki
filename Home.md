@@ -23,3 +23,7 @@ Welcome to the hsg-project wiki!  This wiki will walk you through how to set up,
 * [Converting files to XML](converting-files-to-xml): How to convert Word, PDF, and other Office files to XML
 * [VSFS](vsfs): Getting VSFS students set up to contribute with GitHub
 * [Troubleshooting](troubleshooting): Quick fixes to common problems
+
+### Editing this wiki
+
+Have an idea for improving a page or spot a problem? Great! There is *plenty* of room for improving our directions, procedures, and FAQs. Once you've made your edits, just drop Joe a note with a link to the page. Everyone depends on these directions for their work, so he reviews all edits for things that may need additional testing. Unlike our regular repositories, edits to the wiki don't generate email notifications, so it's easy to miss these edits. Indeed, once a substantive change has been applied, we often circulate an email to let everyone know about the new procedure, improved directions, etc. Have questions about a particularly substantive edit you're thinking about? Just reach out to Joe.
