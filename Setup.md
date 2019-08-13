@@ -18,9 +18,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Updating from an old setup? 
 
-[Instructions last updated July 17, 2019]
+[Instructions last updated August 13, 2019]
 
-- **Note:** These instructions are being updated and are not expected to work. Please stick with your previous setup if possible and wait for the testing to be completed before proceeding.
+- **Note:** These instructions are being updated and are not expected to work. **Please stick with your previous setup** if possible and wait for the testing to be completed before proceeding.
 - From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave version 10.14.x", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
 - **Warning:** If macOS **Catalina (10.15)** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.
 - Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
@@ -40,11 +40,17 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     You should see at least the following 4 entries: `ant git node node@10`. If you see `node@6` and not `node@10`, the following two commands will upgrade node@6 to node@10:
 
-        brew uninstall node@6 && brew install node@10
+        brew uninstall node@6
+
+        brew install node@10
 
     If any are of the other 3 entries (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
 
-        brew install ant && brew install git && brew install node
+        brew install ant
+
+        brew install git
+
+        brew install node
 
 - Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -67,8 +73,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java`, `java8`, `java11`, or `github-desktop`, select the appropriate command from the following list to uninstall the old software:
 
         brew cask uninstall java
+
         brew cask uninstall java8
+
         brew cask uninstall java11
+
         brew cask uninstall github-desktop
 
 - The next command will update you to the current versions of our main software packages: eXist 4.7.1, GitHub Desktop 2.1.0, oXygen 21.1, and Java 8 (specifically, the Zulu distribution of OpenJDK 8):
