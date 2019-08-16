@@ -9,48 +9,52 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
 - An up-to-date copy macOS (10.14; see warning below about 10.15). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
 - A GitHub account
-    - If you don't have one, please create one at https://github.com/join
+    - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
     - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
 - Other required information that will be provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist)
-    - Credentials for hsg (needed when you begin publishing directly to hsg)
     - oXygen license key
+    - Credentials for hsg (needed when you begin publishing directly to hsg)
 
 ## Updating from an old setup? 
 
-[Instructions last updated August 13, 2019]
+[Instructions last updated August 16, 2019.]
 
-- **Note:** These instructions are being updated and are not expected to work. **Please stick with your previous setup** if possible and wait for the testing to be completed before proceeding.
-- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave version 10.14.x", skip ahead to the next step. Otherwise, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete.
-- **Warning:** If macOS **Catalina (10.15)** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.
-- Open the App Store (using Spotlight, search for `App Store`; or in Finder, select `Go` > `Applications`), select the Updates tab, and install all available updates. If the App Store prompts you to restart your system to complete installation of operating system updates, do so before proceeding.
-- After installing macOS Mojave (10.14) and all system updates, you will need to install the current version of the Apple Developer Command Line Tools so that Homebrew and our oXygen scripts work. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
+- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates, then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
+    - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
+    - **Warning:** If macOS **Catalina (10.15)** is available, please exercise caution when updating your computer to this version, since 10.15 drops support for 32-bit applications, including Kingston's IronKey software, which you may rely on in your duties. Please confirm with your trainer that all software you require is 64-bit capable before you update to macOS 10.15.
+- Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
+- After installing all system updates, you will need to install the current version of the Apple Developer Command Line Tools. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
 
         xcode-select --install
 
-    This will bring up a dialog with 3 buttons. Select "Install", and let the installation complete.
+    This will bring up a dialog with 3 buttons. Select "Install", and let the installation complete. Or, it might tell you that you already have these tools installed, in which case you should proceed.
 
 - You will need to update Homebrew. To do so, enter the following command: 
 
         brew update && brew upgrade
 
-- We also need to make sure you have all of the required dependencies installed. To show what you have already installed, paste in the following command:
+- We also need to make sure you have all of the HSG software dependencies installed. To show what you have already installed, paste in the following command:
  
         brew list
 
-    You should see at least the following 4 entries: `ant git node node@10`. If you see `node@6` and not `node@10`, the following two commands will upgrade node@6 to node@10:
+    You should see at least the following 4 entries: `ant git node node@10`. If you see `node@4`, `node@6`, and/or `node@8`, these are old versions, and we should uninstall these. Paste in the following commands to uninstall the old versions (4 through 8), as appropriate:
+
+        brew uninstall node@4
 
         brew uninstall node@6
 
-        brew install node@10
+        brew uninstall node@8
 
-    If any are of the other 3 entries (`ant git node`) are missing from the result of the `brew list` command above, install them with the following command:
+    If any of the other 4 required dependencies—`ant`, `git`, `node`, or `node@10`—are missing from the result of the `brew list` command above, install them with the following commands, as needed:
 
         brew install ant
 
         brew install git
 
         brew install node
+
+        brew install node@10
 
 - Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -66,13 +70,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         for folder in $(find * -maxdepth 0 -type d ); do rm -rf "$folder/node_modules"; done
 
-- We also need to make sure you have all of the required dependencies installed. To show what you have already installed, paste in the following command:
+- We also need to make sure you have the rest of the HSG software dependencies installed. To show what you have already installed, paste in the following command:
  
         brew cask list
 
-    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java`, `java8`, `java11`, or `github-desktop`, select the appropriate command from the following list to uninstall the old software:
-
-        brew cask uninstall java
+    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java8`, `java11`, or `github-desktop`, select the appropriate command from the following list to uninstall the old software:
 
         brew cask uninstall java8
 
@@ -80,10 +82,24 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask uninstall github-desktop
 
-- The next command will update you to the current versions of our main software packages: eXist 4.7.1, GitHub Desktop 2.1.0, oXygen 21.1, and Java 8 (specifically, the Zulu distribution of OpenJDK 8):
+- The next command will update you to the current versions of our main software packages: Java, eXist 4.7.1, GitHub Desktop 2.1.0, oXygen 21.1:
 
-        brew cask reinstall zulu8 exist-db github oxygen-xml-editor
+        brew cask reinstall java
 
+        brew cask reinstall exist-db 
+
+        brew cask reinstall github 
+
+        brew cask reinstall oxygen-xml-editor
+
+- We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
+  - Click on eXist's dock icon.
+  - A dialog box will open asking if you want to open eXist. Select "Open."
+  - eXist's dock icon will stop bouncing.
+  - Click on eXist's dock icon again.
+  - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
+  - The eXist splash screen will appear as eXist completes its startup routine.
+  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
   - Quit and restart oXygen.
@@ -129,13 +145,22 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew tap caskroom/versions
 
-        brew cask install zulu8 github oxygen-xml-editor exist-db
+        brew cask install java exist-db github oxygen-xml-editor
 
         brew install ant git node node@10
 
         npm install -g gulp bower
 
-    When prompted, enter the password for your user account. You will now find oXygen XML Editor and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the oXygen XML Editor and GitHub Desktop icons into your Dock so you can always get to them easily.
+    When prompted, enter the password for your user account. You will now find eXist-db, oXygen XML Editor, and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily.
+
+1. We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
+  - Click on eXist's dock icon.
+  - A dialog box will open asking if you want to open eXist. Select "Open."
+  - eXist's dock icon will stop bouncing.
+  - Click on eXist's dock icon again.
+  - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
+  - The eXist splash screen will appear as eXist completes its startup routine.
+  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
 
 1. Start oXygen and paste in the license key provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) when prompted.
 
@@ -146,8 +171,6 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 1. Find GitHub Desktop in your Applications folder. Drag its icon to the dock.
 
 1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`.
-
-1. Under the `GitHub Desktop` menu, select `Install Command Line Tool`.
 
 ## Getting hsg-project
 
@@ -167,11 +190,11 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Starting eXist
 
-1. Open the `Applications` folder (in Finder, select `Go > Applications`). Drag eXist onto your Dock. 
+1. Of eXist isn't already in your Dock, find it in your `Applications` folder (in Finder, select `Go > Applications`), and drag eXist onto your Dock. 
 
-1. Start eXist. The first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close. 
+1. Start eXist. The very first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close. 
 
-1. Start eXist. eXist will show a splash screen and install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
+1. Start eXist again. eXist will show a splash screen and, when the database is empty, install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
 ### Deploying all repositories to eXist
 
@@ -267,7 +290,7 @@ Note: These steps are optional and used for editing files already stored in the 
 
 ## Connecting to hsg with Transmit
 
-Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist).
+Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist). We use version 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/.
 
 1. Select `Favorites` > `Add to Favorites...`
 
