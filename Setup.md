@@ -154,13 +154,13 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     When prompted, enter the password for your user account. You will now find eXist-db, oXygen XML Editor, and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily.
 
 1. We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
-  - Click on eXist's dock icon.
-  - A dialog box will open asking if you want to open eXist. Select "Open."
-  - eXist's dock icon will stop bouncing.
-  - Click on eXist's dock icon again.
-  - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
-  - The eXist splash screen will appear as eXist completes its startup routine.
-  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
+    - Click on eXist's dock icon.
+    - A dialog box will open asking if you want to open eXist. Select "Open."
+    - eXist's dock icon will stop bouncing.
+    - Click on eXist's dock icon again.
+    - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
+    - The eXist splash screen will appear as eXist completes its startup routine.
+    - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
 
 1. Start oXygen and paste in the license key provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) when prompted.
 
@@ -190,11 +190,7 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Starting eXist
 
-1. Of eXist isn't already in your Dock, find it in your `Applications` folder (in Finder, select `Go > Applications`), and drag eXist onto your Dock. 
-
-1. Start eXist. The very first time you run eXist the installer will lead you through a setup screen. Accept all of the default values, and select `Save` and `Yes`. The installer will close. 
-
-1. Start eXist again. eXist will show a splash screen and, when the database is empty, install some default apps. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
+1. Start eXist via its application icon in your Dock. During startup eXist will show a splash screen. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
 ### Deploying all repositories to eXist
 
