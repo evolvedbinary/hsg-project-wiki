@@ -38,7 +38,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
  
         brew list
 
-    You should see at least the following 4 entries: `ant git node node@10`. If you see `node@4`, `node@6`, and/or `node@8`, these are old versions, and we should uninstall these. Paste in the following commands to uninstall the old versions (4 through 8), as appropriate:
+    You should see at least the following 4 entries: `ant git node node@10`. If you see `node@4`, `node@6`, and/or `node@8`, these are old versions, and we should uninstall these. Paste in the following command(s) to uninstall the old versions (4 through 8), as appropriate:
 
         brew uninstall node@4
 
@@ -74,7 +74,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
  
         brew cask list
 
-    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java8`, `java11`, or `github-desktop`, select the appropriate command from the following list to uninstall the old software:
+    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java8`, `java11`, or `github-desktop`, paste in the corresponding command(s) to uninstall the old software, as appropriate:
 
         brew cask uninstall java8
 
@@ -82,7 +82,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask uninstall github-desktop
 
-- The next command will update you to the current versions of our main software packages: Java, eXist 4.7.1, GitHub Desktop 2.1.0, oXygen 21.1:
+- The next command will update you to the current versions of our main software packages: Java (OpenJDK 12.0.2), eXist 4.7.1, GitHub Desktop 2.1.1, and oXygen XML Editor 21.1:
 
         brew cask reinstall java
 
