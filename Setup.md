@@ -158,7 +158,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask install java exist-db github oxygen-xml-editor
 
-        brew install ant git node node@10
+        brew install ant git maven node node@10
 
         npm install -g gulp bower
 
@@ -171,7 +171,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     - Click on eXist's dock icon again.
     - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
     - The eXist splash screen will appear as eXist completes its startup routine.
-    - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
+    - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
 
 1. Start oXygen and paste in the license key provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) when prompted.
 
