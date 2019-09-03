@@ -98,7 +98,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask reinstall oxygen-xml-editor
 
-    If any of the commands return an error like "Error: It seems there is already an App at '/Applications/GitHub Desktop.app'", go to Finder > Go > Applications, locate the application, drag its icon to the Trash in the Dock, and perform the command one more time. 
+    > If the command for java returns an error like "Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module", then follow [these directions for completely removing old versions of Java](removing-all-versions-of-java), and return here when you are done.
+    >
+    > If any of the other commands return an error like "Error: It seems there is already an App at '/Applications/GitHub Desktop.app'", go to Finder > Go > Applications, locate the application, drag its icon to the Trash in the Dock, and perform the command one more time. 
 
 - Next, open oXygen.
   - From the External Tools toolbar menu (i.e., the green triangle icon), select "Pull updates from all repositories". 
@@ -114,11 +116,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
   - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
 - Return to oXygen.
   - From the External Tools toolbar menu, under `= Setup and maintenance =`, select
-    - `1. Clone all repositories`
+    - `1. Clone all repositories & resources`
     - `2. Apply Mac settings to hsg-project`
     - `3. Apply hsg-project settings to eXist`
 - If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
-- **Note:** Until hsg is updated to eXist 5, you can only use Transmit to publish to the website instead of oXygen's "Upload current file to history.state.gov" command (the command will return an error). See "Connecting to hsg with Transmit" below.
+- **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's "Upload current file to history.state.gov" command will not work. See "Connecting to hsg with Transmit" below.
 
 ## Installing dependencies
 
@@ -187,7 +189,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. Inside the `hsg-project` folder, double-click on the `hsg-project.xpr` file. This opens oXygen and opens the `Project` pane with a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
 
-1. In oXygen's menu bar, you will see a button with a green triangle icon, the "Tools" icon, and at its right is a small black triangle icon. Select the black triangle icon to display a list of common commands for working with the hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
+1. In oXygen's menu bar, you will see a button with a green triangle icon, the "Tools" icon, and at its right is a small black triangle icon. Select the black triangle icon to display a list of common commands for working with the hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories & resources`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories & resources` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
 
 1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
 
