@@ -23,6 +23,7 @@ Welcome to the hsg-project wiki!  This wiki will walk you through how to set up,
 * [Converting files to XML](converting-files-to-xml): How to convert Word, PDF, and other Office files to XML
 * [VSFS](vsfs): Getting VSFS students set up to contribute with GitHub
 * [Troubleshooting](troubleshooting): Quick fixes to common problems
+* [Removing All Versions of Java](removing-all-versions-of-java): Only do this if you really hit a snag when trying to upgrade Java
 
 ### Editing this wiki
 
