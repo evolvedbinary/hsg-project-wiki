@@ -111,7 +111,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
   - Click on eXist's dock icon again.
   - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
   - The eXist splash screen will appear as eXist completes its startup routine.
-  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
+  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
 - Return to oXygen.
   - From the External Tools toolbar menu, under `= Setup and maintenance =`, select
     - `1. Clone all repositories`
