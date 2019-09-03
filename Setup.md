@@ -98,29 +98,29 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask reinstall oxygen-xml-editor
 
-    > If the command for java returns an error like "Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module", then follow [these directions for completely removing old versions of Java](removing-all-versions-of-java), and return here when you are done.
+    > If the command for java returns an error like `Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module`, then follow [these directions for completely removing old versions of Java](removing-all-versions-of-java), and return here when you are done.
     >
-    > If any of the other commands return an error like "Error: It seems there is already an App at '/Applications/GitHub Desktop.app'", go to Finder > Go > Applications, locate the application, drag its icon to the Trash in the Dock, and perform the command one more time. 
+    > If any of the other commands return an error like `Error: It seems there is already an App at '/Applications/GitHub Desktop.app'`, go to the Finder, select `Go` > `Applications`, locate the application in question, drag its icon to the Trash icon in the Dock, and perform the Terminal command one more time. 
 
 - Next, open oXygen.
-  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Pull updates from all repositories". 
+  - From the External Tools toolbar menu (i.e., the green triangle icon), select `Pull updates from all repositories`. 
   - Then, from the External Tools toolbar menu, run the `Wipe eXist Data` command (confirm "yes" when asked)
 
 - Next, we need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
   - Click on eXist's dock icon.
-  - A dialog box will open asking if you want to open eXist. Select "Open."
+  - A dialog box will open asking if you want to open eXist. Select `Open`.
   - eXist's dock icon will stop bouncing.
   - Click on eXist's dock icon again.
-  - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
+  - A dialog box will open showing eXist's configuration properties. Select `Save`. When prompted to create the data directory or confirm the location of the data directory, select `OK`.
   - The eXist splash screen will appear as eXist completes its startup routine.
-  - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
+  - Once the eXist splash screen disappears, click the eXist menu bar icon and select `Quit`.
 - Return to oXygen.
   - From the External Tools toolbar menu, under `= Setup and maintenance =`, select
     - `1. Clone all repositories & resources`
     - `2. Apply Mac settings to hsg-project`
     - `3. Apply hsg-project settings to eXist`
 - If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
-- **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's "Upload current file to history.state.gov" command will not work. See "Connecting to hsg with Transmit" below.
+- **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's `Upload current file to history.state.gov` command will not work. See [Connecting to hsg with Transmit](#connecting-to-hsg-with-transmit) below.
 
 ## Installing dependencies
 
