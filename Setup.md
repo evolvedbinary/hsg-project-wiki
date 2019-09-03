@@ -78,7 +78,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
  
         brew cask list
 
-    You should see at least the following 4 entries: github, exist-db, and oxygen-xml-editor. However, if you see `java8`, `java11`, or `github-desktop`, paste in the corresponding command(s) to uninstall the old software, as appropriate:
+    You will probably see the following 4 entries: exist-db, github, java, and oxygen-xml-editor. However, if you see `java8`, `java11`, or `github-desktop`, paste in the corresponding command(s) to uninstall the old software, as appropriate:
 
         brew cask uninstall java8
 
@@ -98,8 +98,10 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask reinstall oxygen-xml-editor
 
+    If any of the commands return an error like "Error: It seems there is already an App at '/Applications/GitHub Desktop.app'", go to Finder > Go > Applications, locate the application, drag its icon to the Trash in the Dock, and perform the command one more time. 
+
 - Next, open oXygen.
-  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
+  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Pull updates from all repositories". 
   - Then, from the External Tools toolbar menu, run the `Wipe eXist Data` command (confirm "yes" when asked)
 
 - Next, we need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
@@ -227,7 +229,7 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. 
 
-1. You will see a button in the toolbar, called `Fetch origin`. Click on this to make sure you have the latest version of everyone else's work from this repository.
+1. You will see a button in the toolbar, called `Fetch origin` (sometimes `Pull origin`). Click on this to make sure you have the latest version of everyone else's work from this repository.
 
 1. In the left-hand pane, you will see a tab, called `Changes`, with a list of files you have modified. Confirm which files you want to commit by selecting (or unselecting) the checkboxes next to each file. Clicking on any file bring up a summary of the changes you made to the file (known as a "diff").
 
@@ -249,7 +251,7 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 To ensure your local copy of files is up to date with everyone's work, follow these steps:
 
-1. In oXygen, under the Tools dropdown menu, select `Fetch updates for all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Fetch updates for current repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
+1. In oXygen, under the Tools dropdown menu, select `Pull updates from all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Pull updates from current repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
 
 1. To update your copy of the website running in eXist, select `Deploy all repositories to localhost`. Or, if you only want to update a single repository, open a file from that repository in oXygen and select `Deploy current repository to localhost`. When you see `BUILD SUCCESSFUL`, close the tab.
 
