@@ -18,7 +18,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Updating from an old setup? 
 
-[Instructions last updated August 16, 2019.]
+[Instructions last updated September 3, 2019.]
 
 - From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates, then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
     - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
@@ -28,9 +28,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         xcode-select --install
 
-    This will bring up a dialog with 3 buttons. Select "Install", and let the installation complete. Or, it might tell you that you already have these tools installed, in which case you should proceed.
+    If this command returns a message that says, "error: command line tools already installed", then you can skip to the next step. Otherwise, you will see a dialog window with 3 buttons. Select "Install", and let the installation complete. Or, it might tell you that you already have these tools installed, in which case you should proceed.
 
-- You will need to update Homebrew. To do so, enter the following command: 
+- We need to update Homebrew. To do so, enter the following command: 
 
         brew update && brew upgrade
 
@@ -55,6 +55,10 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
         brew install node
 
         brew install node@10
+
+    We will now install one new dependency, `maven`:
+
+        brew install maven
 
 - Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -82,7 +86,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask uninstall github-desktop
 
-- The next command will update you to the current versions of our main software packages: Java (OpenJDK 12.0.2), eXist 4.7.1, GitHub Desktop 2.1.1, and oXygen XML Editor 21.1:
+- If eXist, GitHub Desktop, or oXygen are open, quit these applications.
+
+- The next commands will update you to the current versions of our main software packages: Java (OpenJDK 12.0.2), eXist 5.0.0, GitHub Desktop 2.1.3, and oXygen XML Editor 21.1:
 
         brew cask reinstall java
 
@@ -92,7 +98,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         brew cask reinstall oxygen-xml-editor
 
-- We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
+- Next, open oXygen.
+  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
+  - Then, from the External Tools toolbar menu, run the `Wipe eXist Data` command (confirm "yes" when asked)
+
+- Next, we need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
   - Click on eXist's dock icon.
   - A dialog box will open asking if you want to open eXist. Select "Open."
   - eXist's dock icon will stop bouncing.
@@ -100,16 +110,13 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
   - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
   - The eXist splash screen will appear as eXist completes its startup routine.
   - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit", and right click on eXist's dock icon and select "Quit".
-- Next, open oXygen.
-  - From the External Tools toolbar menu (i.e., the green triangle icon), select "Fetch updates for all repositories". 
-  - Quit and restart oXygen.
-  - Then, from the External Tools toolbar menu, run these commands:
-    - `Wipe eXist Data` (confirm "yes" when asked)
-    - Under `= Setup and maintenance =`: 
-      - `1. Clone all repositories`
-      - `2. Apply Mac settings to hsg-project`
-      - `3. Apply hsg-project settings to eXist`
+- Return to oXygen.
+  - From the External Tools toolbar menu, under `= Setup and maintenance =`, select
+    - `1. Clone all repositories`
+    - `2. Apply Mac settings to hsg-project`
+    - `3. Apply hsg-project settings to eXist`
 - If you use eXist to preview website content, then proceed to [Starting eXist](#starting-exist) and then perform the steps under [Deploying all repositories to eXist](#deploying-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
+- **Note:** Until hsg is updated to eXist 5, you can only use Transmit to publish to the website instead of oXygen's "Upload current file to history.state.gov" command (the command will return an error). See "Connecting to hsg with Transmit" below.
 
 ## Installing dependencies
 
@@ -129,7 +136,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install Xcode or accept the Xcode license (in which case you should do as directed, and once done, re-enter the command to install homebrew).  
+    Follow any instructions that Homebrew presents you with. For example, it may prompt you to install Xcode or accept the Xcode license (in which case you should do as directed, and once done, re-enter the command to install Homebrew).  
 
 1. To confirm Homebrew installed correctly, enter this command:
 
