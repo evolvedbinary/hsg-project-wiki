@@ -103,7 +103,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     > If any of the other commands return an error like `Error: It seems there is already an App at '/Applications/GitHub Desktop.app'`, go to the Finder, select `Go` > `Applications`, locate the application in question, drag its icon to the Trash icon in the Dock, and perform the Terminal command one more time. 
 
 - Next, open oXygen.
-  - From the External Tools toolbar menu (i.e., the green triangle icon), select `Fetch updates for all repositories`. 
+  - From the External Tools toolbar menu (i.e., the green triangle icon), select `Pull updates from all repositories`. 
   - Quit and restart oXygen.
   - Then, from the External Tools toolbar menu, run the `Wipe eXist Data` command (confirm "yes" when asked)
 
