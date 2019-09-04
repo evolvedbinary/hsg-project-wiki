@@ -22,8 +22,7 @@ Welcome to the hsg-project wiki!  This wiki will walk you through how to set up,
 * [Homebrew](homebrew): Information on our use of Homebrew and apps available via Homebrew
 * [Converting files to XML](converting-files-to-xml): How to convert Word, PDF, and other Office files to XML
 * [VSFS](vsfs): Getting VSFS students set up to contribute with GitHub
-* [Troubleshooting](troubleshooting): Quick fixes to common problems
-* [Removing All Versions of Java](removing-all-versions-of-java): Only do this if you really hit a snag when trying to upgrade Java
+* [Troubleshooting](troubleshooting): Fixes to common problems
 
 ### Editing this wiki
 
