@@ -8,7 +8,7 @@ Make sure you are always working with the latest version of every file in your s
 
 ### Getting the latest files
 
-1. In oXygen's External Tools dropdown menu (also available from the `Tools` menu > `External Tools`), select `Fetch updates for all repositories`.
+1. In oXygen's External Tools dropdown menu (also available from the `Tools` menu > `External Tools`), select `Pull updates for all repositories`.
 1. Your hsg-project folder and all of the repositories cloned into its `repos` subdirectory is now up to date. 
 
 ### Uploading the latest files into your eXist-db
