@@ -1,4 +1,4 @@
-# Setting up a history.state.gov Development Environment
+# Set up a history.state.gov Development Environment
 
 > Last updated on September 3, 2019 for eXist 5.0.0.
 
@@ -9,14 +9,12 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
     - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- An up-to-date copy macOS (10.14; see warning below about 10.15). The Mac operating system is not strictly necessary; on Windows, Linux, or other operating systems, you should be able to find alternative methods of installing the required software, but you're on your own.
+- An up-to-date Mac. While macOS is not strictly necessary (alternative methods of installing the required software should be available on Windows or Linux), we provide our own support, so you'll be on your own with a different operating system.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
-    - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub, also needed for the steps below.
-- Other required information that will be provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist)
-    - oXygen license key
-    - Credentials for hsg (needed when you begin publishing directly to hsg)
+    - Let your trainer know your GitHub account name so we can add you to the HistoryAtState organization on GitHub.
+- Other required information that will be provided to you during your training (see the [training checklist](training-checklist))
 
 ## Install system updates
 
@@ -25,9 +23,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
 - Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
 
-## Install software
+## Prepare your workspace
 
-1. Open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time, hitting return after each:
+1. Open Terminal (using the Spotlight (🔍) icon in the menu bar, search for `Terminal`; or in Finder, select `Go` > `Utilities`). Paste the following commands into your Terminal window, one at a time, hitting return after each:
 
         mkdir ~/workspace
 
@@ -39,13 +37,15 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     ![Video showing how to drag folder onto sidebar](https://github.com/HistoryAtState/hsg-project/wiki/images/drag-folder-onto-sidebar.gif)
     
-1. Install [Homebrew](http://brew.sh) by copying and pasting this entire command into your Terminal window and hitting return:
+## Install Homebrew
+
+1. Install [Homebrew](https://brew.sh) by copying and pasting this entire command into your Terminal window and hitting return:
 
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     Follow any instructions that Homebrew presents you with. For example, it may prompt you to install Xcode or accept the Xcode license (in which case you should do as directed, and once done, re-enter the command to install Homebrew).  
 
-1. To confirm Homebrew installed correctly, enter this command:
+1. To confirm that Homebrew installed correctly, enter this command:
 
         brew doctor
 
@@ -54,6 +54,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     > Your system is ready to brew.
 
     If, instead, Homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
+
+## Install HSG software dependencies and applications
 
 1. Having installed Homebrew, enter these commands to install Java JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
 
@@ -67,6 +69,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     When prompted, enter the password for your user account. You will now find eXist-db, oXygen XML Editor, and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily.
 
+## Prepare oXygen and eXist
+
 1. We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
     - Click on eXist's dock icon.
     - A dialog box will open asking if you want to open eXist. Select "Open."
@@ -76,17 +80,17 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
     - The eXist splash screen will appear as eXist completes its startup routine.
     - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
 
-1. Start oXygen and paste in the license key provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) when prompted.
+1. Start oXygen and paste in the license key provided to you [during your training](training-checklist) when prompted.
 
 1. Quit oXygen for now.
 
-## Setting up GitHub Desktop
+## Set up GitHub Desktop
 
 1. Find GitHub Desktop in your Applications folder. Drag its icon to the dock.
 
 1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`.
 
-## Getting hsg-project
+## Get hsg-project
 
 1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, click on the `File` menu and select `Clone Repository`. Under GitHub.com, you will see an entry called `HistoryAtState/hsg-project`. Select this, and then select `Clone hsg-project`. In the `Local Path` field, click on `Choose`, navigate to your `workspace` folder we created in step 1, select `Open`, and finally select `Clone`.
 
@@ -98,15 +102,15 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 1. Next, continue with the `Setup & maintenance` entries in the External Tools menu, selecting `2. Apply Mac settings to hsg-project` and `3. Apply hsg-project settings to eXist`. (Do not proceed to #4 yet.)
 
-## Previewing files on your computer
+## Preview files on your computer
 
 Before publishing files to the public website, you may wish to preview them on your local system. This helps ensure that your edits have the desired effect and reduces the likelihood of unforeseen problems when publishing the files.
 
-### Starting eXist
+### Start eXist
 
 1. Start eXist via its application icon in your Dock. During startup eXist will show a splash screen. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
-### Deploying all repositories to eXist
+### Deploy all repositories to eXist
 
 1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `4. Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
 
@@ -114,7 +118,7 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Test a simple edit
 
-1. Drill down through the folder structure of the repositories to `repos/rdcr/articles/afghanistan.xml`. This is a TEI XML file that can be viewed at <http://localhost:8080/exist/apps/hsg-shell/countries/afghanistan> (see <http://history.state.gov/countries/afghanistan> for the public website).
+1. Drill down through the folder structure of the repositories to `repos/rdcr/articles/afghanistan.xml`. This is a TEI XML file that can be viewed at <http://localhost:8080/exist/apps/hsg-shell/countries/afghanistan> (see <https://history.state.gov/countries/afghanistan> for the public website).
 
 1. Make a simple change, e.g., change the word "Summary" to "Introduction" in the first `<head>` element. Select the `File` menu > `Save` to save your changes to the file. 
 
@@ -122,7 +126,7 @@ Before publishing files to the public website, you may wish to preview them on y
 
 1. In your browser, (re-)load <http://localhost:8080/exist/apps/hsg-shell/countries/afghanistan>, and you will see your change. Return to oXygen, undo your change (`Edit` > `Undo`), save the file, and select `Upload current file to localhost` again.
 
-## Publishing your work
+## Publish your work
 
 When you have work that you would like to publish, the following steps will ensure that your work is backed up in our version control repository and published to the live site:
 
@@ -150,9 +154,9 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
 
-    Before you publish the first time, you must first enter the password provided to you [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist) for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
+    Before you publish the first time, you must first enter the password provided to you [during your training](training-checklist) for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
 
-## Keeping up with everyone's latest work
+## Keep up with everyone's latest work
 
 To ensure your local copy of files is up to date with everyone's work, follow these steps:
 
@@ -179,7 +183,7 @@ A more detailed set of instructions with suggestions for daily and weekly tasks 
 
 1. Select `OK`
 
-## Browsing history.state.gov's eXist in oXygen's Data Source Explorer
+## Browse history.state.gov's eXist in oXygen's Data Source Explorer
 
 Note: These steps are optional and used for editing files already stored in the database on history.state.gov. The previous section provides a convenient method of uploading individual files to eXist.
 
@@ -192,15 +196,15 @@ Note: These steps are optional and used for editing files already stored in the 
     - `Name:` `1861.history.state.gov`
     - `Data Source:` `WebDAV (S)FTP`
     - `WebDAV/FTP URL:` `https://1861.history.state.gov/exist/webdav/db`
-    - `User` and `Password`: You will be provided with this information [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist)
+    - `User` and `Password`: You will be provided with this information [during your training](training-checklist)
 
 1. Select `OK`
 
 1. Add another connection using the same steps for `1991.history.state.gov`
 
-## Connecting to hsg with Transmit
+## Connect to hsg with Transmit
 
-Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](https://github.com/HistoryAtState/hsg-project/wiki/training-checklist). We use version 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/.
+Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](training-checklist). We use version 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/.
 
 1. Select `Favorites` > `Add to Favorites...`
 
