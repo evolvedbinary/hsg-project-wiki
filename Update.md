@@ -2,22 +2,22 @@
 
 > Last updated on September 3, 2019 for eXist 5.0.0.
 
-These directions help you update your history.state.gov Development Environment so that it contains the latest operating system, software dependencies, core applications, and configurations.
+These directions assume you have a [fully configured](setup) history.state.gov Development Environment and that you need to update your system so that it contains the latest operating system, software dependencies, core applications, and configurations.
 
 ## Install system updates
 
-- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
+1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
     - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
     - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
-- Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
+1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
 
 ## Update the Apple Developer Command Line Tools
 
-- After installing all system updates, you will need to install the current version of the Apple Developer Command Line Tools. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
+1. After installing all system updates, you will need to install the current version of the Apple Developer Command Line Tools. To do so, open Terminal (using Spotlight, search for `Terminal`; or in Finder, select `Go` > `Utilities`), and paste in the following command:
 
         xcode-select --install
 
-    If this command returns a message that says, "error: command line tools already installed", then you can skip to the next step. Otherwise, you will see a dialog window with 3 buttons. Select "Install", and let the installation complete. Or, it might tell you that you already have these tools installed, in which case you should proceed.
+1. If this command returns a message that says, "error: command line tools already installed", then you can skip to the next step. Otherwise, you will see a dialog window with 3 buttons. Select "Install", and let the installation complete. Or, it might tell you that you already have these tools installed, in which case you should proceed.
 
 ## Update Homebrew
 
