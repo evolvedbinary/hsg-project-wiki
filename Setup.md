@@ -1,6 +1,6 @@
 # Set up a history.state.gov Development Environment
 
-> Last updated on September 3, 2019 for eXist 5.0.0.
+> Last updated on September 3, 2019 for eXist 5.0.0. (**Note:** The directions for updating older setups have moved [here](update).)
 
 The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software. These directions lead you through installing this software, checking out GitHub repositories, and setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
