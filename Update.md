@@ -93,7 +93,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
         brew cask reinstall oxygen-xml-editor
 
-    > If the command for java returns an error like `Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module`, then follow the [directions for completely removing old versions of Java](Troubleshooting#removing-all-versions-of-java), and return here when you are done.
+    > If the command for java returns an error like `Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module`, then follow the [directions for completely removing old versions of Java](troubleshooting#removing-all-versions-of-java), and return here when you are done.
     >
     > If any of the other commands return an error like `Error: It seems there is already an App at '/Applications/GitHub Desktop.app'`, go to the Finder, select `Go` > `Applications`, locate the application in question, drag its icon to the Trash icon in the Dock, and perform the Terminal command one more time. 
 
