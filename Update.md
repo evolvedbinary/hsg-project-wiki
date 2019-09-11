@@ -93,7 +93,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
         brew cask reinstall oxygen-xml-editor
 
-    > If the command for java returns an error like `Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module`, then follow the [directions for completely removing old versions of Java](troubleshooting#removing-all-versions-of-java), and return here when you are done.
+    > If the command for java returns an error like `Error: Cask 'java' is unreadable: undefined method `release' for OS::Mac:Module`, then follow the [directions for completely removing old versions of Java](troubleshooting#remove-all-versions-of-java), and return here when you are done.
     >
     > If any of the other commands return an error like `Error: It seems there is already an App at '/Applications/GitHub Desktop.app'`, go to the Finder, select `Go` > `Applications`, locate the application in question, drag its icon to the Trash icon in the Dock, and perform the Terminal command one more time. 
 
@@ -119,6 +119,6 @@ These directions assume you have a [fully configured](setup) history.state.gov D
         - `2. Apply Mac settings to hsg-project`
         - `3. Apply hsg-project settings to eXist`
 
-1. If you use eXist to preview website content, then proceed to [Starting eXist](setup#starting-exist) and then perform the steps under [Deploying all repositories to eXist](setup#deploying-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
+1. If you use eXist to preview website content, then proceed to [Start eXist](setup#start-exist) and then perform the steps under [Deploy all repositories to eXist](setup#deploy-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
 
-> **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's `Upload current file to history.state.gov` command will not work. See [Connecting to hsg with Transmit](setup#connecting-to-hsg-with-transmit).
+> **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's `Upload current file to history.state.gov` command will not work. See [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit).
