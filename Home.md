@@ -3,7 +3,7 @@ Welcome to the hsg-project wiki!  This wiki will walk you through how to set up,
 ### Getting started
 
 1. [Setting up an HSG Development Environment](setup) on your computer (see also the [Training checklist](training-checklist))
-1. [Updating an HSG Development Environment](update) on your computer
+1. [Updating the HSG Development Environment](update) on your computer
 
 ### Working with HSG Publications and Datasets
 
