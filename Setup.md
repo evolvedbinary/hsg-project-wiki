@@ -69,7 +69,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     When prompted, enter the password for your user account. 
 
-1. eXist-db, oXygen XML Editor, and GitHub Desktop are now installed! To find them, go to the finder Finder, and select `Go > Applications`. 
+1. eXist-db, oXygen XML Editor, and GitHub Desktop are now installed! To find them, go to Finder, and select `Go > Applications`. 
 
 1. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily. (oXygen's is inside a folder of the same name.)
 
