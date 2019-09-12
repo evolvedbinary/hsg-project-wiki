@@ -10,6 +10,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
     - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
     - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
 1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
+    - _Note_: If you receive an update alert for Transmit, you will need to delete the local version you have installed and follow these steps instead: https://github.com/HistoryAtState/hsg-project/wiki/setup#connect-to-hsg-with-transmit
 
 ## Update the Apple Developer Command Line Tools
 
