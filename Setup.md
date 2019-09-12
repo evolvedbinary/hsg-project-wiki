@@ -230,3 +230,7 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
     - `User Name` and `Password`: You will be provided with this information during your training
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`
+
+### Updating From An Old Setup
+
+Looking for the directions for updating from an old setup? These directions have moved to their own page: [Update your history.state.gov Development Environment](update).
