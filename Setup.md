@@ -9,7 +9,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
     - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- An up-to-date Mac. While macOS is not strictly necessary (alternative methods of installing the required software should be available on Windows or Linux), we provide our own support, so you'll be on your own with a different operating system.
+- An up-to-date Mac, running macOS 10.13 or 10.14. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
@@ -18,8 +18,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Install system updates
 
-- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
-    - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
+- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button, and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
+    - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave (10.14).
     - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
 - Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
 
@@ -67,7 +67,11 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         npm install -g gulp bower
 
-    When prompted, enter the password for your user account. You will now find eXist-db, oXygen XML Editor, and GitHub Desktop in the `Applications` folder of your home directory (e.g., `/Users/Joe/Applications`, not in the top level `/Applications` directory). To find the application in Finder, select `Go > Home > Applications`. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily.
+    When prompted, enter the password for your user account. 
+
+1. eXist-db, oXygen XML Editor, and GitHub Desktop are now installed! To find them, go to the finder Finder, and select `Go > Applications`. 
+
+1. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily. (oXygen's is inside a folder of the same name.)
 
 ## Prepare oXygen and eXist
 
@@ -94,9 +98,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, click on the `File` menu and select `Clone Repository`. Under GitHub.com, you will see an entry called `HistoryAtState/hsg-project`. Select this, and then select `Clone hsg-project`. In the `Local Path` field, click on `Choose`, navigate to your `workspace` folder we created in step 1, select `Open`, and finally select `Clone`.
 
-1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. Inside the `hsg-project` folder, double-click on the `hsg-project.xpr` file. This opens oXygen and opens the `Project` pane with a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
+1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. Inside the `hsg-project` folder, double-click on the `hsg-project.xpr` file. This will cause oXygen to open and activate the `Project` pane, showing a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
 
-1. In oXygen's menu bar, you will see a button with a green triangle icon, the "Tools" icon, and at its right is a small black triangle icon. Select the black triangle icon to display a list of common commands for working with the hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories & resources`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories & resources` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
+1. In oXygen's menu bar, you will see a button with a green, triangle-shaped icon, the "External Tools" icon, and at its right is a tiny, black, triangle-shaped icon (a "disclosure" icon, which indicates that clicking on it will display drop-down menu). Select this disclosure icon to display a drop-down list of common commands for working with hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories & resources`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories & resources` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
 
 1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
 
@@ -218,8 +222,6 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
     - `Local Path`: `~/workspace/hsg-project/repos`
 
 1. Select `Save`.
-
-1. Add another favorite using the same steps for `1991.history.state.gov`
 
 1. For localhost, use:
 
