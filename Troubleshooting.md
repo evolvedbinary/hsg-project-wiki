@@ -65,7 +65,7 @@ For good measure, reset Homebrew:
 brew update-reset && brew update
 ```
 
-Now you should be able to install Java without error! Return to your directions—presumably you were somewhere in the [Setup](Setup) steps.
+Now you should be able to install Java without error. Return to your directions—presumably you were somewhere in the [Setup](Setup) steps.
 
 For reference, see these links:
 
@@ -73,6 +73,6 @@ For reference, see these links:
 - https://www.java.com/en/download/help/deployment_cache.xml
 - https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#A1096903
 
-## Transmit is refusing to connect to localhost!
+## Transmit is refusing to connect to localhost
 
 You may need to downgrade to Transmit 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/. Also, confirm you've configured Transmit as described in [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit).
