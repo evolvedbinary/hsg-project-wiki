@@ -39,7 +39,7 @@ Git conflicts can be tricky to overcome, but take a screenshot and send it to yo
 
 If all else fails, try to save your work to another folder. Then delete the repository from your disk and re-run the "Clone all repositories" step in the HSG Setup directions. This will put a fresh clone of the GitHub repository onto your disk. Then you can try to fold your work back into the repository so you can commit it.
 
-## Remove All Versions of Java
+## Remove all versions of Java
 
 If Homebrew raises an error when you try to upgrade Java, chances are that you have an old version of Java installed by an old version of Homebrew, or you have an old version of Java installed by an old version of the Mac operating system—and Homebrew has no means to remove it. 
 
