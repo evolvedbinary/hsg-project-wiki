@@ -76,3 +76,20 @@ For reference, see these links:
 ## Transmit is refusing to connect to localhost
 
 You may need to downgrade to Transmit 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/. Also, confirm you've configured Transmit as described in [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit).
+
+## When I start oXygen under macOS 10.15, a warning dialog appears
+
+If you installed oXygen before October 17, 2019, you may see this warning when opening oXygen with macOS 10.15:
+
+> libjnidispatch.jnilib cannot be opened because the developer cannot be verified.
+
+On October 17, a new maintenance build of oXygen was released that fixes this issue. To install it, follow these steps:
+
+1. If oXygen is open, quit it.
+1. Open Terminal and paste in this command: 
+
+        brew cask reinstall oxygen-xml-editor
+
+1. Start oXygen. 
+
+No more warning dialog!
