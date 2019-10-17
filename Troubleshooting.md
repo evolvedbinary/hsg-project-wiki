@@ -83,7 +83,7 @@ If you installed oXygen before October 17, 2019, you may see this warning when o
 
 > libjnidispatch.jnilib cannot be opened because the developer cannot be verified.
 
-On October 17, a new maintenance build of oXygen was released that fixes this issue. To install it, follow these steps:
+On October 17, a new maintenance build of oXygen was released that [fixes this issue](https://www.oxygenxml.com/build_history.html#2019101513). To install the updated version of oXygen, follow these steps:
 
 1. If oXygen is open, quit it.
 1. Open Terminal and paste in this command: 
