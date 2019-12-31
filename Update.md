@@ -6,9 +6,9 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
 ## Install system updates
 
-1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
-    - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave.
-    - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
+1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Catalina Version 10.15.x", click on the "Software Update" button and install any available software updates. If you are running an earlier version of macOS, here is the link to the [macOS Catalina webpage](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12); go to this page and click on the "View in the Mac App Store" button to open Catalina in the App Store. Click on the Download button, and allow the installation to complete. 
+    - If your computer tells you that it cannot run macOS Catalina (10.14), worry not; all of our software is still compatible with systems as old as macOS High Sierra (10.13), but the directions below assume that you have Catalina.
+
 1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
     - _Note_: If you receive an update alert for Transmit, you will need to delete the local version you have installed and follow these steps instead: [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit)
 
@@ -121,5 +121,3 @@ These directions assume you have a [fully configured](setup) history.state.gov D
         - `3. Apply hsg-project settings to eXist`
 
 1. If you use eXist to preview website content, then proceed to [Start eXist](setup#start-exist) and then perform the steps under [Deploy all repositories to eXist](setup#deploy-all-repositories-to-exist). Otherwise, you're all set with the latest version of all of our software.
-
-> **Note:** Until hsg is updated to eXist 5, you must Transmit to publish to the website; oXygen's `Upload current file to history.state.gov` command will not work. See [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit).
