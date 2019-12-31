@@ -1,13 +1,13 @@
 # Update your history.state.gov Development Environment
 
-> Last updated on September 3, 2019 for eXist 5.0.0.
+> Last updated on December 31, 2019 for eXist 5.1.1.
 
 These directions assume you have a [fully configured](setup) history.state.gov Development Environment and that you need to update your system so that it contains the latest operating system, software dependencies, core applications, and configurations.
 
 ## Install system updates
 
 1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Catalina Version 10.15.x", click on the "Software Update" button and install any available software updates. If you are running an earlier version of macOS, here is the link to the [macOS Catalina webpage](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12); go to this page and click on the "View in the Mac App Store" button to open Catalina in the App Store. Click on the Download button, and allow the installation to complete. 
-    - If your computer tells you that it cannot run macOS Catalina (10.14), worry not; all of our software is still compatible with systems as old as macOS High Sierra (10.13), but the directions below assume that you have Catalina.
+    - If your computer tells you that it cannot run macOS Catalina (10.15), worry not; all of our software is still compatible with systems as old as macOS High Sierra (10.13), but the directions below assume that you have Catalina.
 
 1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
     - _Note_: If you receive an update alert for Transmit, you will need to delete the local version you have installed and follow these steps instead: [Connect to hsg with Transmit](setup#connect-to-hsg-with-transmit)
@@ -84,7 +84,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
 1. If eXist, GitHub Desktop, or oXygen are open, quit these applications.
 
-1. The next commands will update you to the current versions of our main software packages: Java (OpenJDK 12.0.2), eXist 5.0.0, GitHub Desktop 2.1.3, and oXygen XML Editor 21.1:
+1. The next commands will update you to the current versions of our main software packages: Java (OpenJDK 13.0.1), eXist 5.1.0, GitHub Desktop 2.2.4, and oXygen XML Editor 21.1:
 
         brew cask reinstall java
 
