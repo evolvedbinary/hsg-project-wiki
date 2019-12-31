@@ -208,7 +208,7 @@ Note: These steps are optional and used for editing files already stored in the 
 
 ## Connect to hsg with Transmit
 
-Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](training-checklist). We use version 5.2.3, since later versions have a bug that causes Transmit to fail when connecting to localhost; find version 5.2.3 at https://download.panic.com/transmit/.
+Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](training-checklist). 
 
 1. Select `Favorites` > `Add to Favorites...`
 
