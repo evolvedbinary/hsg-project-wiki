@@ -1,6 +1,6 @@
 # Set up a history.state.gov Development Environment
 
-> Last updated on September 3, 2019 for eXist 5.0.0. (**Note:** The directions for updating older setups have moved [here](update).)
+> Last updated on December 31, 2019 for eXist 5.1.0. (**Note:** The directions for updating older setups have moved [here](update).)
 
 The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software. These directions lead you through installing this software, checking out GitHub repositories, and setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
@@ -9,7 +9,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
     - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- An up-to-date Mac, running macOS 10.13 or 10.14. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
+- An up-to-date Mac, running macOS 10.13 or higher. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
@@ -18,9 +18,9 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Install system updates
 
-- From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Mojave Version 10.14.x", click on the "Software Update" button, and install any available software updates for 10.14.x (see warning about 10.15 below), then skip to the next step. If you are running an earlier version of macOS, here is the link to the [macOS Mojave webpage](https://itunes.apple.com/gb/app/macos-mojave/id1398502828?mt=12); go to this page and click on the "View in the Mac App Store" button to open Mojave in the App Store. Click on the Download button, and allow the installation to complete. 
-    - If your computer tells you that it cannot run macOS Mojave (10.14), worry not; all of our software is still compatible with macOS High Sierra (10.13), but the directions below assume that you have Mojave (10.14).
-    - **Warning:** If macOS **Catalina (10.15)** is available, please do not upgrade to it yet. We have not tested our software with 10.15. 
+1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Catalina Version 10.15.x", click on the "Software Update" button and install any available software updates. If you are running an earlier version of macOS, here is the link to the [macOS Catalina webpage](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12); go to this page and click on the "View in the Mac App Store" button to open Catalina in the App Store. Click on the Download button, and allow the installation to complete. 
+    - If your computer tells you that it cannot run macOS Catalina (10.15), worry not; all of our software is still compatible with systems as old as macOS High Sierra (10.13), but the directions below assume that you have Catalina.
+
 - Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
 
 ## Prepare your workspace
