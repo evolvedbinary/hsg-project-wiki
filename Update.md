@@ -84,7 +84,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
 1. If eXist, GitHub Desktop, or oXygen are open, quit these applications.
 
-1. The next commands will update you to the current versions of our main software packages: Java (OpenJDK 13.0.1), eXist 5.1.0, GitHub Desktop 2.2.4, and oXygen XML Editor 21.1:
+1. The next commands will update you to the current versions of our main software packages: Java (OpenJDK 13.0.1), eXist 5.1.1, GitHub Desktop 2.2.4, and oXygen XML Editor 21.1:
 
         brew cask reinstall java
 
