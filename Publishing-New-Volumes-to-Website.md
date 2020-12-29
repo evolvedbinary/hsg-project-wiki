@@ -69,9 +69,9 @@ If you have the final pdf of the volume, you can make TIFFs and PNGs while you w
 
         for file in *.pdf; do FOLDER=`basename -s .pdf $file`; mkdir $FOLDER; cd $FOLDER; mkdir tiff; mkdir medium; mkdir pdf; cd ..; mv $file "$FOLDER/pdf/"; done
 
-    This will create a parent folder with 3 subfolders named “pdf” “tiff” and “medium”. Then paste this entire line in:
+    This will create a parent folder with 3 subfolders named “pdf”, “tiff”, and “medium”. Then paste this entire line in:
 
-        for folder in $(find * -maxdepth 0 -type d ); do gs -dBATCH -dNOPAUSE -q -sDEVICE=tiffg4 -r600 "-sOutputFile=$folder/tiff/%04d.tif" "$folder/pdf/$folder.pdf"; done
+        for folder in $(find * -maxdepth 0 -type d ); do gs -dBATCH -dNOPAUSE -q -sDEVICE=tiffg4 -dUseCropBox -r600 "-sOutputFile=$folder/tiff/%04d.tif" "$folder/pdf/$folder.pdf"; done
 
     This splits the pdf into tiffs, placing the tiffs in the “tiff” folder.
 
