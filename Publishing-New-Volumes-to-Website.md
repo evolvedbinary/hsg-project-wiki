@@ -171,8 +171,8 @@ Once in S3 Cache Helper, enter your volume’s ID and select `Submit`. (Whereas 
 
 1. After you press `Submit`, open your localhost in Transmit. (If you haven't configured Transmit, follow the setup directions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#connecting-to-hsg-with-transmit>.) 
 2. Navigate down to `/db/apps/s3/cache/static.history.state.gov/frus`. Under `frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
-3. To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.history.state.gov` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
-4. Move the volume folder from the localhost into the corresponding folder in `1861.history.state.gov`.
+3. To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.hsg` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
+4. Move the volume folder from the localhost into the corresponding folder in `1861.hsg`.
 
 ## 6. Add Subject Tags for the Volume
 

@@ -5,8 +5,8 @@ We publish EPUB and Mobi versions of each FRUS volume. This page explains how we
 ## Prerequisites
 
 1. A [history.state.gov development system](setup), fully [up-to-date](version-control).
-1. [Calibre](http://calibre-ebook.com/) and [Parallel](http://www.gnu.org/software/parallel/). Install these via Homebrew in Terminal: `brew cask install calibre && brew install parallel`. (For more on Terminal and Homebrew, see step 1.)
-1. [iBooks](https://www.apple.com/support/mac-apps/ibooks/) for Mac (installed by default with Mac OS X).
+1. [Calibre](http://calibre-ebook.com/) and [Parallel](http://www.gnu.org/software/parallel/). Install these via Homebrew in Terminal: `brew install calibre parallel`. (For more on Terminal and Homebrew, see step 1.)
+1. [Books](https://support.apple.com/books/) for Mac (installed by default).
 1. [Kindle](https://itunes.apple.com/us/app/kindle/id405399194?mt=12) for Mac (free from the Mac App Store).
 1. An internet connection (to access cover art, graphics on S3).
 

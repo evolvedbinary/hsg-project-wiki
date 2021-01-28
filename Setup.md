@@ -1,6 +1,6 @@
 # Set up a history.state.gov Development Environment
 
-> Last updated on December 31, 2019 for eXist 5.1.1. (**Note:** The directions for updating older setups have moved [here](update).)
+> Last updated on January 28, 2021. (**Note:** To update an existing HSG Development Environemnt, use [these directions](update).)
 
 The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software. These directions lead you through installing this software, checking out GitHub repositories, and setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
@@ -8,8 +8,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 - A computer with at least:
     - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
-    - 30 GB of available storage space (an SSD, or at least an SSD/HD hybrid "Fusion" drive, is recommended for best performance).
-- An up-to-date Mac, running macOS 10.13 or higher. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
+    - 50 GB of available storage space (an SSD is recommended for best performance).
+- An up-to-date Mac, running macOS 11 or higher. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
@@ -18,8 +18,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Install system updates
 
-1. From the Apple () menu in the top-left corner of your screen, choose "About This Mac". If it says "macOS Catalina Version 10.15.x", click on the "Software Update" button and install any available software updates. If you are running an earlier version of macOS, here is the link to the [macOS Catalina webpage](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12); go to this page and click on the "View in the Mac App Store" button to open Catalina in the App Store. Click on the Download button, and allow the installation to complete. 
-    - If your computer tells you that it cannot run macOS Catalina (10.15), worry not; all of our software is still compatible with systems as old as macOS High Sierra (10.13), but the directions below assume that you have Catalina.
+1. From the Apple () menu in the top-left corner of your screen, choose `About This Mac`. Select on the `Software Update` button and install any available software updates. If you are running a version of macOS lower than 11 (Big Sur), here is the link to the [macOS Big Sur webpage](https://support.apple.com/en-us/HT201475). 
+    - If your computer cannot run macOS Big Sur (11), worry not; all of our software is still compatible with systems as old as macOS Mojave (10.14), but the directions below assume that you have Big Sur.
 
 - Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
 
@@ -41,7 +41,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 1. Install [Homebrew](https://brew.sh) by copying and pasting this entire command into your Terminal window and hitting return:
 
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     Follow any instructions that Homebrew presents you with. For example, it may prompt you to install Xcode or accept the Xcode license (in which case you should do as directed, and once done, re-enter the command to install Homebrew).  
 
@@ -53,15 +53,15 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     > Your system is ready to brew.
 
-    If, instead, Homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is "ready to brew".
+    If, instead, Homebrew reports that there are errors or issues, try to follow the prompts to fix the problems. If you're unable to fix them, ask your trainer for help. Do not proceed until the `brew doctor` command reports you that your system is `ready to brew`.
 
 ## Install HSG software dependencies and applications
 
-1. Having installed Homebrew, enter these commands to install Java JDK, GitHub Desktop, oXygen XML Editor, eXist, as well as the other dependencies:
+1. Having installed Homebrew, enter these commands to install eXist, oXygen XML Editor, GitHub Desktop, OpenVPN Connect, as well as the other dependencies:
 
-        brew tap homebrew/cask-versions
-
-        brew cask install java exist-db github oxygen-xml-editor
+        brew tap bell-sw/liberica
+        
+        brew install liberica-jdk8-full exist-db github openvpn-connect oxygen-xml-editor
 
         brew install ant git maven node node@10
 
@@ -69,20 +69,21 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
     When prompted, enter the password for your user account. 
 
-1. eXist-db, oXygen XML Editor, and GitHub Desktop are now installed! To find them, go to Finder, and select `Go > Applications`. 
+1. eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect are now installed! To find them, go to Finder, and select `Go > Applications`. 
 
-1. Drag the eXist-db, oXygen XML Editor, and GitHub Desktop icons into your Dock so you can always get to them easily. (oXygen's is inside a folder of the same name.)
-
-## Prepare oXygen and eXist
+1. Drag the eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect icons into your Dock so you can always get to them easily. (oXygen's is inside a folder of the same name.)
 
 1. We need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
-    - Click on eXist's dock icon.
-    - A dialog box will open asking if you want to open eXist. Select "Open."
-    - eXist's dock icon will stop bouncing.
+    - Find eXist-db in the Applications folder.
+    - Right-click (or hold down the control key and left-click) on it, and select `Open` from the contextual menu.
+    - A dialog box will open asking if you want to open eXist. Select `Open`.
+    - eXist's dock icon will start bouncing, then stop.
     - Click on eXist's dock icon again.
-    - A dialog box will open showing eXist's configuration properties. Select "Save." When prompted to create the data directory or confirm the location of the data directory, select "OK."
+    - A dialog box will open showing eXist's configuration properties. Select `Save`. When prompted to create the data directory or confirm the location of the data directory, select `OK`.
     - The eXist splash screen will appear as eXist completes its startup routine.
-    - Once the eXist splash screen disappears, click the eXist menu bar icon and select "Quit."
+    - Once the eXist splash screen disappears, click the eXist menu bar icon and select `Quit`.
+
+## Prepare oXygen
 
 1. Start oXygen and paste in the license key provided to you [during your training](training-checklist) when prompted.
 
@@ -96,13 +97,13 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Get hsg-project
 
-1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, click on the `File` menu and select `Clone Repository`. Under GitHub.com, you will see an entry called `HistoryAtState/hsg-project`. Select this, and then select `Clone hsg-project`. In the `Local Path` field, click on `Choose`, navigate to your `workspace` folder we created in step 1, select `Open`, and finally select `Clone`.
+1. To clone the hsg-project repository which contains all of the files needed for working with history.state.gov, click on the `File` menu and select `Clone Repository`. Under GitHub.com, you will see an entry called `HistoryAtState/hsg-project`. Select this, and then select `Clone`. In the `Local Path` field, click on `Choose`, navigate to your `workspace` folder we created in step 1, select `Open`, and finally select `Clone`.
 
 1. In Finder, navigate to your `workspace` directory, and notice that `hsg-project` is saved here. Inside the `hsg-project` folder, double-click on the `hsg-project.xpr` file. This will cause oXygen to open and activate the `Project` pane, showing a list of the top level folders in the `hsg-project` folder. You can use this to open any file in our project for editing.
 
-1. In oXygen's menu bar, you will see a button with a green, triangle-shaped icon, the "External Tools" icon, and at its right is a tiny, black, triangle-shaped icon (a "disclosure" icon, which indicates that clicking on it will display drop-down menu). Select this disclosure icon to display a drop-down list of common commands for working with hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories & resources`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for hsg, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories & resources` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
+1. In oXygen's menu bar, you will see a button with a green, triangle-shaped icon, the "External Tools" icon, and at its right is a tiny, black, triangle-shaped icon (a "disclosure" icon, which indicates that clicking on it will display drop-down menu). Select this disclosure icon to display a drop-down list of common commands for working with hsg-project. Under the section `Setup & maintenance`, select `1. Clone all repositories & resources`. (These commands are also available via the oXygen menu bar: `Tools` > `External Tools`.) This triggers a command to clone all of the data repositories for HSG, including `frus` (for the _Foreign Relations_ series), `pocom` (for Principals & Chiefs), etc. These repositories will all be stored in the `repos` subdirectory of the `hsg-project` directory. On our DIN, `Clone all repositories & resources` procedure should take only a couple of minutes; on slower internet connections, this may take 15 minutes or longer. You will know the command completed successfully when you see `BUILD SUCCESSFUL` in the console pane at the bottom of your oXygen window. 
 
-1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up hsg.
+1. In the Project pane, right-click on the `hsg-project` folder and select `Refresh`. You should now see a `repos` folder. Explore the `repos` directory and notice, for example, `frus` and `pocom`. These are all of the files that make up HSG.
 
 1. Next, continue with the `Setup & maintenance` entries in the External Tools menu, selecting `2. Apply Mac settings to hsg-project` and `3. Apply hsg-project settings to eXist`. (Do not proceed to #4 yet.)
 
@@ -116,7 +117,7 @@ Before publishing files to the public website, you may wish to preview them on y
 
 ### Deploy all repositories to eXist
 
-1. To prepare your local eXist database with all of the files needed to run a local copy of hsg, go to the Tools dropdown menu in oXygen and select `4. Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
+1. To prepare your local eXist database with all of the files needed to run a local copy of HSG, go to the Tools dropdown menu in oXygen and select `4. Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
 
 1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
 
@@ -136,7 +137,7 @@ When you have work that you would like to publish, the following steps will ensu
 
 ### Apply "Format and Indent"
 
-With the document open in oXygen, select the "Format and Indent" toolbar button (also accessible via the "Source" menu under "Document" > "Format and Indent"), and save your document. If you've made updates to many files, see https://github.com/HistoryAtState/hsg-project/issues/31 for a time-saving tip.  This "Format and Indent" command ensures your commit (in the next step) is clean and reveals only the changes you made, not other incidental changes.
+With the document open in oXygen, select the `Format and Indent` toolbar button (also accessible via the `Source` menu under `Document` > `Format and Indent`), and save your document. If you've made updates to many files, see https://github.com/HistoryAtState/hsg-project/issues/31 for a time-saving tip. This `Format and Indent` command ensures your commit (in the next step) is clean and reveals only the changes you made, not other incidental changes.
 
 ### Commit your work and push it to GitHub 
 
@@ -154,11 +155,33 @@ With the document open in oXygen, select the "Format and Indent" toolbar button 
 
 1. Once you've made all of your commits, select `Push Origin` to push your changes to GitHub. (The `Push Origin` button will now return to `Fetch Origin`, and you will receive an email confirmation of your commit from the hsg-commits mailing list.)
 
-### Publish your work to hsg
+### Configure VPN
 
-1. Publish the changes to hsg in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
+Before you can publish your work to HSG the first time, you need to configure OpenVPN Connect to connect to the HSG VPN.
 
-    Before you publish the first time, you must first enter the password provided to you [during your training](training-checklist) for the hsg production servers. To do this, in oXygen's Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
+1. Start OpenVPN Connect via its application icon in your Dock.
+
+1. Select the `+` icon to enter the `Import File` dialog.
+
+1. Select the `File` tab.
+
+1. Select the `Browse` button and navigate to the .ovpn file that you were provided [during your training](training-checklist).
+
+1. Select the `Add` button at the top-right corner of the window.
+
+1. Toggle the connect/disconnect button to confirm you are able to connect. Try opening <http://1861.hsg> in your browser.
+
+### Connect to the VPN
+
+1. Start OpenVPN Connect via its application icon in your Dock.
+
+1. Select the connect button.
+
+### Publish your work to HSG
+
+1. Publish the changes to HSG in oXygen using the Tools dropdown menu > `Upload current file to history.state.gov`. 
+
+    Before you publish the first time, you must first enter the password provided to you [during your training](training-checklist) for the HSG production servers. To do this, in oXygen's External Tools toolbar dropdown menu under the `Setup & maintenance section`, select `5. Enter server credentials`.
 
 ## Keep up with everyone's latest work
 
@@ -178,12 +201,13 @@ A more detailed set of instructions with suggestions for daily and weekly tasks 
 
 1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear.
 
-1. Under `Connection wizards` select `Create eXist-db XML connection`. Keep `Host`, `Port`, and `Libraries` unchanged, but modify the other fields as follows:
+1. Under `Connections` select `+` to bring up the `Connection` window. Modify the fields as follows: 
 
-    - `User:` `admin`
-    - `Password:` (delete the existing entry and leave this blank)
-
-1. Leave `Use a secure HTTPS connection (SSL)` checkbox unchecked. 
+    - `Name:` `localhost`
+    - `Data Source:` `WebDAV (S)FTP`
+    - `WebDAV/FTP URL:` `http://localhost:8080/exist/webdav/db`
+    - `User`: `admin`
+    - `Password`: (blank)
 
 1. Select `OK`
 
@@ -197,16 +221,14 @@ Note: These steps are optional and used for editing files already stored in the 
 
 1. Under `Connections` select `+` to bring up the `Connection` window. Modify the fields as follows: 
 
-    - `Name:` `1861.history.state.gov`
+    - `Name:` `1861.hsg`
     - `Data Source:` `WebDAV (S)FTP`
-    - `WebDAV/FTP URL:` `https://1861.history.state.gov/exist/webdav/db`
+    - `WebDAV/FTP URL:` `http://1861.hsg:8080/exist/webdav/db`
     - `User` and `Password`: You will be provided with this information [during your training](training-checklist)
 
 1. Select `OK`
 
-1. Add another connection using the same steps for `1991.history.state.gov`
-
-## Connect to hsg with Transmit
+## Connect to HSG with Transmit
 
 Transmit is a file transfer client that makes it easy to upload many files to eXist or perform other batch file processes. You will be provided with this software [during your training](training-checklist). 
 
@@ -214,9 +236,10 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
 
 1. Modify the fields as follows: 
 
-    - Name: `1861.history.state.gov`
-    - `Protocol:` `WebDAV HTTPS`
-    - `Address:` `1861.history.state.gov`
+    - Name: `1861.hsg`
+    - `Protocol:` `WebDAV`
+    - `Address:` `1861.hsg`
+    - `Port:` `8080`
     - `User Name` and `Password`: You will be provided with this information during your training
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`

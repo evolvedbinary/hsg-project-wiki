@@ -1,11 +1,12 @@
 Trainer provides:
 
-- Mac mini installation, setup of new user account, demonstration how to run App Store > Update to update to the latest version of operating system and stay up to date
-- A browser bookmark to hsg-project wiki; so trainee can reference setup directions
-- License key for oXygen
-- Credentials for history.state.gov (used in oXygen and Transmit)
-- Login for Amazon AWS Console and access key for logging into S3 with Transmit
+- A Mac mini, setup of new user account, and a demonstration how to run System Preferences > Software Update to update to the latest version of operating system and stay up to date
 - Download of Microsoft Office 2016 from S3
+- A browser bookmark to hsg-project wiki; so trainee can reference setup directions
+- License key for oXygen XML Editor
+- An OpenVPN profile for use with OpenVPN Connect
+- Credentials for history.state.gov (used in oXygen and Transmit)
+- An access key for logging into S3 with Transmit
 
 Trainee provides:
 
