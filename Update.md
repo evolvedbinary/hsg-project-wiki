@@ -76,6 +76,6 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
 1. If you use eXist to preview website content, then proceed to [Start eXist](setup#start-exist) and then perform the steps under [Deploy all repositories to eXist](setup#deploy-all-repositories-to-exist). 
 
-1. If you publish content to the website, then proceed to [Configure VPN](setup#configure-vpn) and delete previous 1861 entries in oXygen's Data Source pane and Transmit, creating new entries with the settings detailed in [Browse HSG's eXist in oXygen's Data Source Explorer](setup#browse-hsgs-exist-in-oxygens-data-source-explorer) and [Connect to HSG with Transmit](connect-to-hsg-with-transmit). You will need an OpenVPN profile and new passwords for HSG; contact Joe for these.
-
 1. Now you're all up to date!
+
+> The following text is still under preparation - do not perform these steps! “If you publish content to the website, then proceed to [Configure VPN](setup#configure-vpn) and delete previous 1861 entries in oXygen's Data Source pane and Transmit, creating new entries with the settings detailed in [Browse HSG's eXist in oXygen's Data Source Explorer](setup#browse-hsgs-exist-in-oxygens-data-source-explorer) and [Connect to HSG with Transmit](connect-to-hsg-with-transmit). You will need an OpenVPN profile and new passwords for HSG; contact Joe for these.‘
