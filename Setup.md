@@ -157,6 +157,8 @@ With the document open in oXygen, select the `Format and Indent` toolbar button 
 
 ### Configure VPN
 
+> NOTE: This section is not yet ready. Please skip ahead.
+
 Before you can publish your work to HSG the first time, you need to configure OpenVPN Connect to connect to the HSG VPN.
 
 1. Start OpenVPN Connect via its application icon in your Dock.
@@ -172,6 +174,8 @@ Before you can publish your work to HSG the first time, you need to configure Op
 1. Toggle the connect/disconnect button to confirm you are able to connect. Try opening <http://1861.hsg> in your browser.
 
 ### Connect to the VPN
+
+> NOTE: This section is not yet ready. Please skip ahead.
 
 1. Start OpenVPN Connect via its application icon in your Dock.
 
