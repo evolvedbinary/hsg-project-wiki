@@ -54,7 +54,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 ## Prepare oXygen and eXist
 
 1. Next, open oXygen.
-    - From the External Tools toolbar menu (i.e., the green, triangle-shaped icon), select `Fetch updates for all repositories`. 
+    - From the External Tools toolbar menu (i.e., the green, triangle-shaped icon), select `Pull updates for all repositories`. 
     - Quit and restart oXygen.
     - Then, from the External Tools toolbar menu, run the `Wipe eXist database` command (confirm "yes" when asked)
 
