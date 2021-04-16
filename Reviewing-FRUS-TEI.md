@@ -50,7 +50,7 @@ As you complete the steps below, check off the boxes, and add any notes in comme
             - Crop the image 
             - Use `File > Export` to save the cropped image as a compressed tif file, e.g., `figure_nnnn.tif` (not `.tiff`)
             - Use `Image > Image Size` to reduce the image size to max 500 pixels wide and 72 dpi, and use `File > Export` to save the resized image using the same `nnnn` number but prefixed with `figure_` and using the png format: `figure_nnnn.png`
-            - Upload the newly generated .tif and .png files to S3's `static.history.state.gov` bucket in the `frus/{volume-id}` folder.  
+            - Upload the newly generated .tif and .png files to S3's `static.history.state.gov.v2` bucket in the `frus/{volume-id}` folder.  
             - Returning to the TEI, make sure the heading of the image is in the graphic element's `<head>` element - typing it in if not present. Ideally we should have a `<head>` element for each graphic; this is especially important for accessibility reasons, but helps everyone.
             - Revalidate the file
     1. Once the volume passes the schema and metadata checks, perform a `Format and Indent` (in the `Document` > `Source` menu) once and commit the file to the SVN repository

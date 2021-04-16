@@ -216,11 +216,11 @@ for FILE in $(find * -name '*.tiff' -type f); do BASE=`basename $FILE .tiff`; mv
 mogrify -format png -density 72 "*.tif"; mogrify -resize '600x800' "*.png"
 ```
 
-Now upload each volumes' images into the `static.history.state.gov` bucket in the `frus` directory, e.g., `frus/frus1969-76v01/figure_0637.tif` and `frus/frus1969-76v01/figure_0637.png`. 
+Now upload each volumes' images into the `static.history.state.gov.v2` bucket in the `frus` directory, e.g., `frus/frus1969-76v01/figure_0637.tif` and `frus/frus1969-76v01/figure_0637.png`. 
 
 ## Convert all page image TIFFs to PNGs
 
-We also prepare page images as screen resolution PNGs. Check the `static.history.state.gov` bucket in the `frus` directory to see if the TIFF and PNG files are already in the volume's `tiff` and `medium` folders, respectively. If the TIFF and PNG files haven't been uploaded, here's how:
+We also prepare page images as screen resolution PNGs. Check the `static.history.state.gov.v2` bucket in the `frus` directory to see if the TIFF and PNG files are already in the volume's `tiff` and `medium` folders, respectively. If the TIFF and PNG files haven't been uploaded, here's how:
 
 - Download the TIFFs for the volumes you're working on
 - Open Terminal.app, create a folder on your desktop called `frus-images`, and cd into it:
@@ -243,4 +243,4 @@ for FOLDER in $(find * -maxdepth 0 -type d ); do mkdir $FOLDER/tiff; mkdir $FOLD
 for FOLDER in $(find * -maxdepth 0 -type d ); do mogrify -path "$FOLDER/medium" -format png -density 72 "$FOLDER/tiff/*.tif"; mogrify -resize 'x800' "$FOLDER/medium/*.png"; done
 ```
 
-Now that the TIFFs have been converted into screen-resolution PNG files, and the file & folder structure is in the form we need it to be, upload each volumes' images into the `static.history.state.gov` S3 bucket in the `frus` directory. The PNGs will be located in, for example, `frus/frus1969-76v01/medium/0001.png`, and the TIFFs will be located in, for example, `frus/frus1969-76v01/tiff/figure_0637.tif`. 
+Now that the TIFFs have been converted into screen-resolution PNG files, and the file & folder structure is in the form we need it to be, upload each volumes' images into the `static.history.state.gov.v2` S3 bucket in the `frus` directory. The PNGs will be located in, for example, `frus/frus1969-76v01/medium/0001.png`, and the TIFFs will be located in, for example, `frus/frus1969-76v01/tiff/figure_0637.tif`. 

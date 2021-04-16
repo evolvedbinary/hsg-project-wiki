@@ -79,7 +79,7 @@ If you have the final pdf of the volume, you can make TIFFs and PNGs while you w
 
     This transforms the tiffs into screen resolution pngs that are in the “medium” folder. 
 
-This final step takes significantly longer to complete so be sure that the process is done running before you upload the page images to S3. When this is done running, upload the parent folder with the 3 subfolders to S3 in the directory `static.history.state.gov/frus` 
+This final step takes significantly longer to complete so be sure that the process is done running before you upload the page images to S3. When this is done running, upload the parent folder with the 3 subfolders to S3 in the directory `static.history.state.gov.v2/frus` 
 
 ---
 
@@ -170,8 +170,8 @@ If the menu on this page says, "S3 app isn't configured yet," you will need to f
 Once in S3 Cache Helper, enter your volume’s ID and select `Submit`. (Whereas before, this automatically updated the cache for us, there are a few extra steps that we have to do in the new workflow.)
 
 1. After you press `Submit`, open your localhost in Transmit. (If you haven't configured Transmit, follow the setup directions at <https://github.com/HistoryAtState/hsg-project/wiki/Setup#connecting-to-hsg-with-transmit>.) 
-2. Navigate down to `/db/apps/s3/cache/static.history.state.gov/frus`. Under `frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
-3. To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.hsg` and navigate to `apps/s3/cache/static.history.state.gov/frus`. 
+2. Navigate down to `/db/apps/s3/cache/static.history.state.gov.v2/frus`. Under `frus`, you should have a folder with the name of the volume you just submitted. Inside each of the subfolders, you should have a generated resources file. 
+3. To update the cache, leave your localhost open on Transmit and on the other side of the app open `1861.hsg` and navigate to `apps/s3/cache/static.history.state.gov.v2/frus`. 
 4. Move the volume folder from the localhost into the corresponding folder in `1861.hsg`.
 
 ## 6. Add Subject Tags for the Volume
@@ -193,7 +193,8 @@ As with our previous workflow, in order to update the carousel for the publicati
 1. Open `display-order.xml` and add your new `<topic-id>` at the top of `display-order`, deleting the lowest `<topic-id>` entry so there are no more than 3 of these in `<display-order>`.
 2. As with the shell files, to create a new topic entry, you can either open the most recent topics entry, edit the information for your volume—remembering to change the id to one higher, and save the file as a new entry, or your can open a blank XML document and paste in the following to edit and save in the repo:
 
-`<?xml version="1.0" encoding="UTF-8"?>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <topic>
     <id>72</id>
     <type>publication</type>
@@ -203,7 +204,7 @@ As with our previous workflow, in order to update the carousel for the publicati
         major emphasis of the volume is the role the United States Information Agency played in the formulation and
         implementation of public diplomacy.</body>
     <link>/historicaldocuments/frus1977-80v30</link>
-    <image>https://s3.amazonaws.com/static.history.state.gov/frus/frus1977-80v30/covers/frus1977-80v30.jpg</image>
+    <image>https://static.history.state.gov/frus/frus1977-80v30/covers/frus1977-80v30.jpg</image>
     <image-description>Book cover of <em>Foreign Relations of the United States</em>, 1977–1980, Volume XXX,
         Public Diplomacy</image-description>
     <image-height>600</image-height>
@@ -213,13 +214,14 @@ As with our previous workflow, in order to update the carousel for the publicati
     <created-datetime>2016-06-07T07:20:59.72-04:00</created-datetime>
     <last-modified-by>eckrothsl</last-modified-by>
     <last-modified-datetime>2016-06-07T07:20:59.72-04:00</last-modified-datetime>
-</topic>`
+</topic>
+```
 
 Once you have finished editing both files, upload them to localhost, and review them one last time before uploading to hsg when you are are ready to publish the volume. 
 
 ## 7. Commit all files to GitHub
 After you have finished publishing your volume, the files in each of these repos need to be committed to GitHub. Remember to click `Sync` after you commit the files to push your changes to the master branch. You will have to do this 3 separate times for the following files in 3 repos:
-1.  carousel
+1. carousel
   - display-order
   - numbered entry for volume
 2. frus
@@ -227,3 +229,4 @@ After you have finished publishing your volume, the files in each of these repos
   - volumes
 3. tags/tagged resources
   - frus-tags
+  
