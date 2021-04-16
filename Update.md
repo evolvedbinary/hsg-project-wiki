@@ -1,6 +1,6 @@
 # Update your history.state.gov Development Environment
 
-> Last updated on January 28, 2021.
+> Last updated on April 15, 2021.
 
 These directions assume you have a [fully configured](setup) history.state.gov Development Environment and that you need to update your system so that it contains the latest operating system, software dependencies, core applications, and configurations.
 
@@ -41,9 +41,9 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
         npm install -g gulp bower
         
-    If any of the applications are already installed, Homebrew will skip them, retaining the existing installation.
+    If any of the applications are already installed, Homebrew will skip them, retaining the existing installation. 
 
-1. Make sure that the following icons are in your Dock: eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect. If any are not there, go to Finder, and select `Go > Applications`, and drag the respective applications' icons into the dock.
+1. Make sure that the following icons are in your Dock: eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect. If any are not there, go to Finder, and select `Go > Applications`, and drag the respective applications' icons into the dock. (In particular, oXygen XML Editor, may have disappeared from your Dock as a result of the command above, due to [a known issue with Homebrew](https://github.com/Homebrew/homebrew-cask/issues/102721). Please add it back to your Dock for easy access.)
 
 1. Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
@@ -56,7 +56,6 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 1. Next, open oXygen.
     - From the External Tools toolbar menu (i.e., the green, triangle-shaped icon), select `Pull updates for all repositories`. 
     - Quit and restart oXygen.
-    - Then, from the External Tools toolbar menu, run the `Wipe eXist database` command (confirm "yes" when asked)
 
 1. Next, we need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
     - Click on eXist's dock icon.
@@ -74,8 +73,65 @@ These directions assume you have a [fully configured](setup) history.state.gov D
         - `2. Apply Mac settings to hsg-project`
         - `3. Apply hsg-project settings to eXist`
 
-1. If you use eXist to preview website content, then proceed to [Start eXist](setup#start-exist) and then perform the steps under [Deploy all repositories to eXist](setup#deploy-all-repositories-to-exist). 
+1. If you use eXist to preview website content, then start eXist via its application icon in your Dock. During startup eXist will show a splash screen. Once the splash screen disappears, you can start, stop, and quit eXist and access other eXist utilities via its menu bar entry (a blue "X"-shaped icon). 
 
-1. Now you're all up to date!
+1. To prepare your local eXist database with all of the files needed to run a local copy of HSG, go to the Tools dropdown menu in oXygen and select `4. Deploy all repositories to localhost`. This step takes about 10-15 minutes on our computers. On a remote computer, this step could take as long as 40 minutes, depending on your computer's hardware.
 
-If you publish content to the website, then proceed to [Configure VPN](setup#configure-vpn) and delete previous 1861 entries in oXygen's Data Source pane and Transmit. Create new entries with the settings detailed in [Browse HSG's eXist in oXygen's Data Source Explorer](setup#browse-hsgs-exist-in-oxygens-data-source-explorer) and [Connect to HSG with Transmit](connect-to-hsg-with-transmit). You will need an OpenVPN profile and new passwords for HSG; contact Joe for these.
+1. Now a complete copy of history.state.gov is now running at <http://localhost:8080/exist/apps/hsg-shell/>. 
+
+## Set up OpenVPN Connect
+
+Before you can resume publishing your work to HSG, you will need to set up the OpenVPN Connect application to connect to the new HSG Virtual Private Network (VPN). This allows you to access the production eXist server for publishing to HSG. 
+
+1. Start OpenVPN Connect via its application icon in your Dock.
+
+1. Select the `X` icon to end the `Onboarding Tour`, select `Agree` when prompted with the Data Collection notice, and select `OK` to dismiss the "Updates" window.
+
+1. On the `Import Profile` window, select the `File` tab.
+
+1. Select the `Browse` button and navigate to the OpenVPN Profile file (it has a `.ovpn` file extension) that you were provided by Joe prior to starting the update (or contact him if you don't yet have it).
+
+1. Select the `Add` button at the top-right corner of the window.
+
+1. Toggle the connect/disconnect button to confirm you are able to connect. With the connection active, try opening <http://1861.hsg> in your browser. Now disconnect.
+
+Now, anytime you need to publish to HSG, you can connect to the VPN.
+
+## Update oXygen and Transmit to publish via VPN
+
+With the VPN, we no longer access the "1861" server (the server that we upload XML files to when we publish to HSG) via the 1861.history.state.gov domain. Instead, we reach it via the "1861.hsg" domain, which can only be reached when we are connected to the VPN. To ensure you can use oXygen and Transmit to publish to HSG, perform these steps:
+
+### Update oXygen to use 1861.hsg
+
+1. In oXygen, select the `Window` menu > `Show View` > `Data Source Explorer`. A new pane will open up, called `Data Source Explorer`. 
+
+1. In this pane's toolbar, click on the small gear icon (its tooltip labels this icon as `Configure Database Sources...`). A `Preferences` window will appear. 
+
+1. Under `Connections`, find the entry `1861.history.state.gov`, and double-click on it to bring up the `Connection` window. 
+
+1. Modify the `Name` and `WebDAV/FTP URL` fields as follows, leaving the other fields unchanged: 
+
+    - `Name:` `1861.hsg`
+    - `WebDAV/FTP URL:` `http://1861.hsg/exist/webdav/db`
+
+1. Select `OK` to dismiss the `Connection` window, and select `OK` to dismiss the `Preferences` window.
+
+1. In the `Data Source Explorer` pane, browse the contents of the `1861.hsg` entry and make sure you can reach the `apps` folder.
+
+### Update Transmit to use 1861.hsg
+
+1. In Transmit, select the "Servers" tab to see your list of saved servers.
+
+1. Find the entry `1861.history.state.gov`, and right-click on it and select `Edit "1861.history.state.gov"` (or use the `Server` menu and select `Edit "1861.history.state.gov"`). 
+
+1. Modify the `Protocol`, `Address`, and `Port` fields as follows, leaving the other fields unchanged:
+
+    - `Protocol`: `WebDAV` (i.e., not `WebDAV HTTPS`)
+    - `Address`: `1861.hsg`
+    - `Port`: `80`
+
+### Update Transmit to use the new S3 buckets
+
+1. If you publish to S3, contact Joe for the new S3 credentials.
+
+Congratulations! Now you are all up to date!
