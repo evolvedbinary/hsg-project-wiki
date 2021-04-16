@@ -159,13 +159,15 @@ With the document open in oXygen, select the `Format and Indent` toolbar button 
 
 Before you can publish your work to HSG the first time, you need to set up the OpenVPN Connect application to connect to the HSG Virtual Private Network (VPN). This allows you to access the production eXist server for publishing to HSG. 
 
+[During your training](training-checklist) you will be provided with an OpenVPN Profile file (it has a `.ovpn` file extension). To ensure this file is stored in a safe place, create a folder for it. In Finder, open your `workspace` folder, and use `File` > `New Folder` to create a new folder, called `OpenVPN Profiles`. Drag your OpenVPN Profile file (the `.ovpn` file) into this folder.
+
 1. Start OpenVPN Connect via its application icon in your Dock.
 
 1. Select the `X` icon to end the `Onboarding Tour`, select `Agree` when prompted with the Data Collection notice, and select `OK` to dismiss the "Updates" window.
 
 1. On the `Import Profile` window, select the `File` tab.
 
-1. Select the `Browse` button and navigate to the OpenVPN Profile file (it has a `.ovpn` file extension) that you were provided [during your training](training-checklist).
+1. Select the `Browse` button and navigate to the OpenVPN Profile file in your `workspace` folder.
 
 1. Select the `Add` button at the top-right corner of the window.
 
