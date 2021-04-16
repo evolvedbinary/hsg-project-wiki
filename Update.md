@@ -126,8 +126,9 @@ With the VPN, we no longer access the "1861" server (the server that we upload X
 
 1. Find the entry `1861.history.state.gov`, and right-click on it and select `Edit "1861.history.state.gov"` (or use the `Server` menu and select `Edit "1861.history.state.gov"`). 
 
-1. Modify the `Protocol`, `Address`, and `Port` fields as follows, leaving the other fields unchanged:
+1. Modify the server name, `Protocol`, `Address`, and `Port` fields as follows, leaving the other fields unchanged:
 
+    - Name: `1861.hsg`
     - `Protocol`: `WebDAV` (i.e., not `WebDAV HTTPS`)
     - `Address`: `1861.hsg`
     - `Port`: `80`
