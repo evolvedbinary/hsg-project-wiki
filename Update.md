@@ -83,13 +83,15 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 
 Before you can resume publishing your work to HSG, you will need to set up the OpenVPN Connect application to connect to the new HSG Virtual Private Network (VPN). This allows you to access the production eXist server for publishing to HSG. 
 
+Before starting this update, Joe should have provided you with an OpenVPN Profile file (it has a `.ovpn` file extension). If you don't have this file yet, contact Joe to request yours. To ensure this file is stored in a safe place, create a folder for it. In Finder, open your `workspace` folder, and use `File` > `New Folder` to create a new folder, called `OpenVPN Profiles`. Drag your OpenVPN Profile file (the `.ovpn` file) into this folder.
+
 1. Start OpenVPN Connect via its application icon in your Dock.
 
 1. Select the `X` icon to end the `Onboarding Tour`, select `Agree` when prompted with the Data Collection notice, and select `OK` to dismiss the "Updates" window.
 
 1. On the `Import Profile` window, select the `File` tab.
 
-1. Select the `Browse` button and navigate to the OpenVPN Profile file (it has a `.ovpn` file extension) that you were provided by Joe prior to starting the update (or contact him if you don't yet have it).
+1. Select the `Browse` button and navigate to your OpenVPN Profile file.
 
 1. Select the `Add` button at the top-right corner of the window.
 
