@@ -97,11 +97,11 @@ Before starting this update, Joe should have provided you with an OpenVPN Profil
 
 1. Toggle the connect/disconnect button to confirm you are able to connect. With the connection active, try opening <http://1861.hsg> in your browser. Now disconnect.
 
-Now, anytime you need to publish to HSG, you can connect to the VPN.
+Now, anytime you need to publish to HSG, you can connect to the HSG VPN.
 
 ## Update oXygen and Transmit to publish via VPN
 
-With the VPN, we no longer access the "1861" server (the server that we upload XML files to when we publish to HSG) via the 1861.history.state.gov domain. Instead, we reach it via the "1861.hsg" domain, which can only be reached when we are connected to the VPN. To ensure you can use oXygen and Transmit to publish to HSG, perform these steps:
+We previously published our work to HSG by connecting to the eXist server at "1861.history.state.gov." This domain is no longer accessible on the public internet. Instead, we now publish to HSG via the new "1861.hsg" domain, which is only accessible when connected to the VPN. To ensure you can use oXygen and Transmit to publish to HSG, perform these steps:
 
 ### Update oXygen to use 1861.hsg
 
