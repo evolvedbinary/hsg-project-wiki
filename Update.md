@@ -43,7 +43,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
         
     If any of the applications are already installed, Homebrew will skip them, retaining the existing installation. 
 
-1. Make sure that the following icons are in your Dock: eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect. If any are not there, go to Finder, and select `Go > Applications`, and drag the respective applications' icons into the dock. (In particular, oXygen XML Editor, may have disappeared from your Dock as a result of the command above, due to [a known issue with Homebrew](https://github.com/Homebrew/homebrew-cask/issues/102721). Please add it back to your Dock for easy access.)
+1. Make sure that the following icons are in your Dock: eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect. If any are not there, go to Finder, and select `Go > Applications`, and drag the respective applications' icons into the dock. (It's likely that oXygen XML Editor will disappear from your Dock as a result of the command above, due to [a known issue with Homebrew](https://github.com/Homebrew/homebrew-cask/issues/102721). Please add oXygen back to your Dock for easy access.)
 
 1. Run `brew doctor` to check your Homebrew installation, and follow any instructions to resolve problems that it reports. Keep running `brew doctor` until it reports:
 
