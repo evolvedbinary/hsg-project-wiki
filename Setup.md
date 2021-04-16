@@ -1,15 +1,15 @@
 # Set up a history.state.gov Development Environment
 
-> Last updated on January 28, 2021. (**Note:** To update an existing HSG Development Environment, use [these directions](update).)
+> Last updated on April 15, 2021. (**Note:** To update an existing HSG Development Environment, use [these directions](update).)
 
 The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software. These directions lead you through installing this software, checking out GitHub repositories, and setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
 ## Requirements
 
-- A computer with at least:
-    - 8 GB of RAM (to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time)
-    - 50 GB of available storage space (an SSD is recommended for best performance).
-- An up-to-date Mac, running macOS 11 or higher. While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
+- A computer with:
+    - 16 GB of RAM, but at least 8 GB of RAM. This is to accommodate editing large XML files in oXygen, and running eXist, a web browser, and other apps at the same time.
+    - 50 GB of available storage space. An SSD is recommended for best performance.
+    - The Mac operating system (macOS). While macOS is not strictly necessary, we provide our own support, so you'll be on your own in finding methods for installing the required software and adapting scripts, etc. to Windows or Linux.
 - A GitHub account
     - If you don't have one, please create one at https://github.com/join.
     - Make note of your credentials (username & password), since you will need these for the steps below.
@@ -21,7 +21,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 1. From the Apple () menu in the top-left corner of your screen, choose `About This Mac`. Select the `Software Update` button and install any available software updates. If you are running a version of macOS lower than 11 (Big Sur), here is the link to the [macOS Big Sur webpage](https://support.apple.com/en-us/HT201475) listing requirements and instructions for upgrading. 
     - If your computer cannot run macOS Big Sur (11), worry not; all of our software is still compatible with systems as old as macOS Mojave (10.14), but the directions below assume that you have Big Sur.
 
-1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the Updates tab, and install all available updates. 
+1. Open the App Store (using the Spotlight (🔍) icon in the menu bar, search for `App Store`; or in Finder, select `Go` > `Applications`, and find `App Store` in the list of applications), select the `Updates` tab, and install all available updates. 
 
 ## Prepare your workspace
 
@@ -67,7 +67,7 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         npm install -g gulp bower
 
-    When prompted, enter the password for your user account. 
+    When prompted, enter the password for your the user account on your Mac. 
 
 1. eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect are now installed! To find them, go to Finder, and select `Go > Applications`. 
 
@@ -85,15 +85,15 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
 ## Prepare oXygen
 
-1. Start oXygen and paste in the license key provided to you [during your training](training-checklist) when prompted.
+1. Start oXygen XML Editor via its application icon in your Dock and paste in the license key provided to you [during your training](training-checklist) when prompted.
 
 1. Quit oXygen for now.
 
 ## Set up GitHub Desktop
 
-1. Find GitHub Desktop in your Applications folder. Drag its icon to the dock.
+1. Start GitHub Desktop via its application icon in your Dock, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. 
 
-1. Start GitHub Desktop, and follow the prompts to set up the program: Select `Sign into GitHub.com` and enter your GitHub.com user account credentials. Select `Continue`.
+1. Select `Continue`.
 
 ## Get hsg-project
 
@@ -155,25 +155,25 @@ With the document open in oXygen, select the `Format and Indent` toolbar button 
 
 1. Once you've made all of your commits, select `Push Origin` to push your changes to GitHub. (The `Push Origin` button will now return to `Fetch Origin`, and you will receive an email confirmation of your commit from the hsg-commits mailing list.)
 
-### Configure VPN
+### Set up OpenVPN Connect
 
-Before you can publish your work to HSG the first time, you need to configure OpenVPN Connect to connect to the HSG VPN.
+Before you can publish your work to HSG the first time, you need to set up the OpenVPN Connect application to connect to the HSG Virtual Private Network (VPN). This allows you to access the production eXist server for publishing to HSG. 
 
 1. Start OpenVPN Connect via its application icon in your Dock.
 
-1. Select the `+` icon to enter the `Import File` dialog.
+1. Select the `X` icon to end the `Onboarding Tour`, select `Agree` when prompted with the Data Collection notice, and select `OK` to dismiss the "Updates" window.
 
-1. Select the `File` tab.
+1. On the `Import Profile` window, select the `File` tab.
 
-1. Select the `Browse` button and navigate to the .ovpn file that you were provided [during your training](training-checklist).
+1. Select the `Browse` button and navigate to the OpenVPN Profile file (it has a `.ovpn` file extension) that you were provided [during your training](training-checklist).
 
 1. Select the `Add` button at the top-right corner of the window.
 
-1. Toggle the connect/disconnect button to confirm you are able to connect. Try opening <http://1861.hsg> in your browser.
+1. Toggle the connect/disconnect button to confirm you are able to connect. With the connection active, try opening <http://1861.hsg> in your browser. Now disconnect.
+
+Now, anytime you need to publish to HSG, you can connect to the VPN.
 
 ### Connect to the VPN
-
-> NOTE: This section is not yet ready. Please skip ahead.
 
 1. Start OpenVPN Connect via its application icon in your Dock.
 
@@ -225,7 +225,7 @@ Note: These steps are optional and used for editing files already stored in the 
 
     - `Name:` `1861.hsg`
     - `Data Source:` `WebDAV (S)FTP`
-    - `WebDAV/FTP URL:` `http://1861.hsg:8080/exist/webdav/db`
+    - `WebDAV/FTP URL:` `http://1861.hsg/exist/webdav/db`
     - `User` and `Password`: You will be provided with this information [during your training](training-checklist)
 
 1. Select `OK`
@@ -241,8 +241,8 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
     - Name: `1861.hsg`
     - `Protocol:` `WebDAV`
     - `Address:` `1861.hsg`
-    - `Port:` `8080`
-    - `User Name` and `Password`: You will be provided with this information during your training
+    - `Port:` `80`
+    - `User Name` and `Password`: You will be provided with this information [during your training](training-checklist)
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`
 
@@ -254,9 +254,11 @@ Transmit is a file transfer client that makes it easy to upload many files to eX
     - `Protocol:` `WebDAV`
     - `Address:` `localhost`
     - `Port:` `8080`
-    - `User Name` and `Password`: You will be provided with this information during your training
+    - `User Name` and `Password`: You will be provided with this information [during your training](training-checklist)
     - `Remote Path`: `/exist/webdav/db`
     - `Local Path`: `~/workspace/hsg-project/repos`
+
+Congratulations! Your HSG Development Environment is now set up!
 
 ### Updating From An Old Setup
 
