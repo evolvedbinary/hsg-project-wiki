@@ -1,6 +1,6 @@
 # Set up a history.state.gov Development Environment
 
-> Last updated on April 15, 2021. (**Note:** To update an existing HSG Development Environment, use [these directions](update).)
+> Last updated on April 23, 2021. (**Note:** To update an existing HSG Development Environment, use [these directions](update).)
 
 The history.state.gov (HSG) Development Environment requires a modern computer with ample memory and storage and a suite of software. These directions lead you through installing this software, checking out GitHub repositories, and setting up oXygen to access the files in the history.state.gov project. If you need to preview how files will look on the history.state.gov website before you publish them, there are further directions for starting eXist and populating the database, at which point you will have a fully functional copy of the website running on your computer. The directions also describe how to save your work by committing it to our version control system and, once you are ready to publish it, how to upload your work to the website.
 
@@ -141,7 +141,7 @@ With the document open in oXygen, select the `Format and Indent` toolbar button 
 
 ### Commit your work and push it to GitHub 
 
-1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. 
+1. With a file from the repository open in oXygen, open the Tools dropdown menu, and select `Open current file's repository in GitHub Desktop`. This will open GitHub Desktop, with the current repository selected. 
 
 1. You will see a button in the toolbar, called `Fetch origin` (sometimes `Pull origin`). Click on this to make sure you have the latest version of everyone else's work from this repository.
 
@@ -191,9 +191,9 @@ Now, anytime you need to publish to HSG, you can connect to the VPN.
 
 To ensure your local copy of files is up to date with everyone's work, follow these steps:
 
-1. In oXygen, under the Tools dropdown menu, select `Pull updates from all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Pull updates from current repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
+1. In oXygen, under the Tools dropdown menu, select `Pull updates from all repositories`. Or, if you are only interested in a single repository, open a file from that repository in oXygen and select `Pull updates from current file's repository`. A new tab will open at the bottom pane of the oXygen window, showing the results of the update script. These results summarize which files have been downloaded. When you see `BUILD SUCCESSFUL`, feel free to close the tab.
 
-1. To update your copy of the website running in eXist, select `Deploy all repositories to localhost`. Or, if you only want to update a single repository, open a file from that repository in oXygen and select `Deploy current repository to localhost`. When you see `BUILD SUCCESSFUL`, close the tab.
+1. To update your copy of the website running in eXist, select `Deploy all repositories to localhost`. Or, if you only want to update a single repository, open a file from that repository in oXygen and select `Deploy current file's repository to localhost`. When you see `BUILD SUCCESSFUL`, close the tab.
 
 A more detailed set of instructions with suggestions for daily and weekly tasks is in the article on [[Version control]].
 
