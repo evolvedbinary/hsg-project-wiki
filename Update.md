@@ -54,7 +54,7 @@ These directions assume you have a [fully configured](setup) history.state.gov D
 ## Prepare oXygen and eXist
 
 1. Next, open oXygen.
-    - From the External Tools toolbar menu (i.e., the green, triangle-shaped icon), select `Pull updates for all repositories`. 
+    - From the External Tools toolbar menu (i.e., the green, triangle-shaped icon), select `Pull updates from all repositories`. 
     - Quit and restart oXygen.
 
 1. Next, we need to force eXist to complete one full start up, in order to work around some quirks of eXist and macOS:
