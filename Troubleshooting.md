@@ -12,6 +12,8 @@ If you're getting an error, copy and paste the entire error verbatim into an ema
 
 If the error is appearing on a web page, copy and paste the URL where the error appears into the email.
 
+If the error is occurring in your use of oXygen, please select Tools > External Tools > Generate troubleshooting report, which may take a few minutes to complete. Once you see BUILD SUCCESSFUL in the Results pane, copy and paste all of this text into an email and send it to your trainer. (To copy the text, use your mouse to right-click—or control-click, for Mac users—in the Results pane, select Select All, then right-click again and select Copy.) This troubleshooting report contains information about your operating system and the software installed that is useful in troubleshooting problems.
+
 ## Deploying all repositories to localhost says BUILD FAILED
 
 First, check:
