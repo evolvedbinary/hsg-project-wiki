@@ -67,6 +67,8 @@ The history.state.gov (HSG) Development Environment requires a modern computer w
 
         npm install -g gulp bower
 
+        git config --global pull.rebase false
+
     When prompted, enter the password for your the user account on your Mac. 
 
 1. eXist-db, oXygen XML Editor, GitHub Desktop, and OpenVPN Connect are now installed! To find them, go to Finder, and select `Go > Applications`. 
