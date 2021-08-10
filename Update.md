@@ -40,6 +40,8 @@ These directions assume you have a [fully configured](setup) history.state.gov D
         brew install ant git maven node node@10
 
         npm install -g gulp bower
+
+        git config --global pull.rebase false
         
     If any of the applications are already installed, Homebrew will skip them, retaining the existing installation. 
 
