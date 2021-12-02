@@ -14,7 +14,6 @@ Welcome to the hsg-project wiki!  This wiki will walk you through how to set up,
 1. [eBooks: Generating, reviewing, and publishing](ebooks)
 1. [FRUS quarterly releases: Steps in preparing quarterly releases](quarterly-releases)
 1. [Travels & Visits: Converting MS Word submissions into XML](preparing-travels-and-visits)
-1. [Social Media Cards](social-media-cards)
 
 ### Other resources
 
