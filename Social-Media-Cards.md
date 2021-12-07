@@ -165,7 +165,7 @@ For example, let's consider the case where the time the last article was changed
 open-graph: map:merge((
   $config:OPEN_GRAPH,
   map {
-    "article:modified_time": <meta property="article:modified_time" content=""/>
+    "article:modified_time": <meta property="article:modified_time" content="{current-dateTime()}"/>
   }
 ))
 ```
